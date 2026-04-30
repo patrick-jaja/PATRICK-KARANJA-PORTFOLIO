@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Patrick Karanja - Strategic Creative & Communications Consultant">
+
+    <title>Ajira Digital Program - Patrick Karanja</title>
+
+    <link rel="shortcut icon" type="image/png" href="../assets/common/patrick-karanja-logo.png">
+
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/venobox.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/odometer.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/nice-select.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/main.css">
+
+    <!-- Poppins Font Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --rr-color-theme-primary: #8DC63F !important;
+            --rr-color-heading-primary: #131E3A !important;
+            --rr-color-text-body: #2A3A5E !important;
+            --rr-color-bg-1: #131E3A !important;
+            --rr-color-common-dark: #131E3A !important;
+            --rr-ff-heading: 'Poppins', sans-serif !important;
+            --rr-ff-body: 'Poppins', sans-serif !important;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        li,
+        div {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .primary-header {
+            padding: 0 !important;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img,
+        .side-menu-logo img {
+            height: 55px !important;
+            width: auto;
+            max-height: none !important;
+        }
+
+        .header.sticky-active {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .primary-header {
+            height: 70px !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .header-logo img {
+            height: 55px !important;
+        }
+
+        .header.sticky-active .mobile-menu-items ul li a {
+            color: #131E3A !important;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header.sticky-active .sidebar-trigger span {
+            background-color: #131E3A !important;
+        }
+
+        .mobile-menu-items ul li a {
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-items ul li a:hover {
+            color: var(--rr-color-theme-primary) !important;
+            text-shadow: 0 0 12px var(--rr-color-theme-primary) !important;
+        }
+
+        .scroll-section:first-of-type {
+            padding-top: 130px !important;
+        }
+
+        .scroll-section,
+        .footer-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            position: relative;
+            background-color: #131E3A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: visible;
+            box-sizing: border-box;
+        }
+
+        @media(max-width:991px) {
+
+            .scroll-section,
+            .footer-section {
+                min-height: auto;
+                height: auto;
+                padding: 100px 0 60px 0;
+                scroll-snap-align: none;
+                display: block;
+            }
+
+            #smooth-content {
+                scroll-snap-type: none;
+            }
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: none !important;
+            transform: translateY(-8px);
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .bullet-list li strong {
+            color: var(--rr-color-heading-primary);
+            font-weight: 700;
+        }
+
+        .bullet-list li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: var(--rr-color-theme-primary);
+            font-size: 1.5em;
+            line-height: 1;
+            top: -2px;
+        }
+
+        /* Custom dark service item for Expertise Grid */
+        .service-item-dark {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item-dark:hover {
+            transform: translateY(-5px);
+            border-color: var(--rr-color-theme-primary);
+            box-shadow: 0 15px 40px rgba(13, 198, 63, 0.08);
+        }
+
+        .service-icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .service-icon-circle i {
+            font-size: 32px;
+            color: var(--rr-color-heading-primary);
+        }
+
+        /* Professional Grid for Case Studies */
+        .case-study-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(19, 30, 58, 0.08);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .case-study-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-study-thumb {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            height: 240px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .case-study-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-study-thumb .project-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--rr-color-theme-primary);
+            color: var(--rr-color-heading-primary);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .case-study-card .bullet-list li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .case-btn-wrap {
+            margin-top: auto;
+            padding-top: 25px;
+        }
+
+        .timeline {
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--rr-color-theme-primary);
+            border: 3px solid var(--rr-color-bg-1);
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-role {
+            font-size: 16px;
+            color: var(--rr-color-theme-primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .timeline-bullets li::before {
+            content: 'â†’';
+            position: absolute;
+            left: 0;
+            color: var(--rr-color-theme-primary);
+        }
+
+        .skill-category {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--rr-color-theme-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--rr-color-theme-primary);
+        }
+
+        .program-card {
+            background: #fff;
+            border: 1px solid rgba(19, 30, 58, 0.08);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .program-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 198, 63, 0.1);
+        }
+
+        .program-card h3 {
+            font-size: 24px;
+            color: var(--rr-color-heading-primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .program-card p {
+            font-size: 15px;
+            margin: 0;
+            color: #666;
+        }
+
+        .tl-card {
+            border-left: 4px solid var(--rr-color-theme-primary);
+            padding: 25px 30px;
+            background: rgba(19, 30, 58, 0.03);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .tl-card:hover {
+            background: rgba(19, 30, 58, 0.05);
+            transform: translateX(5px);
+            border-left-width: 8px;
+        }
+
+        .tl-card h3 {
+            font-size: 20px;
+            margin: 0;
+            color: var(--rr-color-heading-primary);
+            font-weight: 600;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--rr-color-bg-1);
+        }
+
+        .final-cta h2 {
+            color: #fff;
+            font-size: clamp(30px, 4vw, 50px);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .final-cta h2 span {
+            color: var(--rr-color-theme-primary);
+        }
+
+        /* Force all animated content to be visible on scroll */
+        .fade-top,
+        .fade-bottom,
+        .fade-left,
+        .fade-right,
+        .img-reveal,
+        .img-overlay,
+        .fade-wrapper,
+        [data-animation],
+        [data-text-animation],
+        .char,
+        .word {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+        body {
+            overflow-wrap: break-word;
+        }
+
+        /* Scroll Snap & Layout Refinement */
+        html {
+            scroll-snap-type: y mandatory;
+            scroll-behavior: smooth;
+        }
+
+        .scroll-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            position: relative;
+            background-color: var(--rr-color-bg-1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        /* Responsive height for smaller screens and content fitting */
+        @media (max-width: 991px) {
+            .scroll-section {
+                min-height: auto;
+                height: auto;
+                padding: 100px 0;
+                scroll-snap-align: none;
+                display: block;
+            }
+
+            html {
+                scroll-snap-type: none;
+            }
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 2px solid transparent;
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            background: rgba(141, 198, 63, 0.05);
+            box-shadow: 0 0 80px rgba(141, 198, 63, 0.2);
+            transform: translateY(-5px);
+        }
+
+        /* Uniform Vertical Spacing class */
+        .project-spacing {
+            margin-bottom: 50px;
+        }
+
+        .section-title-vis {
+            font-size: clamp(24px, 3vw, 36px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 25px;
+            line-height: 1.2;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title-vis::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 4px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 10px;
+        }
+
+        /* Executive Case Study Elements */
+        .partner-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 60px;
+            opacity: 0.6;
+            filter: grayscale(1);
+            transition: all 0.4s;
+        }
+
+        .partner-row:hover {
+            opacity: 1;
+            filter: grayscale(0);
+        }
+
+        .partner-logo-box {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 6px;
+        }
+
+        .stat-block {
+            padding: 20px;
+            border-left: 2px solid var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0 12px 12px 0;
+            height: 100%;
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--rr-color-theme-primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .minimal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .minimal-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .minimal-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* Alternating Grid Logic */
+        .order-lg-last {
+            order: 2;
+        }
+
+        .order-lg-first {
+            order: 1;
+        }
+
+        @media (max-width: 991px) {
+
+            .order-lg-last,
+            .order-lg-first {
+                order: 0 !important;
+            }
+        }
+
+        /* Uniform Minimal Grid for Photos */
+        .uniform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .grid-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            background: #000;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--rr-color-theme-primary);
+            box-shadow: none !important;
+        }
+
+        .video-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .video-wrap video {
+            width: 100%;
+            display: block;
+            height: auto;
+            max-height: none;
+            background: #000;
+        }
+
+        @media (max-width: 991px) {
+            .uniform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 575px) {
+            .uniform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="loading" data-loading-text="AJIRA"></div>
+    </div>
+
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block">
+                        <a href="../index.html">
+                            <img class="logo-dark" src="../assets/common/patrick-karanja-logo.png"
+                                alt="Patrick Karanja Logo">
+                            <img class="logo-light" src="../assets/common/patrick-karanja-logo.png"
+                                alt="Patrick Karanja Logo">
+                        </a>
+                    </div>
+
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul>
+                                <li><a href="../index.html#about">About</a></li>
+                                <li><a href="../index.html#expertise">Expertise</a></li>
+                                <li><a href="../index.html#work">Work</a></li>
+                                <li><a href="../index.html#experience">Experience</a></li>
+                                <li><a href="../index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right">
+                            <a href="#contact" class="rr-primary-btn header-btn">Get in Touch</a>
+                            <div class="sidebar-icon">
+                                <button class="sidebar-trigger open">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-area" class="sidebar-area">
+        <button class="sidebar-trigger close">
+            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7"
+                style="enable-background: new 0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
+            </svg>
+        </button>
+        <div class="side-menu-content">
+            <div class="side-menu-logo">
+                <a class="dark-img" href="../index.html"><img src="../assets/common/patrick-karanja-logo.png"
+                        alt="Patrick Karanja Logo"></a>
+                <a class="light-img" href="../index.html"><img src="../assets/common/patrick-karanja-logo.png"
+                        alt="Patrick Karanja Logo"></a>
+            </div>
+            <div class="side-menu-about">
+                <div class="side-menu-header">
+                    <h3>About Me</h3>
+                </div>
+                <p>Strategic Creative & Communications Consultant driving national-scale campaigns across Africa.</p>
+                <a href="#contact" class="rr-primary-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- 01. INTRO: AJIRA DIGITAL PROGRAM (Project-First Executive Case Study) -->
+            <section class="scroll-section" id="intro" style="display: block; overflow-y: auto;">
+                <div
+                    style="position:absolute; top: -50%; left: 20%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(13,198,63,0.05) 0%, transparent 60%); z-index: 0; pointer-events: none;">
+                </div>
+
+                <div class="container" style="position: relative; z-index: 1;">
+                    <!-- Project Branding Header -->
+                    <div class="row align-items-center mb-40">
+                        <div class="col-auto">
+                            <div
+                                style="background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                                <img src="../assets/ajira/ajira-hero.png" alt="ajirahero"
+                                    style="height: clamp(60px, 8vw, 100px); width: auto; object-fit: contain;">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h1
+                                style="color: #fff; font-size: clamp(32px, 4.5vw, 65px); font-weight: 800; margin-top: 5px; margin-bottom: 0; line-height: 1.0;">
+                                Ajira Digital Program</h1>
+                        </div>
+                    </div>
+                    <!-- Row 1: Role & Video Side-by-Side (Vertical Compression) -->
+                    <div class="row gy-4 project-spacing align-items-start">
+                        <!-- Left: My Role -->
+                        <div class="col-lg-7">
+                            <div class="topic-card"
+                                style="padding: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-left: 4px solid var(--rr-color-theme-primary); height: auto;">
+                                <h3 style="color: #fff; font-size: 24px; font-weight: 800; margin-bottom: 20px;">
+                                    Creative Communications & Design Lead</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">Led
+                                    creative communication and storytelling across national campaigns, translating
+                                    mission into youth-focused content and digital narratives.</p>
+                                <div class="row gy-2">
+                                    <div class="col-md-12">
+                                        <ul class="minimal-list" style="columns: 2;">
+                                            <li><strong>Campaign Lead:</strong> Visual identity systems.</li>
+                                            <li><strong>Social Strategy:</strong> Localized narratives.</li>
+                                            <li><strong>Event Comms:</strong> High-level collateral.</li>
+                                            <li><strong>Multimedia:</strong> Impact storytelling.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right: Video -->
+                        <div class="col-lg-5" style="padding-top: 150px;">
+                            <div class="video-wrap">
+                                <video controls>
+                                    <source src="../assets/ajira/remote-jobs.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <p
+                                style="color: var(--rr-color-theme-primary); font-size: 10px; font-weight: 700; text-transform: uppercase; margin-top: 12px; text-align: center; letter-spacing: 1px;">
+                                Empowering Remote Jobs</p>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Strategic Overview (Spread Across Width) -->
+                    <div class="row project-spacing">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding: 35px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis" style="font-size: 20px; margin-bottom: 15px;">Overview
+                                </h3>
+                                <p
+                                    style="color: #fff; font-size: 17px; line-height: 1.6; font-weight: 500; margin-bottom: 15px;">
+                                    National initiative designed to equip youth with digital skills and connect them to
+                                    online work opportunities.</p>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6; margin-bottom: 0;">
+                                    Sponsored by <strong>Mastercard Foundation</strong>, <strong>KEPSA</strong>,
+                                    <strong>eMobilis</strong>, and **Ministry of ICT**. Focused on standardizing the
+                                    ecosystem through strategic visual alignment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Strategic Approach (Compact) -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding: 35px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+                                <h3
+                                    style="color: #fff; font-size: 20px; font-weight: 700; margin-bottom: 20px; color: var(--rr-color-theme-primary);">
+                                    Strategic Approach</h3>
+                                <div class="row gy-3">
+                                    <div class="col-md-4">
+                                        <div
+                                            style="border-left: 2px solid rgba(141, 198, 63, 0.3); padding-left: 15px;">
+                                            <p
+                                                style="color: #fff; font-weight: 700; margin-bottom: 5px; font-size: 14px;">
+                                                Youth-Driven</p>
+                                            <p style="color: #888; font-size: 13px;">Relatable online work storytelling.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div
+                                            style="border-left: 2px solid rgba(141, 198, 63, 0.3); padding-left: 15px;">
+                                            <p
+                                                style="color: #fff; font-weight: 700; margin-bottom: 5px; font-size: 14px;">
+                                                National Branding</p>
+                                            <p style="color: #888; font-size: 13px;">Consistent visual standards.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div
+                                            style="border-left: 2px solid rgba(141, 198, 63, 0.3); padding-left: 15px;">
+                                            <p
+                                                style="color: #fff; font-weight: 700; margin-bottom: 5px; font-size: 14px;">
+                                                Multi-Platform</p>
+                                            <p style="color: #888; font-size: 13px;">Digital & ground activations.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Problem Solving: Challenge & Solution -->
+                    <div class="row gy-4 mb-60">
+                        <div class="col-lg-12">
+                            <div class="topic-card"
+                                style="padding: 50px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05);">
+                                <div class="row align-items-center">
+                                    <div class="col-md-5">
+                                        <span
+                                            style="color:var(--rr-color-theme-primary); font-size:11px; font-weight:800; text-transform: uppercase;">The
+                                            Challenge</span>
+                                        <h4 style="color: #fff; font-size: 24px; font-weight: 700; margin-top: 10px;">
+                                            Traditional vs. Digital Perception</h4>
+                                        <p style="color: #a0a0a0; font-size: 15px; margin-top: 15px;">Many young people
+                                            perceived employment primarily as traditional office work, making it
+                                            difficult to communicate the legitimacy and potential of digital
+                                            freelancing.</p>
+                                    </div>
+                                    <div class="col-md-2 text-center d-none d-md-block">
+                                        <i class="fas fa-arrow-right"
+                                            style="color: var(--rr-color-theme-primary); font-size: 30px; opacity: 0.3;"></i>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <span
+                                            style="color:var(--rr-color-theme-primary); font-size:11px; font-weight:800; text-transform: uppercase;">The
+                                            Solution</span>
+                                        <h4 style="color: #fff; font-size: 24px; font-weight: 700; margin-top: 10px;">
+                                            Visual Credibility Systems</h4>
+                                        <ul class="minimal-list" style="margin-top: 15px;">
+                                            <li><strong>Visual Infographics:</strong> Simplifying complex economic
+                                                concepts into relatable visuals.</li>
+                                            <li><strong>Success Stories:</strong> Documenting real-life outcomes to
+                                                build legitimacy and trust.</li>
+                                            <li><strong>Scalable Templates:</strong> Enabling consistent partner
+                                                communications across platforms.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Impact & Metrics -->
+                    <div class="row mb-100">
+                        <div class="col-lg-4">
+                            <h3 class="section-title-vis" style="font-size: 24px; margin-bottom: 30px;">Impact</h3>
+                            <p style="color: #a0a0a0; font-size: 15px;">Driving growth through consistent messaging and
+                                outcome-based storytelling across national digital ecosystems.</p>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row gy-4">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="stat-block">
+                                        <span class="stat-value">National</span>
+                                        <span class="stat-label">Brand Visibility</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="stat-block">
+                                        <span class="stat-value">Positive</span>
+                                        <span class="stat-label">Engagement</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="stat-block">
+                                        <span class="stat-value">Unified</span>
+                                        <span class="stat-label">Messaging</span>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="stat-block">
+                                        <span class="stat-value">Scalable</span>
+                                        <span class="stat-label">Storytelling</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Partner Credibility Row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div style="padding-top: 40px; border-top: 1px solid rgba(255,255,255,0.05);">
+                                <p
+                                    style="color: rgba(255,255,255,0.3); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-align: center; margin-bottom: 30px;">
+                                    Strategic Partners & Stakeholders</p>
+                                <div class="partner-row">
+                                    <div class="partner-logo-box"
+                                        style="padding: 12px 24px; border: 1.5px solid rgba(141, 198, 63, 0.3); color: var(--rr-color-theme-primary);">
+                                        Mastercard Foundation</div>
+                                    <div class="partner-logo-box">Ministry of ICT</div>
+                                    <div class="partner-logo-box">KEPSA</div>
+                                    <div class="partner-logo-box">eMobilis Institute</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 02. PHOTO BRIDGE (Uniform Minimal Grid) -->
+            <section class="gallery-bridge" id="gallery" style="padding: 100px 0; background: var(--rr-color-bg-1);">
+                <div class="container">
+                    <div class="section-heading text-center mb-60">
+                        <h4 class="sub-heading" style="color: var(--rr-color-theme-primary);">Visual Narrative</h4>
+                        <h2 class="section-title" style="color: #fff;">Program Reach & Assets</h2>
+                    </div>
+                    <div class="uniform-grid">
+                        <div class="grid-item">
+                            <img src="../assets/ajira/inclusion.png" alt="inclusion">
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/ajira/customer-service-week.png" alt="customerserviceweek">
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/ajira/women-empower.png" alt="womenempower">
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/ajira/ajira-for-she-2.png" alt="ajiraforshe2">
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/ajira/fow.png" alt="fow">
+                        </div>
+                        <div class="grid-item">
+                            <img src="../assets/ajira/poster-job.png" alt="posterjob">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- 04. NATIONAL EVENTS (Video Left 3/4, Text Right 1/4) -->
+            <section class="scroll-section" id="national-events">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-9 order-lg-first">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/success-story.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 order-lg-last">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">National Events</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6;">High-production
+                                    documentaries capturing the nationwide rollout of the Ajira Satellite Program across
+                                    Kenya's counties.</p>
+                                <hr style="border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                                <span
+                                    style="color: var(--rr-color-theme-primary); font-weight: 700; font-size: 13px; text-transform: uppercase;">Scale:
+                                    47 Counties</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 05. INCLUSION CAMPAIGN (Text Left 1/4, Video Right 3/4) -->
+            <section class="scroll-section" id="inclusion">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-3 order-lg-first">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">Digital Inclusion</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6;">Strategic communications
+                                    for digital accessibility, ensuring that online work opportunities are inclusive for
+                                    Persons with Disabilities (PWDs) across Kenya.</p>
+                                <hr style="border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
+                                <span
+                                    style="color: var(--rr-color-theme-primary); font-weight: 700; font-size: 13px; text-transform: uppercase;">Campaign:
+                                    Inclusive Future</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 order-lg-last">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/inclusion-video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 06. INTERNATIONAL WOMEN'S DAY 2026 (Video Left 3/4, Text Right 1/4) -->
+            <section class="scroll-section" id="iwd-2026">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-9 order-lg-first">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/womens-day-26.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 order-lg-last">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">IWD 2026</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6;">National launch event for
+                                    women in the digital economy, celebrating progress and setting the agenda for future
+                                    female-led digital growth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 07. AJIRA FOR SHE (Text Left 1/4, Video Right 3/4) -->
+            <section class="scroll-section" id="ajira-for-she">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-3 order-lg-first">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">Ajira For She</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6;">A dedicated campaign
+                                    focusing on empowering young women through tailored digital mentorship, training,
+                                    and job linkages.</p>
+                                <span
+                                    style="background: var(--rr-color-theme-primary); color: #131E3A; padding: 4px 10px; border-radius: 4px; font-weight: 800; font-size: 11px; text-transform: uppercase;">Target:
+                                    1M+ Women</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 order-lg-last">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/ajira-for-she.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 08. SUSTAINABILITY - SIB (Video Left 3/4, Text Right 1/4) -->
+            <section class="scroll-section" id="sustainability">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-9 order-lg-first">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/lets-be-clear.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 order-lg-last">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">Sustainability</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6;">Sustainable Inclusive
+                                    Business (SIB) initiatives driving long-term organizational resilience and ethical
+                                    digital transformation.</p>
+                                <span
+                                    style="background: var(--rr-color-theme-primary); color: #131E3A; padding: 4px 10px; border-radius: 4px; font-weight: 800; font-size: 11px; text-transform: uppercase;">Featured:
+                                    Let's Be Clear</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 09. IMPACT STORIES (Text Left 1/4, Video Right 3/4) -->
+            <section class="scroll-section" id="impact-stories">
+                <div class="container">
+                    <div class="row align-items-center gy-4">
+                        <div class="col-lg-3 order-lg-first">
+                            <div class="topic-card hover-glow">
+                                <h3 class="section-title-vis" style="font-size: 24px;">Impact & Metrics</h3>
+                                <div class="mb-3">
+                                    <h4
+                                        style="color: var(--rr-color-theme-primary); font-size: 32px; font-weight: 900; margin: 0;">
+                                        1M+</h4>
+                                    <p
+                                        style="color: #fff; font-size: 12px; text-transform: uppercase; font-weight: 700;">
+                                        Reach</p>
+                                </div>
+                                <div class="mb-3">
+                                    <h4
+                                        style="color: var(--rr-color-theme-primary); font-size: 32px; font-weight: 900; margin: 0;">
+                                        30%</h4>
+                                    <p
+                                        style="color: #fff; font-size: 12px; text-transform: uppercase; font-weight: 700;">
+                                        Growth</p>
+                                </div>
+                                <p style="color: #a0a0a0; font-size: 14px;">Human stories of transformation through the
+                                    Ajira digital ecosystem.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 order-lg-last">
+                            <div class="topic-card hover-glow"
+                                style="padding: 0; overflow: hidden; border-radius: 20px;">
+                                <video controls style="width: 100%; display: block;">
+                                    <source src="../assets/ajira/impact-stories.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. FINAL POSITIONING / CTA (Full Screen Snap) -->
+            <section class="scroll-section" id="final-thought">
+                <div class="container">
+                    <div class="final-cta" style="margin: 0; padding: 0;">
+                        <h2 data-animation="nunca-fadeInUp" style="font-size: clamp(30px, 4vw, 55px);">I don't just
+                            design visuals.<br> <span style="color: var(--rr-color-theme-primary);">I build
+                                communication systems that scale impact across ecosystems.</span></h2>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. CONTACT SECTION -->
+            <footer class="footer-section pt-80" id="contact">
+                <div class="shapes">
+                    <div class="shape shape-1"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-1.png" alt="shape"></div>
+                    <div class="shape shape-2"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-2.png" alt="shape"></div>
+                </div>
+                <div class="container">
+                    <div class="footer-top text-center"
+                        style="display:flex; flex-direction:column; align-items:center; border-bottom: none;">
+                        <img src="../assets/common/patrick-karanja-logo.png" alt="Logo" style="max-height: 80px; margin-bottom: 30px;">
+                        <h2 class="title"
+                            style="max-width: 800px; margin-bottom: 40px; font-size: clamp(30px, 4vw, 60px);">Let's
+                            build systems that drive real impact.</h2>
+                        <a href="mailto:jajadezigns@gmail.com" class="rr-primary-btn"
+                            style="padding: 20px 40px; font-size: 18px;">Start a Conversation</a>
+                    </div>
+                    <div class="row footer-wrap" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 50px;">
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">Contact Details</h3>
+                                </div>
+                                <ul class="address-list">
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                                        <div class="content"><a href="tel:+254718094919">+254 718 094 919</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                        <div class="content"><a
+                                                href="mailto:jajadezigns@gmail.com">jajadezigns@gmail.com</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area mt-50">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p>&copy; Copyright 2026 Patrick Karanja, All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+    <!-- JS here (Fetched dynamically) -->
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/imagesloaded-pkgd.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/waypoints.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/venobox.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/odometer.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/meanmenu.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquery.isotope.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/swiper.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/split-type.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/gsap.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-trigger.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-smoother.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquery.carouselTicker.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/nice-select.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/slider.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/contact.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/main.js"></script>
+</body>
+
+</html>
+
+

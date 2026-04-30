@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KAISA Initiative - Patrick Karanja Creative Communications Portfolio">
+    <title>KAISA Initiative - Patrick Karanja</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/common/patrick-karanja-logo.png">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/venobox.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rr-color-theme-primary: #b531ff !important;
+            --rr-color-heading-primary: #131E3A !important;
+            --rr-color-bg-1: #131E3A !important;
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        li,
+        div {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .primary-header {
+            padding: 0 !important;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img,
+        .side-menu-logo img {
+            height: 55px !important;
+            width: auto;
+            max-height: none !important;
+        }
+
+        .header.sticky-active {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .primary-header {
+            height: 70px !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .header-logo img {
+            height: 55px !important;
+        }
+
+        .header.sticky-active .mobile-menu-items ul li a {
+            color: #131E3A !important;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header.sticky-active .sidebar-trigger span {
+            background-color: #131E3A !important;
+        }
+
+        .mobile-menu-items ul li a {
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-items ul li a:hover {
+            color: var(--rr-color-theme-primary) !important;
+            text-shadow: 0 0 12px var(--rr-color-theme-primary) !important;
+        }
+
+        .scroll-section:first-of-type {
+            padding-top: 130px !important;
+        }
+
+        .scroll-section,
+        .footer-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            position: relative;
+            background-color: #131E3A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: visible;
+            box-sizing: border-box;
+        }
+
+        @media(max-width:991px) {
+
+            .scroll-section,
+            .footer-section {
+                min-height: auto;
+                height: auto;
+                padding: 100px 0 60px 0;
+                scroll-snap-align: none;
+                display: block;
+            }
+
+            #smooth-content {
+                scroll-snap-type: none;
+            }
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: none !important;
+            transform: translateY(-8px);
+        }
+
+        .section-title-vis {
+            font-size: clamp(22px, 2.5vw, 32px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title-vis::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 4px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 10px;
+        }
+
+        .minimal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .minimal-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        .minimal-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .stat-block {
+            padding: 25px;
+            border-left: 3px solid var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0 12px 12px 0;
+            height: 100%;
+            transition: all 0.4s;
+        }
+
+        .stat-block:hover {
+            background: rgba(181, 49, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--rr-color-theme-primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .uniform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            width: 100%;
+        }
+
+        .grid-item {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            background: #000;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain !important;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .grid-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--rr-color-theme-primary);
+            box-shadow: none !important;
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media(max-width:991px) {
+            .uniform-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:575px) {
+            .uniform-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .project-spacing {
+            margin-bottom: 50px;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: #131E3A;
+        }
+
+        .final-cta h2 {
+            color: #fff;
+            font-size: clamp(30px, 4vw, 50px);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .final-cta h2 span {
+            color: var(--rr-color-theme-primary);
+        }
+
+        .fade-top,
+        .fade-bottom,
+        .fade-left,
+        .fade-right,
+        .img-reveal,
+        .img-overlay,
+        .fade-wrapper,
+        [data-animation],
+        [data-text-animation],
+        .char,
+        .word {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+        .video-wrap {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #000;
+            box-shadow: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .video-wrap video {
+            width: 100%;
+            display: block;
+            height: 100%;
+            max-height: 60vh;
+            object-fit: cover !important;
+            background: #000;
+        }
+
+        .vid-caption {
+            color: var(--rr-color-theme-primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 15px;
+            text-align: left;
+            letter-spacing: 1px;
+            padding-left: 10px;
+            border-left: 2px solid var(--rr-color-theme-primary);
+        }
+
+        .accent-border-left {
+            border-left: 4px solid var(--rr-color-theme-primary);
+            padding-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loading" data-loading-text="KAISA"></div>
+    </div>
+
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block">
+                        <a href="../index.html">
+                            <img class="logo-dark" src="../assets/common/patrick-karanja-logo.png"
+                                alt="Patrick Karanja Logo">
+                            <img class="logo-light" src="../assets/common/patrick-karanja-logo.png"
+                                alt="Patrick Karanja Logo">
+                        </a>
+                    </div>
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul>
+                                <li><a href="../index.html#about">About</a></li>
+                                <li><a href="../index.html#expertise">Expertise</a></li>
+                                <li><a href="../index.html#work">Work</a></li>
+                                <li><a href="../index.html#experience">Experience</a></li>
+                                <li><a href="../index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right">
+                            <a href="../index.html#contact" class="rr-primary-btn header-btn">Get in Touch</a>
+                            <div class="sidebar-icon">
+                                <button class="sidebar-trigger open"><span></span><span></span><span></span></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-area" class="sidebar-area">
+        <button class="sidebar-trigger close">
+            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16px" height="12.7px"
+                viewBox="0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
+            </svg>
+        </button>
+        <div class="side-menu-content">
+            <div class="side-menu-logo">
+                <a class="dark-img" href="../index.html"><img src="../assets/common/patrick-karanja-logo.png"
+                        alt="Patrick Karanja Logo"></a>
+                <a class="light-img" href="../index.html"><img src="../assets/common/patrick-karanja-logo.png"
+                        alt="Patrick Karanja Logo"></a>
+            </div>
+            <div class="side-menu-about">
+                <div class="side-menu-header">
+                    <h3>About Me</h3>
+                </div>
+                <p>Strategic Creative &amp; Communications Consultant driving national-scale campaigns across Africa.
+                </p>
+                <a href="../index.html#contact" class="rr-primary-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- SECTION 1: INTRO -->
+            <section class="scroll-section" id="intro" style="padding-top:120px;">
+                <div
+                    style="position:absolute;top:-50%;left:20%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(181,49,255,0.07) 0%,transparent 60%);z-index:0;pointer-events:none;">
+                </div>
+                <div class="container" style="position:relative;z-index:1;">
+
+                    <!-- Branding Header -->
+                    <div class="row align-items-center mb-40">
+                        <div class="col-auto">
+                            <div
+                                style="background:rgba(255,255,255,0.03);padding:15px;border-radius:12px;border:1px solid rgba(255,255,255,0.05);">
+                                <img src="../assets/kaisa/kaisa-logo.jpg" alt="KAISA Logo"
+                                    style="height:clamp(50px,7vw,90px);width:auto;object-fit:contain;">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <span
+                                style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">03.
+                                Ecosystem Initiative</span>
+                            <h1
+                                style="color:#fff;font-size:clamp(32px,4.5vw,65px);font-weight:800;margin-top:8px;margin-bottom:0;line-height:1.0;">
+                                KAISA Initiative</h1>
+                        </div>
+                    </div>
+
+                    <!-- Role + Hero Image -->
+                    <div class="row gy-4 project-spacing align-items-start">
+                        <div class="col-lg-7">
+                            <div class="topic-card"
+                                style="padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-left:4px solid var(--rr-color-theme-primary);height:auto;">
+                                <h3
+                                    style="color:#fff;font-size:26px;font-weight:800;margin-bottom:20px;line-height:1.2;">
+                                    Visual Advocacy &amp; Civic Engagement Design</h3>
+                                <p style="color:#d0d0d0;font-size:16px;line-height:1.7;margin-bottom:25px;">Architecting
+                                    the visual identity for governance-centric campaigns. I specialized in translating
+                                    complex policy frameworks and civic rights into highly authoritative, accessible,
+                                    and persuasive visual narratives that drive national awareness.</p>
+                                <ul class="minimal-list" style="columns:2;column-gap:30px;">
+                                    <li><strong>Advocacy Design:</strong> Persuasion-driven systems.</li>
+                                    <li><strong>Policy Narrative:</strong> Simplifying governance.</li>
+                                    <li><strong>Information Design:</strong> High-impact infographics.</li>
+                                    <li><strong>Ecosystem Branding:</strong> Multi-partner alignment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5" style="padding-top: 40px;">
+                            <div
+                                style="border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.05);">
+                                <img src="../assets/kaisa/kaisa-story.jpg" alt="KAISA Campaign Story"
+                                    style="width:100%;height:auto;display:block;">
+                            </div>
+                            <p class="vid-caption" style="margin-top:15px;">KAISA Advocacy Stories</p>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="row project-spacing">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:45px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis" style="font-size:22px;margin-bottom:20px;">The
+                                    Transparency Mandate</h3>
+                                <p
+                                    style="color:#fff;font-size:18px;line-height:1.6;font-weight:500;margin-bottom:20px;">
+                                    At KAISA, the objective was to bridge the gap between government policy and public
+                                    understanding. I engineered communication assets that gave the 'Right to
+                                    Information' a credible and modern visual voice.</p>
+                                <p style="color:#aaa;font-size:15px;line-height:1.7;margin-bottom:0;">By standardizing
+                                    the design language of civic advocacy, I helped elevate the initiative’s
+                                    credibility, ensuring that governance messaging resonated as effectively in local
+                                    counties as it did on national digital platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Approach -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:35px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3
+                                    style="color:var(--rr-color-theme-primary);font-size:20px;font-weight:700;margin-bottom:20px;">
+                                    Strategic Approach</h3>
+                                <div class="row gy-3">
+                                    <div class="col-md-4">
+                                        <div class="accent-border-left">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Policy Simplification</p>
+                                            <p style="color:#888;font-size:13px;">Complex governance issues made
+                                                digestible.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-border-left">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Visual Credibility</p>
+                                            <p style="color:#888;font-size:13px;">Maintaining trust while being
+                                                engaging.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-border-left">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Multi-Channel Reach</p>
+                                            <p style="color:#888;font-size:13px;">Digital, print &amp; event-based
+                                                advocacy.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: CHALLENGE & APPROACH -->
+            <section class="scroll-section" id="challenge">
+                <div class="container">
+                    <div class="row gy-4 align-items-stretch">
+                        <div class="col-lg-6">
+                            <div class="topic-card"
+                                style="padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis">The Challenge</h3>
+                                <ul class="minimal-list">
+                                    <li>Communicating policy and governance issues in an engaging, non-alienating way
+                                    </li>
+                                    <li>Capturing audience attention in a crowded digital media space</li>
+                                    <li>Maintaining credibility while making content visually compelling</li>
+                                    <li>Reaching diverse demographics spread across counties</li>
+                                    <li>Sustaining consistent messaging across campaign phases</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="topic-card"
+                                style="padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis">The Approach</h3>
+                                <ul class="minimal-list">
+                                    <li>Used storytelling and design to simplify complex governance issues</li>
+                                    <li>Focused on clarity, visual hierarchy, and strong messaging architecture</li>
+                                    <li>Developed audience-friendly content formats adapted per platform</li>
+                                    <li>Built data-driven advocacy visual systems</li>
+                                    <li>Maintained brand consistency across all communication outputs</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Row -->
+                    <div class="row gy-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="stat-block">
+                                <span class="stat-value">County-Wide</span>
+                                <span class="stat-label">Campaign Reach Across Kenya</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-block">
+                                <span class="stat-value">Multi-Platform</span>
+                                <span class="stat-label">Digital + Events + Print</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="stat-block">
+                                <span class="stat-value">Advocacy</span>
+                                <span class="stat-label">Policy Communication Specialist</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: CAMPAIGN ASSETS GALLERY -->
+            <section class="scroll-section" id="gallery" style="display:block;padding-top:100px;">
+                <div class="container">
+                    <div class="text-center mb-60">
+                        <span
+                            style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">Visual
+                            Authority</span>
+                        <h2 class="section-title-vis" style="padding-left:0;text-align:center;margin-top:10px;">
+                            Integrated Advocacy Ecosystem</h2>
+                        <p style="color:#aaa;max-width:700px;margin:15px auto 0;">Ensuring design integrity across
+                            digital awareness weeks, partner summits, and localized county campaigns.</p>
+                    </div>
+                    <div class="uniform-grid">
+                        <div class="grid-item"><img src="../assets/kaisa/ai-week.png" alt="AI Week Kenya"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="../assets/kaisa/ai-week-web.png" alt="AI Week Web"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="../assets/kaisa/kaisa-impact-story.png" alt="KAISA Impact Story"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="../assets/kaisa/kaisa-story.jpg" alt="KAISA Story"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="../assets/kaisa/partners-logos.png" alt="Partner Logos"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="../assets/kaisa/kaisa-logo.jpg" alt="KAISA Logo Visual"
+                                style="object-fit:contain;background:#000;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: CAMPAIGN VIDEOS -->
+            <section class="scroll-section" id="videos">
+                <div class="container">
+                    <div class="text-center mb-60">
+                        <span
+                            style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">Media
+                            Productions</span>
+                        <h2 style="color:#fff;font-size:clamp(24px,3vw,40px);font-weight:800;margin-top:10px;">Campaign
+                            Films</h2>
+                    </div>
+                    <div class="row gy-5 align-items-stretch">
+                        <div class="col-lg-6">
+                            <div class="topic-card" style="padding:25px;">
+                                <div class="video-wrap">
+                                    <video controls style="width: 100%; display: block; height: auto;">
+                                        <source src="../assets/kaisa/kaisa-naks.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="mt-20">
+                                    <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">KAISA NAKS
+                                        Campaign</h4>
+                                    <p style="color:#a0a0a0;font-size:14px;margin-bottom:0;">Strategic advocacy film
+                                        highlighting local accountability and civic action within Nakuru County.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="topic-card" style="padding:25px;">
+                                <div class="video-wrap">
+                                    <video controls style="width: 100%; display: block; height: auto;">
+                                        <source src="../assets/kaisa/leash-ai.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="mt-20">
+                                    <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">AI Week
+                                        Impact</h4>
+                                    <p style="color:#a0a0a0;font-size:14px;margin-bottom:0;">Showcasing the intersection
+                                        of emerging technology and governance during the national AI week.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL CTA -->
+            <div class="final-cta">
+                <h2>I don't just design visuals.<br> <span>I build communication systems that scale impact across
+                        ecosystems.</span></h2>
+            </div>
+
+            <!-- FOOTER / CONTACT -->
+            <footer class="footer-section pt-80" id="contact">
+                <div class="shapes">
+                    <div class="shape shape-1"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-1.png" alt="shape"></div>
+                    <div class="shape shape-2"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-2.png" alt="shape"></div>
+                </div>
+                <div class="container">
+                    <div class="footer-top text-center"
+                        style="display:flex;flex-direction:column;align-items:center;border-bottom:none;">
+                        <img src="../assets/common/patrick-karanja-logo.png" alt="Logo"
+                            style="max-height:80px;margin-bottom:30px;">
+                        <h2 class="title" style="max-width:800px;margin-bottom:40px;font-size:clamp(30px,4vw,60px);">
+                            Let's build systems that drive real impact.</h2>
+                        <a href="mailto:jajadezigns@gmail.com" class="rr-primary-btn"
+                            style="padding:20px 40px;font-size:18px;">Start a Conversation</a>
+                    </div>
+                    <div class="row footer-wrap" style="border-top:1px solid rgba(255,255,255,0.05);padding-top:50px;">
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">Contact Details</h3>
+                                </div>
+                                <ul class="address-list">
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                                        <div class="content"><a href="tel:+254718094919">+254 718 094 919</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                        <div class="content"><a
+                                                href="mailto:jajadezigns@gmail.com">jajadezigns@gmail.com</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">More Case Studies</h3>
+                                </div>
+                                <ul style="list-style:none;padding:0;">
+                                    <li style="margin-bottom:10px;"><a href="ajira.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Ajira Digital
+                                            Program →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kyeeap.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KYEEAP Program
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kepsa.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KEPSA Projects
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="swvl.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">SWVL Kenya →</a>
+                                    </li>
+                                    <li><a href="youthjobs.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Youth &amp; Jobs
+                                            Initiative →</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area mt-50">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p>&copy; Copyright 2026 Patrick Karanja, All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/imagesloaded-pkgd.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/waypoints.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/meanmenu.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/swiper.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/gsap.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-smoother.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/slider.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/main.js"></script>
+</body>
+
+</html>
+
+

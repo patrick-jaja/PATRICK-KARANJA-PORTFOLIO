@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KYEEAP Program - Patrick Karanja Youth Employment Communications Portfolio">
+    <title>KYEEAP Program - Patrick Karanja</title>
+    <link rel="shortcut icon" type="image/png" href="../assets/common/patrick-karanja-logo.png">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rr-color-theme-primary: #00d2ff !important;
+            --rr-color-bg-1: #131E3A !important;
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        li,
+        div {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        img,
+        video {
+            object-fit: contain !important;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .primary-header {
+            padding: 0 !important;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img,
+        .side-menu-logo img {
+            height: 55px !important;
+            width: auto;
+            max-height: none !important;
+        }
+
+        .header.sticky-active {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .primary-header {
+            height: 70px !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .header-logo img {
+            height: 55px !important;
+        }
+
+        .header.sticky-active .mobile-menu-items ul li a {
+            color: #131E3A !important;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header.sticky-active .sidebar-trigger span {
+            background-color: #131E3A !important;
+        }
+
+        .mobile-menu-items ul li a {
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-items ul li a:hover {
+            color: var(--rr-color-theme-primary) !important;
+            text-shadow: 0 0 12px var(--rr-color-theme-primary) !important;
+        }
+
+        .scroll-section:first-of-type {
+            padding-top: 130px !important;
+        }
+
+        .scroll-section,
+        .footer-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 0;
+            position: relative;
+            background-color: #131E3A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            overflow: visible;
+            box-sizing: border-box;
+        }
+
+        @media(max-width:991px) {
+
+            .scroll-section,
+            .footer-section {
+                min-height: auto;
+                height: auto;
+                padding: 80px 0 60px 0;
+                scroll-snap-align: none;
+                display: block;
+            }
+
+            #smooth-content {
+                scroll-snap-type: none;
+            }
+        }
+
+        .topic-card {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .topic-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.04);
+            box-shadow: none !important;
+            transform: translateY(-8px);
+        }
+
+        .section-title-vis {
+            font-size: clamp(22px, 2.5vw, 32px);
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title-vis::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 15%;
+            height: 70%;
+            width: 4px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 10px;
+        }
+
+        .minimal-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .minimal-list li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 12px;
+            font-size: 14px;
+            color: #d0d0d0;
+            line-height: 1.6;
+        }
+
+        .minimal-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 6px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 50%;
+        }
+
+        .stat-block {
+            padding: 25px;
+            border-left: 3px solid var(--rr-color-theme-primary);
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 0 12px 12px 0;
+            height: 100%;
+            transition: all 0.4s;
+        }
+
+        .stat-block:hover {
+            background: rgba(0, 210, 255, 0.05);
+            transform: translateX(5px);
+        }
+
+        .stat-value {
+            font-size: 28px;
+            font-weight: 900;
+            color: var(--rr-color-theme-primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+
+        .project-spacing {
+            margin-bottom: 50px;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: #131E3A;
+        }
+
+        .final-cta h2 {
+            color: #fff;
+            font-size: clamp(30px, 4vw, 50px);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .final-cta h2 span {
+            color: var(--rr-color-theme-primary);
+        }
+
+        .fade-top,
+        .fade-bottom,
+        .fade-left,
+        .fade-right,
+        .img-reveal,
+        .img-overlay,
+        .fade-wrapper,
+        [data-animation],
+        [data-text-animation],
+        .char,
+        .word {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+
+        .accent-l {
+            border-left: 2px solid rgba(0, 210, 255, 0.3);
+            padding-left: 15px;
+        }
+
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 24px;
+            padding: 35px 30px;
+            transition: all 0.4s;
+            height: 100%;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            transform: translateY(-8px);
+            box-shadow: none !important;
+            background: rgba(0, 210, 255, 0.05);
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--rr-color-theme-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .pillar-icon i {
+            font-size: 22px;
+            color: var(--rr-color-theme-primary);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loading" data-loading-text="KYEEAP"></div>
+    </div>
+
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block"><a href="../index.html"><img class="logo-dark"
+                                src="../assets/common/patrick-karanja-logo.png" alt="Patrick Karanja Logo"><img
+                                class="logo-light" src="../assets/common/patrick-karanja-logo.png"
+                                alt="Patrick Karanja Logo"></a></div>
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul>
+                                <li><a href="../index.html#about">About</a></li>
+                                <li><a href="../index.html#expertise">Expertise</a></li>
+                                <li><a href="../index.html#work">Work</a></li>
+                                <li><a href="../index.html#experience">Experience</a></li>
+                                <li><a href="../index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right"><a href="../index.html#contact" class="rr-primary-btn header-btn">Get in
+                                Touch</a>
+                            <div class="sidebar-icon"><button
+                                    class="sidebar-trigger open"><span></span><span></span><span></span></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-area" class="sidebar-area">
+        <button class="sidebar-trigger close"><svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px"
+                y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
+            </svg></button>
+        <div class="side-menu-content">
+            <div class="side-menu-logo"><a class="dark-img" href="../index.html"><img
+                        src="../assets/common/patrick-karanja-logo.png" alt="Patrick Karanja Logo"></a><a class="light-img"
+                    href="../index.html"><img src="../assets/common/patrick-karanja-logo.png" alt="Patrick Karanja Logo"></a>
+            </div>
+            <div class="side-menu-about">
+                <div class="side-menu-header">
+                    <h3>About Me</h3>
+                </div>
+                <p>Strategic Creative &amp; Communications Consultant driving national-scale campaigns across Africa.
+                </p><a href="../index.html#contact" class="rr-primary-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- SECTION 1: INTRO -->
+            <section class="scroll-section" id="intro" style="padding-top:120px;">
+                <div
+                    style="position:absolute;top:-50%;left:20%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(0,210,255,0.05) 0%,transparent 60%);z-index:0;pointer-events:none;">
+                </div>
+                <div class="container" style="position:relative;z-index:1;">
+
+                    <div class="row align-items-center mb-40">
+                        <div class="col">
+                            <span
+                                style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">02.
+                                Program Rollout</span>
+                            <h1
+                                style="color:#fff;font-size:clamp(32px,4.5vw,65px);font-weight:800;margin-top:8px;margin-bottom:0;line-height:1.0;">
+                                KYEEAP Program</h1>
+                        </div>
+                    </div>
+
+                    <!-- Role Card -->
+                    <div class="row gy-4 project-spacing">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:40px;border:1px solid rgba(255,255,255,0.05);border-left:4px solid var(--rr-color-theme-primary);height:auto;">
+                                <div class="row align-items-center">
+                                    <div class="col-lg-7">
+                                        <h3
+                                            style="color:#fff;font-size:26px;font-weight:800;margin-bottom:20px;line-height:1.2;">
+                                            Structural Communication &amp; Youth Employment Strategy</h3>
+                                        <p style="color:#d0d0d0;font-size:16px;line-height:1.7;margin-bottom:25px;">
+                                            Spearheaded the communications architecture for the Kenya Youth Employment
+                                            and Opportunities Program (KYEEAP). I specialized in translating high-level
+                                            policy frameworks into engaging, grassroots-friendly narratives that
+                                            successfully connected thousands of youth to transformative economic
+                                            opportunities.</p>
+                                        <ul class="minimal-list" style="columns:2;column-gap:30px;">
+                                            <li><strong>National Awareness:</strong> Large-scale mobilization systems.
+                                            </li>
+                                            <li><strong>Content Engineering:</strong> Policy-to-Grassroots translation.
+                                            </li>
+                                            <li><strong>Digital Outreach:</strong> Targeted youth engagement ads.</li>
+                                            <li><strong>Stakeholder Matrix:</strong> Multi-agency alignment.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-5 mt-4 mt-lg-0">
+                                        <div class="row gy-3">
+                                            <div class="col-6">
+                                                <div class="stat-block"><span class="stat-value">National</span><span
+                                                        class="stat-label">Program Rollout</span></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="stat-block"><span class="stat-value">Youth-First</span><span
+                                                        class="stat-label">Communication Approach</span></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="stat-block"><span
+                                                        class="stat-value">Multi-Partner</span><span
+                                                        class="stat-label">Brand Alignment</span></div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="stat-block"><span class="stat-value">Gov-Backed</span><span
+                                                        class="stat-label">Youth Employment</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="row project-spacing">
+                        <div class="col-12">
+                            <div class="topic-card" style="padding:45px;border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis" style="font-size:22px;margin-bottom:20px;">The Economic
+                                    Bridge</h3>
+                                <p
+                                    style="color:#fff;font-size:18px;line-height:1.6;font-weight:500;margin-bottom:20px;">
+                                    At KYEEAP, the challenge was to make bureaucratic employment programs feel personal
+                                    and attainable. I engineered communication assets that simplified the journey from
+                                    program application to real-world employment.</p>
+                                <p style="color:#aaa;font-size:15px;line-height:1.7;margin-bottom:0;">By standardizing
+                                    the design language of youth opportunities, I ensured that every digital banner and
+                                    print flyer carried the weight of government credibility while maintaining the
+                                    energy of youth-centric culture.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Approach -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:35px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3
+                                    style="color:var(--rr-color-theme-primary);font-size:20px;font-weight:700;margin-bottom:20px;">
+                                    Strategic Approach</h3>
+                                <div class="row gy-3">
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Accessibility First</p>
+                                            <p style="color:#888;font-size:13px;">Technical program info made
+                                                youth-friendly.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Campaign Flows</p>
+                                            <p style="color:#888;font-size:13px;">Structured content aligned to
+                                                milestones.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Brand Governance</p>
+                                            <p style="color:#888;font-size:13px;">Consistency across implementing
+                                                partners.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: CHALLENGE & IMPACT -->
+            <section class="scroll-section" id="impact">
+                <div class="container">
+                    <div class="row gy-4 align-items-stretch">
+                        <div class="col-lg-6">
+                            <div class="topic-card"
+                                style="padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis">The Challenge</h3>
+                                <ul class="minimal-list">
+                                    <li>Limited awareness among youth about available employment opportunities</li>
+                                    <li>Complex program structure requiring simplified communication</li>
+                                    <li>Need for consistent branding across multiple implementing partners</li>
+                                    <li>Engaging youth audiences with government program messaging</li>
+                                    <li>Coordinating messaging across diverse regional rollouts</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="topic-card"
+                                style="padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis">Execution &amp; Impact</h3>
+                                <ul class="minimal-list">
+                                    <li>Designed campaign assets for digital and offline deployment</li>
+                                    <li>Produced explainer content and promotional campaign materials</li>
+                                    <li>Supported stakeholder engagement through branded communication tools</li>
+                                    <li>Improved program visibility and understanding among target youth</li>
+                                    <li>Strengthened KYEEAP's communication consistency and professionalism</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Program Pillars -->
+                    <div class="row gy-4 mt-5">
+                        <div class="col-12 text-center mb-20">
+                            <h3 style="color:#fff;font-size:22px;font-weight:700;">Program Communication Pillars</h3>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pillar-card">
+                                <div class="pillar-icon"><i class="fa-solid fa-users"></i></div>
+                                <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">Youth Outreach
+                                </h4>
+                                <p style="color:#a0a0a0;font-size:14px;line-height:1.6;">Youth-first messaging
+                                    frameworks that resonated with diverse demographics across Kenya.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pillar-card">
+                                <div class="pillar-icon"><i class="fa-solid fa-bullhorn"></i></div>
+                                <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">Campaign
+                                    Architecture</h4>
+                                <p style="color:#a0a0a0;font-size:14px;line-height:1.6;">Structured multi-channel
+                                    campaigns aligned to program milestones and government timelines.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pillar-card">
+                                <div class="pillar-icon"><i class="fa-solid fa-palette"></i></div>
+                                <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">Brand
+                                    Consistency</h4>
+                                <p style="color:#a0a0a0;font-size:14px;line-height:1.6;">Unified visual identity
+                                    maintained across all implementing partners and channels.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL CTA -->
+            <div class="final-cta">
+                <h2>I don't just design visuals.<br> <span>I build communication systems that scale impact across
+                        ecosystems.</span></h2>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer-section pt-80" id="contact">
+                <div class="shapes">
+                    <div class="shape shape-1"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-1.png" alt="shape"></div>
+                    <div class="shape shape-2"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-2.png" alt="shape"></div>
+                </div>
+                <div class="container">
+                    <div class="footer-top text-center"
+                        style="display:flex;flex-direction:column;align-items:center;border-bottom:none;">
+                        <img src="../assets/common/patrick-karanja-logo.png" alt="Logo"
+                            style="max-height:80px;margin-bottom:30px;">
+                        <h2 class="title" style="max-width:800px;margin-bottom:40px;font-size:clamp(30px,4vw,60px);">
+                            Let's build systems that drive real impact.</h2>
+                        <a href="mailto:jajadezigns@gmail.com" class="rr-primary-btn"
+                            style="padding:20px 40px;font-size:18px;">Start a Conversation</a>
+                    </div>
+                    <div class="row footer-wrap" style="border-top:1px solid rgba(255,255,255,0.05);padding-top:50px;">
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">Contact Details</h3>
+                                </div>
+                                <ul class="address-list">
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                                        <div class="content"><a href="tel:+254718094919">+254 718 094 919</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                        <div class="content"><a
+                                                href="mailto:jajadezigns@gmail.com">jajadezigns@gmail.com</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">More Case Studies</h3>
+                                </div>
+                                <ul style="list-style:none;padding:0;">
+                                    <li style="margin-bottom:10px;"><a href="ajira.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Ajira Digital
+                                            Program →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kaisa.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KAISA Initiative
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kepsa.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KEPSA Projects
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="swvl.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">SWVL Kenya →</a>
+                                    </li>
+                                    <li><a href="youthjobs.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Youth &amp; Jobs
+                                            Initiative →</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area mt-50">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p>&copy; Copyright 2026 Patrick Karanja, All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/meanmenu.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/gsap.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-smoother.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/main.js"></script>
+</body>
+
+</html>
+
+
