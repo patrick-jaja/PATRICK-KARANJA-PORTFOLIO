@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="KEPSA Projects - Patrick Karanja Communications Portfolio">
+    <title>KEPSA Projects - Patrick Karanja</title>
+    <link rel="shortcut icon" type="image/png" href="assets/common/PATRICK KARANJA LOGO.png">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rr-color-theme-primary: #ffb400 !important;
+            --rr-color-heading-primary: #131E3A !important;
+            --rr-color-bg-1: #131E3A !important;
+        }
+
+        body {
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        li,
+        div {
+            font-family: 'Poppins', sans-serif !important;
+            color: #fff;
+        }
+
+        .primary-header {
+            padding: 0 !important;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img,
+        .side-menu-logo img {
+            height: 55px !important;
+            width: auto;
+            max-height: none !important;
+        }
+
+        .header.sticky-active {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .primary-header {
+            height: 70px !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .header-logo img {
+            height: 55px !important;
+        }
+
+        .header.sticky-active .mobile-menu-items ul li a {
+            color: #131E3A !important;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header.sticky-active .sidebar-trigger span {
+            background-color: #131E3A !important;
+        }
+
+        .mobile-menu-items ul li a {
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-items ul li a:hover {
+            color: var(--rr-color-theme-primary) !important;
+            text-shadow: 0 0 12px var(--rr-color-theme-primary) !important;
+        }
+
+        .scroll-section:first-of-type {
+            padding-top: 130px !important;
+        }
+
+        .scroll-section,
+        .footer-section {
+            scroll-snap-align: start;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 0;
+            position: relative;
+            background-color: #131E3A;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+            box-sizing: border-box;
+        }
+
+        @media(max-width:991px) {
+
+            .scroll-section,
+            .footer-section {
+                min-height: auto;
+                height: auto;
+                padding: 100px 0 60px 0;
+                scroll-snap-align: none;
+                display: block;
+            }
+
+            #smooth-content {
+                scroll-snap-type: none;
+            }
+        }
+
+        .video-wrap {
+            border-radius: 16px;
+            overflow: visible;
+            background: #000;
+            box-shadow: none !important;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+        }
+
+        .video-wrap video {
+            width: 100%;
+            display: block;
+            height: auto;
+            background: #000;
+        }
+
+        .vid-caption {
+            color: var(--rr-color-theme-primary);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-top: 15px;
+            text-align: left;
+            letter-spacing: 1px;
+            padding-left: 10px;
+            border-left: 2px solid var(--rr-color-theme-primary);
+        }
+
+        .accent-l {
+            border-left: 2px solid rgba(255, 180, 0, 0.3);
+            padding-left: 15px;
+        }
+
+        .masonry-grid {
+            display: columns;
+            column-count: 3;
+            column-gap: 20px;
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            overflow: visible;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s;
+        }
+
+        .masonry-item:hover {
+            transform: scale(1.02);
+            border-color: var(--rr-color-theme-primary);
+            box-shadow: none !important;
+        }
+
+        .masonry-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .uniform-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .grid-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            background: #000;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--rr-color-theme-primary);
+        }
+
+        @media(max-width:991px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media(max-width:575px) {
+            .masonry-grid {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loading" data-loading-text="KEPSA"></div>
+    </div>
+
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block"><a href="index.html"><img class="logo-dark"
+                                src="assets/common/PATRICK KARANJA LOGO.png" alt="Patrick Karanja Logo"><img
+                                class="logo-light" src="assets/common/PATRICK KARANJA LOGO.png"
+                                alt="Patrick Karanja Logo"></a></div>
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul>
+                                <li><a href="index.html#about">About</a></li>
+                                <li><a href="index.html#expertise">Expertise</a></li>
+                                <li><a href="index.html#work">Work</a></li>
+                                <li><a href="index.html#experience">Experience</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right"><a href="index.html#contact" class="rr-primary-btn header-btn">Get in
+                                Touch</a>
+                            <div class="sidebar-icon"><button
+                                    class="sidebar-trigger open"><span></span><span></span><span></span></button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-area" class="sidebar-area">
+        <button class="sidebar-trigger close"><svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" x="0px"
+                y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
+            </svg></button>
+        <div class="side-menu-content">
+            <div class="side-menu-logo"><a class="dark-img" href="index.html"><img
+                        src="assets/common/PATRICK KARANJA LOGO.png" alt="Patrick Karanja Logo"></a><a class="light-img"
+                    href="index.html"><img src="assets/common/PATRICK KARANJA LOGO.png" alt="Patrick Karanja Logo"></a>
+            </div>
+            <div class="side-menu-about">
+                <div class="side-menu-header">
+                    <h3>About Me</h3>
+                </div>
+                <p>Strategic Creative &amp; Communications Consultant driving national-scale campaigns across Africa.
+                </p><a href="index.html#contact" class="rr-primary-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- SECTION 1: INTRO -->
+            <section class="scroll-section" id="intro" style="padding-top:120px;">
+                <div
+                    style="position:absolute;top:-50%;left:20%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(255,180,0,0.05) 0%,transparent 60%);z-index:0;pointer-events:none;">
+                </div>
+                <div class="container" style="position:relative;z-index:1;">
+
+                    <!-- Header -->
+                    <div class="row align-items-center mb-40">
+                        <div class="col">
+                            <span
+                                style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">05.
+                                Multi-Sector Programs</span>
+                            <h1
+                                style="color:#fff;font-size:clamp(32px,4.5vw,65px);font-weight:800;margin-top:8px;margin-bottom:0;line-height:1.0;">
+                                KEPSA Projects</h1>
+                        </div>
+                    </div>
+
+                    <!-- Role + Image -->
+                    <div class="row gy-4 project-spacing align-items-start">
+                        <div class="col-lg-7">
+                            <div class="topic-card"
+                                style="padding: 30px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-left: 4px solid var(--rr-color-theme-primary); height: auto;">
+                                <h3 style="color: #fff; font-size: 24px; font-weight: 800; margin-bottom: 20px;">
+                                    Executive & Presidential Level Communications</h3>
+                                <p style="color: #a0a0a0; font-size: 15px; line-height: 1.6; margin-bottom: 20px;">
+                                    Architected
+                                    high-stakes, authoritative communication frameworks for the Kenya Private Sector
+                                    Alliance (KEPSA). I
+                                    specialized in unifying the apex of private sector leadership with top-tier
+                                    government officials—including Presidential summits—through prestigious messaging,
+                                    standardized branding, and
+                                    executive-level content systems.</p>
+                                <ul class="minimal-list" style="columns:2;column-gap:30px;">
+                                    <li><strong>Presidential Events:</strong> High-level protocols.</li>
+                                    <li><strong>Executive Narrative:</strong> Apex-level strategy.</li>
+                                    <li><strong>Brand Governance:</strong> Prestige identity standards.</li>
+                                    <li><strong>Strategic Synthesis:</strong> Public-Private alignment.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-5" style="padding-top:185px;">
+                            <div class="video-wrap"
+                                style="border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.05);background:#000;">
+                                <video controls style="width: 100%; display: block; height: auto;">
+                                    <source src="assets/kepsa/kepsa@20.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <p
+                                style="color: var(--rr-color-theme-primary); font-size: 10px; font-weight: 700; text-transform: uppercase; margin-top: 12px; text-align: center; letter-spacing: 1px;">
+                                KEPSA @20 Anniversary Feature</p>
+                        </div>
+                    </div>
+
+                    <!-- Overview -->
+                    <div class="row project-spacing">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:45px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3 class="section-title-vis" style="font-size:22px;margin-bottom:20px;">The Partnership
+                                    Framework</h3>
+                                <p
+                                    style="color:#fff;font-size:18px;line-height:1.6;font-weight:500;margin-bottom:20px;">
+                                    Working at the apex of Kenya’s private sector required a disciplined approach to
+                                    storytelling. I built communication infrastructures that translated complex economic
+                                    agendas into clear, actionable, and visually compelling program updates.</p>
+                                <p style="color:#aaa;font-size:15px;line-height:1.7;margin-bottom:0;">By standardizing
+                                    creative workflows across flagship initiatives, I ensured that every
+                                    touchpoint—whether a national summit or a digital report—maintained the prestige and
+                                    authority of the KEPSA brand.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Strategic Approach -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="topic-card"
+                                style="padding:35px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);">
+                                <h3
+                                    style="color:var(--rr-color-theme-primary);font-size:20px;font-weight:700;margin-bottom:20px;">
+                                    Strategic Approach</h3>
+                                <div class="row gy-3">
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Structured Workflows</p>
+                                            <p style="color:#888;font-size:13px;">Systems for scalable content delivery.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Standardized Design</p>
+                                            <p style="color:#888;font-size:13px;">Communication templates at scale.</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="accent-l">
+                                            <p style="color:#fff;font-weight:700;margin-bottom:5px;font-size:14px;">
+                                                Stakeholder Alignment</p>
+                                            <p style="color:#888;font-size:13px;">Consistent voice across all partners.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: KEPSA@20 VIDEO FEATURE -->
+            <section class="scroll-section" id="kepsa20">
+                <div class="container">
+                    <div class="row gy-5 align-items-stretch">
+                        <div class="col-lg-5">
+                            <div class="topic-card" style="padding:40px;">
+                                <h3 class="section-title-vis">KEPSA @20 Anniversary</h3>
+                                <p style="color:#fff;font-size:15px;line-height:1.8;margin-bottom:20px;">Led creative
+                                    communications for the landmark 20th Anniversary, marking two decades of private
+                                    sector leadership.</p>
+                                <ul class="minimal-list">
+                                    <li>Branding & visual identity system</li>
+                                    <li>Flagship documentary film production</li>
+                                    <li>Stakeholder engagement comms</li>
+                                </ul>
+                                <div class="row gy-3 mt-4">
+                                    <div class="col-6">
+                                        <div class="stat-block"><span class="stat-value">20Yrs</span><span
+                                                class="stat-label">Leadership</span></div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="stat-block"><span class="stat-value">Scale</span><span
+                                                class="stat-label">National</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7">
+                            <div class="topic-card" style="padding:25px;">
+                                <div
+                                    style="border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.05);">
+                                    <img src="assets/kepsa/kepsaimg3.jpg" alt="KEPSA High-Level Event"
+                                        style="width:100%;height:auto;display:block;">
+                                </div>
+                                <div class="mt-20">
+                                    <p class="vid-caption" style="text-align:left;margin-top:0;">Presidential
+                                        Stakeholder
+                                        Summit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: MEDIA VIDEOS -->
+            <section class="scroll-section" id="media" style="display:block;">
+                <div class="container" style="padding-top: 60px; padding-bottom: 60px;">
+                    <div style="margin-bottom: 50px;">
+                        <span
+                            style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">Campaign
+                            Media</span>
+                        <h2
+                            style="color:#fff;font-size:clamp(24px,3vw,40px);font-weight:800;margin-top:10px;margin-bottom:0;">
+                            Media
+                            Productions</h2>
+                    </div>
+                    <div class="row gy-5 align-items-stretch">
+                        <div class="col-lg-6">
+                            <div class="topic-card" style="padding:200px;">
+                                <div class="video-wrap">
+                                    <video controls style="width: 100%; display: block; height: 100%;">
+                                        <source src="assets/kepsa/kepsamedia1.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="mt-20">
+                                    <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">Executive
+                                        Media Feature</h4>
+                                    <p style="color:#a0a0a0;font-size:14px;margin-bottom:0;">High-level partner
+                                        engagement feature produced for national stakeholders.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="topic-card" style="padding:25px;">
+                                <div class="video-wrap">
+                                    <video controls style="width: 100%; display: block; height: auto;">
+                                        <source src="assets/kepsa/kepsamediafaces.mp4" type="video/mp4">
+                                    </video>
+                                </div>
+                                <div class="mt-20">
+                                    <h4 style="color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;">KEPSA
+                                        Faces Campaign</h4>
+                                    <p style="color:#a0a0a0;font-size:14px;margin-bottom:0;">Showcasing the human impact
+                                        of private sector initiatives across Kenya.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: NATIONAL EVENTS GALLERY -->
+            <section class="scroll-section" id="events" style="display:block;">
+                <div class="container">
+                    <div class="text-center mb-60">
+                        <span
+                            style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">Public-Private
+                            Dialogue</span>
+                        <h2 style="color:#fff;font-size:clamp(28px,3.5vw,48px);font-weight:800;margin-top:10px;">
+                            National Stakeholder Events</h2>
+                        <p style="color:#aaa;max-width:700px;margin:15px auto 0;">Orchestrating high-stakes
+                            communications for Kenya's most critical economic summits and stakeholder forums.</p>
+                    </div>
+                    <div class="masonry-grid">
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaevent(1).jpg" alt="KEPSA Event 1"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaevent2.jpg" alt="KEPSA Event 2"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaevent3.jpg" alt="KEPSA Event 3"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaevent5.jpg" alt="KEPSA Event 5"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaeventg.jpg" alt="KEPSA Event G"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaeventgjj.jpg" alt="KEPSA Event GJJ"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaeventgkg.jpg" alt="KEPSA Event GKG"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaeventh.jpg" alt="KEPSA Event H"></div>
+                        <div class="masonry-item"><img src="assets/kepsa/kepsaeventhj.jpg" alt="KEPSA Event HJ"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: ASSETS GALLERY -->
+            <section class="scroll-section" id="gallery" style="display:block;">
+                <div class="container">
+                    <div class="text-center mb-60">
+                        <span
+                            style="color:var(--rr-color-theme-primary);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:2px;">Visual
+                            Authority</span>
+                        <h2 style="color:#fff;font-size:clamp(28px,3.5vw,48px);font-weight:800;margin-top:10px;">
+                            Integrated Campaign Ecosystem</h2>
+                    </div>
+                    <div class="uniform-grid">
+                        <div class="grid-item"><img src="assets/kepsa/kepsaimg3.jpg" alt="KEPSA Event 1"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="assets/kepsa/kepsaimga.jpg" alt="KEPSA Campaign A"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item"><img src="assets/kepsa/kepsaimgb.jpg" alt="KEPSA Campaign B"
+                                style="object-fit:contain;background:#000;"></div>
+                        <div class="grid-item" style="aspect-ratio:unset;min-height:300px;">
+                            <img src="assets/kepsa/kepsamedia2.png" alt="KEPSA Media"
+                                style="width:100%;height:100%;object-fit:contain;background:#000;">
+                        </div>
+                        <div class="grid-item"
+                            style="display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.02);">
+                            <div style="text-align:center;padding:30px;">
+                                <i class="fa-solid fa-file-pdf"
+                                    style="font-size:48px;color:var(--rr-color-theme-primary);display:block;margin-bottom:15px;"></i>
+                                <p style="color:#fff;font-weight:700;margin-bottom:10px;">Media Book</p>
+                                <a href="assets/kepsa/kepsamediabook.pdf" target="_blank" class="rr-primary-btn"
+                                    style="font-size:12px;padding:8px 20px;">View PDF</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL CTA -->
+            <div class="final-cta">
+                <h2>I don't just design visuals.<br> <span>I build communication systems that scale impact across
+                        ecosystems.</span></h2>
+            </div>
+
+            <!-- FOOTER -->
+            <footer class="footer-section pt-80" id="contact">
+                <div class="shapes">
+                    <div class="shape shape-1"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-1.png" alt="shape"></div>
+                    <div class="shape shape-2"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-2.png" alt="shape"></div>
+                </div>
+                <div class="container">
+                    <div class="footer-top text-center"
+                        style="display:flex;flex-direction:column;align-items:center;border-bottom:none;">
+                        <img src="assets/common/PATRICK KARANJA LOGO.png" alt="Logo"
+                            style="max-height:80px;margin-bottom:30px;">
+                        <h2 class="title" style="max-width:800px;margin-bottom:40px;font-size:clamp(30px,4vw,60px);">
+                            Let's build systems that drive real impact.</h2>
+                        <a href="mailto:jajadezigns@gmail.com" class="rr-primary-btn"
+                            style="padding:20px 40px;font-size:18px;">Start a Conversation</a>
+                    </div>
+                    <div class="row footer-wrap" style="border-top:1px solid rgba(255,255,255,0.05);padding-top:50px;">
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">Contact Details</h3>
+                                </div>
+                                <ul class="address-list">
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                                        <div class="content"><a href="tel:+254718094919">+254 718 094 919</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                        <div class="content"><a
+                                                href="mailto:jajadezigns@gmail.com">jajadezigns@gmail.com</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">More Case Studies</h3>
+                                </div>
+                                <ul style="list-style:none;padding:0;">
+                                    <li style="margin-bottom:10px;"><a href="ajira.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Ajira Digital
+                                            Program →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kaisa.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KAISA Initiative
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="kyeeap.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">KYEEAP Program
+                                            →</a></li>
+                                    <li style="margin-bottom:10px;"><a href="swvl.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">SWVL Kenya →</a>
+                                    </li>
+                                    <li><a href="youthjobs.html"
+                                            style="color:#a0a0a0;text-decoration:none;font-weight:600;">Youth &amp; Jobs
+                                            Initiative →</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area mt-50">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p>&copy; Copyright 2026 Patrick Karanja, All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/meanmenu.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/swiper.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/gsap.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-smoother.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/main.js"></script>
+</body>
+
+</html>

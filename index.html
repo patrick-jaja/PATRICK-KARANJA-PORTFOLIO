@@ -1,0 +1,1537 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Patrick Karanja - Strategic Creative & Communications Consultant">
+
+    <title>Patrick Karanja - Strategic Creative Consultant</title>
+
+    <link rel="shortcut icon" type="image/png" href="assets/common/PATRICK KARANJA LOGO.png">
+
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/venobox.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/animate.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/odometer.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/nice-select.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="https://html.rrdevs.net/nunca/assets/css/main.css">
+
+    <!-- Poppins Font Integration -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --rr-color-theme-primary: #8DC63F !important;
+            --rr-color-heading-primary: #131E3A !important;
+            --rr-color-text-body: #2A3A5E !important;
+            --rr-color-bg-1: #131E3A !important;
+            --rr-color-common-dark: #131E3A !important;
+            --rr-ff-heading: 'Poppins', sans-serif !important;
+            --rr-ff-body: 'Poppins', sans-serif !important;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        span,
+        li,
+        div {
+            font-family: 'Poppins', sans-serif !important;
+        }
+
+        body {
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+        }
+
+        .primary-header {
+            padding: 0 !important;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo img,
+        .side-menu-logo img {
+            height: 55px !important;
+            width: auto;
+            max-height: none !important;
+        }
+
+        .header.sticky-active {
+            background: #ffffff !important;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .primary-header {
+            height: 70px !important;
+            padding: 0 !important;
+        }
+
+        .header.sticky-active .header-logo img {
+            height: 55px !important;
+        }
+
+        .header.sticky-active .mobile-menu-items ul li a {
+            color: #131E3A !important;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        .header.sticky-active .sidebar-trigger span {
+            background-color: #131E3A !important;
+        }
+
+        .mobile-menu-items ul li a {
+            transition: all 0.3s ease;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .mobile-menu-items ul li a:hover {
+            color: var(--rr-color-theme-primary) !important;
+            text-shadow: 0 0 12px var(--rr-color-theme-primary) !important;
+        }
+
+        .scroll-section:first-of-type {
+            padding-top: 130px !important;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        .bullet-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .bullet-list li strong {
+            color: var(--rr-color-heading-primary);
+            font-weight: 700;
+        }
+
+        .bullet-list li::before {
+            content: '\2022';
+            position: absolute;
+            left: 0;
+            color: var(--rr-color-theme-primary);
+            font-size: 1.5em;
+            line-height: 1;
+            top: -2px;
+        }
+
+        /* Custom dark service item for Expertise Grid */
+        .service-item-dark {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 50px 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-item-dark:hover {
+            transform: translateY(-5px);
+            border-color: var(--rr-color-theme-primary);
+            box-shadow: none !important;
+        }
+
+        .service-icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: var(--rr-color-theme-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .service-icon-circle i {
+            font-size: 32px;
+            color: var(--rr-color-heading-primary);
+        }
+
+        /* Professional Grid for Case Studies */
+        .case-study-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(19, 30, 58, 0.08);
+            transition: all 0.3s;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .case-study-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            transform: translateY(-5px);
+            box-shadow: none !important;
+        }
+
+        .case-study-thumb {
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            height: 240px;
+            background: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .case-study-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .case-study-thumb .project-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--rr-color-theme-primary);
+            color: var(--rr-color-heading-primary);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .case-study-card .bullet-list li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        .case-btn-wrap {
+            margin-top: auto;
+            padding-top: 25px;
+        }
+
+        .timeline {
+            border-left: 2px solid rgba(255, 255, 255, 0.1);
+            padding-left: 30px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -37px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: var(--rr-color-theme-primary);
+            border: 3px solid var(--rr-color-bg-1);
+        }
+
+        .timeline-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .timeline-role {
+            font-size: 16px;
+            color: var(--rr-color-theme-primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-bullets {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .timeline-bullets li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--rr-color-theme-primary);
+        }
+
+        .skill-category {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--rr-color-theme-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .skill-bar-container {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 6px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background-color: var(--rr-color-theme-primary);
+        }
+
+        .program-card {
+            background: #fff;
+            border: 1px solid rgba(19, 30, 58, 0.08);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+        }
+
+        .program-card:hover {
+            border-color: var(--rr-color-theme-primary);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(13, 198, 63, 0.1);
+        }
+
+        .program-card h3 {
+            font-size: 24px;
+            color: var(--rr-color-heading-primary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .program-card p {
+            font-size: 15px;
+            margin: 0;
+            color: #666;
+        }
+
+        .tl-card {
+            border-left: 4px solid var(--rr-color-theme-primary);
+            padding: 25px 30px;
+            background: rgba(19, 30, 58, 0.03);
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .tl-card:hover {
+            background: rgba(19, 30, 58, 0.05);
+            transform: translateX(5px);
+            border-left-width: 8px;
+        }
+
+        .tl-card h3 {
+            font-size: 20px;
+            margin: 0;
+            color: var(--rr-color-heading-primary);
+            font-weight: 600;
+        }
+
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--rr-color-bg-1);
+        }
+
+        .final-cta h2 {
+            color: #fff;
+            font-size: clamp(30px, 4vw, 50px);
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .final-cta h2 span {
+            color: var(--rr-color-theme-primary);
+        }
+
+        /* Force all animated content to be visible on scroll */
+        .fade-top,
+        .fade-bottom,
+        .fade-left,
+        .fade-right,
+        .img-reveal,
+        .img-overlay,
+        .fade-wrapper,
+        [data-animation],
+        [data-text-animation],
+        .char,
+        .word {
+            opacity: 1 !important;
+            transform: none !important;
+            visibility: visible !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="preloader">
+        <div class="loading" data-loading-text="PATRICK"></div>
+    </div>
+
+    <header class="header sticky-active">
+        <div class="primary-header">
+            <div class="container">
+                <div class="primary-header-inner">
+                    <div class="header-logo d-lg-block">
+                        <a href="index.html">
+                            <img class="logo-dark" src="assets/common/PATRICK KARANJA LOGO.png"
+                                alt="Patrick Karanja Logo">
+                            <img class="logo-light" src="assets/common/PATRICK KARANJA LOGO.png"
+                                alt="Patrick Karanja Logo">
+                        </a>
+                    </div>
+
+                    <div class="header-menu-wrap">
+                        <div class="mobile-menu-items">
+                            <ul>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#expertise">Expertise</a></li>
+                                <li><a href="#work">Work</a></li>
+                                <li><a href="#experience">Experience</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="header-right-wrap">
+                        <div class="header-right">
+                            <a href="#contact" class="rr-primary-btn header-btn">Get in Touch</a>
+                            <div class="sidebar-icon">
+                                <button class="sidebar-trigger open">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="sidebar-area" class="sidebar-area">
+        <button class="sidebar-trigger close">
+            <svg class="sidebar-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                x="0px" y="0px" width="16px" height="12.7px" viewBox="0 0 16 12.7"
+                style="enable-background: new 0 0 16 12.7" xml:space="preserve">
+                <g>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -2.1569 7.5208)" width="16"
+                        height="2"></rect>
+                    <rect x="0" y="5.4" transform="matrix(0.7071 0.7071 -0.7071 0.7071 6.8431 -3.7929)" width="16"
+                        height="2"></rect>
+                </g>
+            </svg>
+        </button>
+        <div class="side-menu-content">
+            <div class="side-menu-logo">
+                <a class="dark-img" href="index.html"><img src="assets/common/PATRICK KARANJA LOGO.png"
+                        alt="Patrick Karanja Logo"></a>
+                <a class="light-img" href="index.html"><img src="assets/common/PATRICK KARANJA LOGO.png"
+                        alt="Patrick Karanja Logo"></a>
+            </div>
+            <div class="side-menu-about">
+                <div class="side-menu-header">
+                    <h3>About Me</h3>
+                </div>
+                <p>Strategic Creative & Communications Consultant driving national-scale campaigns across Africa.</p>
+                <a href="#contact" class="rr-primary-btn">Contact Me</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- 1. HERO -->
+            <section class="slider-section" id="hero"
+                style="background-color: var(--rr-color-bg-1); overflow: hidden; position: relative;">
+                <style>
+                    #hero {
+                        padding-top: 0px !important;
+                    }
+
+                    .hero-right-container {
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        bottom: 0;
+                        width: 45vw;
+                        z-index: 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: flex-end;
+                    }
+
+                    .hero-right-container::before {
+                        content: '';
+                        position: absolute;
+                        inset: 40px 0 0 0;
+                        background-color: #1e810031;
+                        clip-path: ellipse(100% 75vh at 100% 50%);
+                        -webkit-clip-path: ellipse(100% 75vh at 100% 50%);
+                        z-index: -1;
+                    }
+
+                    .hero-portrait {
+                        height: 83%;
+                        width: auto;
+                        max-width: 100%;
+                        object-fit: contain;
+                        object-position: bottom;
+                        z-index: 1;
+                        pointer-events: none;
+                    }
+
+                    .responsive-slider-content {
+                        max-width: 50vw;
+                        padding-right: 20px;
+                    }
+
+                    @media (min-width: 1200px) {
+                        .responsive-slider-content {
+                            max-width: 650px;
+                        }
+                    }
+
+                    @media (max-width: 991px) {
+                        .hero-right-container {
+                            display: none;
+                        }
+
+                        .responsive-slider-content {
+                            max-width: 100%;
+                        }
+                    }
+                </style>
+                <div class="hero-right-container">
+                    <img src="assets/common/patrick karanja no bg.png" class="hero-portrait" alt="Patrick Karanja">
+                </div>
+                <div class="shape"><img src="https://html.rrdevs.net/nunca/assets/img/shapes/slider-shape-1.png"
+                        alt="shape"></div>
+                <div class="container">
+                    <div class="nunca-slider swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="slider-item">
+                                    <div class="slider-content-wrap">
+                                        <div class="slider-content responsive-slider-content">
+                                            <div class="section-heading white-content">
+                                                <h2 class="section-title mb-10" data-animation="nunca-fadeInUp"
+                                                    data-delay="1000ms" data-duration="1200ms"
+                                                    style="font-size: clamp(35px, 4.5vw, 65px); font-weight: 600; line-height: 1.1; margin-bottom: 15px !important;">
+                                                    Patrick Karanja<span
+                                                        style="color: var(--rr-color-theme-primary);">.</span></h2>
+                                                <h2 class="section-title" data-animation="nunca-fadeInUp"
+                                                    data-delay="1200ms" data-duration="1400ms"
+                                                    style="font-size: clamp(18px, 1.8vw, 24px); color: var(--rr-color-theme-primary); font-family: 'Poppins', sans-serif; font-weight: 500; margin-bottom: 25px !important; text-transform: uppercase; letter-spacing: 1px;">
+                                                    Creative Communications Strategist</h2>
+                                            </div>
+                                            <p data-animation="nunca-fadeInUp" data-delay="1400ms"
+                                                data-duration="1600ms"
+                                                style="font-size: clamp(20px, 2vw, 28px); font-weight: 300; opacity: 1; line-height: 1.5; margin-bottom: 40px !important; color: #fff;">
+                                                Driving National Impact Through Strategic Communication &amp; Design.
+                                            </p>
+                                            <div class="slider-btn-wrap" data-animation="nunca-fadeInUp"
+                                                data-delay="1600ms" data-duration="1800ms">
+                                                <a href="#work" class="rr-primary-btn slider-btn"
+                                                    style="border-radius: 30px; font-weight: 600; padding: 12px 35px; text-transform: uppercase; font-size: 14px;">View
+                                                    Work</a>
+                                                <a href="assets/common/Patrick-Karanja-Resume.pdf"
+                                                    class="rr-white-btn slider-btn"
+                                                    style="margin-left: 15px; border-radius: 30px; font-weight: 600; padding: 12px 35px; text-transform: uppercase; background: transparent; border: 2px solid #fff; color: #fff; font-size: 14px;"
+                                                    target="_blank">Download
+                                                    CV</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. TRUST & METRICS -->
+            <div class="running-text testi bg-dark-1 overflow-hidden" style="padding: 40px 0 20px 0;" id="trust">
+                <div class="container mb-30 text-center">
+                    <p
+                        style="color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; margin-bottom: 20px; font-size: 14px;">
+                        Trusted by global and national ecosystem leaders</p>
+                    <div
+                        style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; align-items: center; filter: grayscale(100%) brightness(200%); opacity: 0.7;">
+                        <h3 style="color:#fff; margin:0; font-weight: 700;">Mastercard Foundation</h3>
+                        <h3 style="color:#fff; margin:0; font-weight: 700;">Microsoft</h3>
+                        <h3 style="color:#fff; margin:0; font-weight: 700;">KEPSA</h3>
+                        <h3 style="color:#fff; margin:0; font-weight: 700;">Ajira Digital</h3>
+                        <h3 style="color:#fff; margin:0; font-weight: 700;">CFYE</h3>
+                    </div>
+                </div>
+                <style>
+                    .dual-ticker-wrapper {
+                        position: relative;
+                        width: 100vw;
+                        height: 110px;
+                        margin-top: 35px;
+                        display: flex;
+                        overflow: hidden;
+                    }
+
+                    .dt-band {
+                        position: absolute;
+                        width: 110vw;
+                        left: -5vw;
+                        padding: 12px 0;
+                        display: flex;
+                        overflow: hidden;
+                        white-space: nowrap;
+                    }
+
+                    .dt-band-1 {
+                        top: 15px;
+                        /* Spaced apart to be visible */
+                        background-color: var(--rr-color-theme-primary);
+                        transform: rotate(0deg);
+                        z-index: 1;
+                    }
+
+                    .dt-band-2 {
+                        bottom: 15px;
+                        /* Spaced apart to be visible */
+                        background-color: #111;
+                        transform: rotate(-2.5deg);
+                        transform-origin: center center;
+                        z-index: 2;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+                        border-top: 1px solid rgba(255, 255, 255, 0.05);
+                        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                    }
+
+                    .dt-content {
+                        display: inline-flex;
+                        animation: dtScroll 60s linear infinite;
+                        /* Slower, readable speed */
+                    }
+
+                    .dt-band-2 .dt-content {
+                        animation-direction: reverse;
+                        animation-duration: 75s;
+                        /* Different readable speed */
+                    }
+
+                    @keyframes dtScroll {
+                        0% {
+                            transform: translateX(0);
+                        }
+
+                        100% {
+                            transform: translateX(-50%);
+                        }
+                    }
+
+                    .dt-item {
+                        display: inline-flex;
+                        align-items: center;
+                        padding: 0 25px;
+                        /* Added slight extra space between items */
+                        font-family: 'Poppins', sans-serif;
+                        font-weight: 400;
+                        /* Regular/Light thickness */
+                        font-size: 15px;
+                        /* Scaled down so it doesn't shout */
+                        letter-spacing: 0.5px;
+                    }
+
+                    .dt-band-1 .dt-item {
+                        color: #000;
+                    }
+
+                    .dt-band-2 .dt-item {
+                        color: #fff;
+                    }
+
+                    .dt-star {
+                        margin-left: 15px;
+                        font-size: 14px;
+                        padding-bottom: 2px;
+                    }
+                </style>
+                <div class="dual-ticker-wrapper">
+                    <!-- Bottom Band (Lime Green) -->
+                    <div class="dt-band dt-band-1">
+                        <div class="dt-content">
+                            <!-- Using 8 repeated groups for a seamless infinite loop -->
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                        </div>
+                    </div>
+                    <!-- Top Band (Dark, Rotated) -->
+                    <div class="dt-band dt-band-2">
+                        <div class="dt-content">
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Fueling Strategic Growth <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Transforming Concepts Into Reality <span class="dt-star">✦</span></div>
+                            <div class="dt-item">Bringing Visions To Vibrancy <span class="dt-star">✦</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. ABOUT SECTION -->
+            <section class="about-section about-1 pt-40 pb-70" id="about">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-12">
+                            <div class="about-img img-reveal">
+                                <div class="img-overlay"></div>
+                                <img src="assets/common/patrick karanja speaking.jpg" alt="Patrick Karanja Speaking">
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-md-12">
+                            <div class="about-content fade-wrapper">
+                                <div class="section-heading mb-40">
+                                    <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Executive
+                                        Summary</h4>
+                                    <h2 class="section-title" data-text-animation="fade-in-right" data-split="char"
+                                        data-duration="0.6" data-stagger="0.07">Building communication systems that
+                                        drive
+                                        adoption, engagement, and impact.</h2>
+                                </div>
+                                <p class="fade-top" style="font-size: 18px; color: #444;">Creative Marketing &
+                                    Communications Specialist with 8+ years experience across public, private, and
+                                    development sectors.</p>
+                                <p class="fade-top mt-30">Led strategic communication, branding, and campaigns for Ajira
+                                    Digital, KYEEAP, and KAISA in partnership with Mastercard Foundation and Microsoft.
+                                </p>
+                                <p class="fade-top mt-30">Focus on digital economy, storytelling, and scalable impact.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. EXPERTISE SECTION (NUNCA Screenshot Dark Style) -->
+            <section class="service-section bg-dark-1" id="expertise">
+                <div class="service-wrap pt-80 pb-80">
+                    <div class="container">
+                        <div class="section-heading white-content text-start mb-60">
+                            <span class="bg-text"
+                                style="left: 0; text-align: left; transform: none; padding-left: 15px; opacity: 0.05;">EXPERTISE</span>
+                            <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Signature
+                                Expertise</h4>
+                            <h2 class="section-title" data-text-animation="fade-in-right" data-split="char"
+                                data-duration="0.6" data-stagger="0.07" style="line-height:1.2;">Pioneering Projects For
+                                Intelligent Solutions
+                            </h2>
+                        </div>
+                        <div class="row fade-wrapper gy-5">
+
+                            <!-- Strategic Card -->
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="service-item-dark fade-top h-100"
+                                    style="padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); background-color: rgba(255, 255, 255, 0.02) !important;">
+                                    <div class="service-icon-circle"
+                                        style="width: 80px; height: 80px; margin-bottom: 30px; background-color: var(--rr-color-theme-primary); display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                                        <i class="fa-solid fa-chess-knight" style="font-size: 30px; color: #111;"></i>
+                                    </div>
+                                    <h3
+                                        style="color: #fff; font-size: 28px; font-weight: 700; margin-bottom: 35px; letter-spacing: -0.5px;">
+                                        Strategic</h3>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Brand Systems & Positioning</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Architecting scalable brand ecosystems to translate complex programs into
+                                            clear, actionable narratives.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Communication & Stakeholders</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Designing communication structures that unify public, private, and
+                                            development stakeholders.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 10px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Digital Program Strategy</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Leading insight-driven campaigns prioritizing digital economy initiatives to
+                                            accelerate engagement.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Creative Card -->
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="service-item-dark fade-top h-100"
+                                    style="padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); background-color: rgba(255, 255, 255, 0.02) !important;">
+                                    <div class="service-icon-circle"
+                                        style="width: 80px; height: 80px; margin-bottom: 30px; background-color: var(--rr-color-theme-primary); display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                                        <i class="fa-solid fa-pen-nib" style="font-size: 30px; color: #111;"></i>
+                                    </div>
+                                    <h3
+                                        style="color: #fff; font-size: 28px; font-weight: 700; margin-bottom: 35px; letter-spacing: -0.5px;">
+                                        Creative</h3>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Visual Storytelling</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Transforming insights, data, and program impact into compelling narratives
+                                            that influence perception.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Brand Identity Design</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Crafting cohesive visual identities and storytelling systems that ensure
+                                            long-term brand equity.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 10px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Motion & Experience (UX)</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Developing intuitive, high-impact visual content grounded in user-centered
+                                            design principles.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Technical Card -->
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="service-item-dark fade-top h-100"
+                                    style="padding: 40px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); background-color: rgba(255, 255, 255, 0.02) !important;">
+                                    <div class="service-icon-circle"
+                                        style="width: 80px; height: 80px; margin-bottom: 30px; background-color: var(--rr-color-theme-primary); display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                                        <i class="fa-solid fa-code" style="font-size: 30px; color: #111;"></i>
+                                    </div>
+                                    <h3
+                                        style="color: #fff; font-size: 28px; font-weight: 700; margin-bottom: 35px; letter-spacing: -0.5px;">
+                                        Technical</h3>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Visual Production Systems</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Advanced execution across design, layout, and motion tools to deliver
+                                            high-end communication assets.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 25px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Content Production</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            End-to-end media creation for campaigns and storytelling with a strong
+                                            emphasis on narrative clarity.</p>
+                                    </div>
+
+                                    <div class="expertise-block" style="margin-bottom: 10px;">
+                                        <h4
+                                            style="color: #fff; font-size: 17px; font-weight: 700; margin-bottom: 8px; line-height: 1.4;">
+                                            Presentation Architecture</h4>
+                                        <p
+                                            style="color: #a0a0a0; font-size: 15px; line-height: 1.6; font-weight: 400; margin: 0;">
+                                            Building structured design systems and high-level presentations that
+                                            communicate complex ideas precisely.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. FEATURED WORK (Professional Grid with Buttons) -->
+            <section class="project-section pt-80 pb-80 bg-dark-1" id="work">
+                <style>
+                    /* Anti-Gravity CSS specifics */
+                    .ag-card {
+                        background: rgba(255, 255, 255, 0.02);
+                        backdrop-filter: blur(10px);
+                        border: 1px solid rgba(255, 255, 255, 0.05);
+                        border-radius: 24px;
+                        padding: 0;
+                        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+                        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                        cursor: pointer;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: visible;
+                    }
+
+                    .ag-card:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+                        border-color: var(--rr-color-theme-primary);
+                        background: rgba(255, 255, 255, 0.04);
+                    }
+
+                    .ag-card-thumb {
+                        height: 220px;
+                        overflow: hidden;
+                        position: relative;
+                        background: #000;
+                    }
+
+                    .ag-card-thumb img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        background: #000;
+                        padding: 20px;
+                        transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+                    }
+
+                    .ag-card:hover .ag-card-thumb img {
+                        transform: scale(1.1);
+                    }
+
+                    .ag-card-overlay {
+                        position: absolute;
+                        inset: 0;
+                        background: linear-gradient(to bottom, transparent 0%, rgba(19, 30, 58, 0.8) 100%);
+                        opacity: 0.6;
+                    }
+
+                    .ag-card-body {
+                        padding: 30px;
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .ag-card h3 {
+                        font-size: 22px;
+                        font-weight: 700;
+                        color: #fff;
+                        margin-bottom: 12px;
+                        margin-top: 5px;
+                    }
+
+                    .ag-card p {
+                        color: #a0a0a0;
+                        font-size: 14px;
+                        margin-bottom: 20px;
+                        line-height: 1.6;
+                        flex-grow: 1;
+                    }
+
+                    .project-tag {
+                        font-size: 11px;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        letter-spacing: 1.5px;
+                        color: var(--rr-color-theme-primary);
+                        display: block;
+                        margin-bottom: 8px;
+                    }
+
+                    .ag-card-footer {
+                        font-weight: 700;
+                        font-size: 13px;
+                        color: var(--rr-color-theme-primary);
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        transition: gap 0.3s;
+                    }
+
+                    .ag-card:hover .ag-card-footer {
+                        gap: 15px;
+                        text-shadow: 0 0 10px rgba(141, 198, 63, 0.5);
+                    }
+
+                    .ag-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 30px;
+                    }
+
+                    .ag-grid .grid-item:nth-child(even) {
+                        margin-top: 60px;
+                        /* offset for asymmetrical floating look */
+                    }
+
+                    @media (max-width: 991px) {
+                        .ag-grid .grid-item:nth-child(even) {
+                            margin-top: 0;
+                        }
+                    }
+
+                    /* Project Modal Styles */
+                    #project-modal {
+                        display: none;
+                        position: fixed;
+                        z-index: 9999;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.85);
+                        backdrop-filter: blur(8px);
+                        overflow-y: auto;
+                    }
+
+                    .project-modal-content {
+                        background-color: #0a0a0a;
+                        color: #ddd;
+                        margin: 5% auto 10% auto;
+                        padding: 50px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        width: 85%;
+                        max-width: 900px;
+                        border-radius: 20px;
+                        position: relative;
+                        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+                        animation: modalFadeIn 0.4s ease-out;
+                    }
+
+                    @keyframes modalFadeIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(50px);
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .close-modal {
+                        color: #888;
+                        position: absolute;
+                        top: 30px;
+                        right: 35px;
+                        font-size: 36px;
+                        font-weight: 300;
+                        cursor: pointer;
+                        transition: 0.3s;
+                        line-height: 1;
+                    }
+
+                    .close-modal:hover {
+                        color: var(--rr-color-theme-primary);
+                    }
+
+                    #project-details h2 {
+                        color: #fff;
+                        font-size: 38px;
+                        margin-bottom: 5px;
+                        font-weight: 700;
+                        letter-spacing: -1px;
+                    }
+
+                    #project-details p strong {
+                        color: #aaa;
+                    }
+
+                    #project-details p {
+                        font-size: 16px;
+                        line-height: 1.8;
+                    }
+
+                    #project-details h3 {
+                        color: var(--rr-color-theme-primary);
+                        font-size: 24px;
+                        margin-top: 40px;
+                        margin-bottom: 15px;
+                        font-weight: 600;
+                    }
+
+                    #project-details ul {
+                        list-style-type: none;
+                        padding-left: 0;
+                    }
+
+                    #project-details ul li {
+                        position: relative;
+                        padding-left: 20px;
+                        margin-bottom: 12px;
+                        font-size: 16px;
+                        color: #ccc;
+                    }
+
+                    #project-details ul li::before {
+                        content: '▹';
+                        position: absolute;
+                        left: 0;
+                        color: var(--rr-color-theme-primary);
+                    }
+                </style>
+
+                <div class="container">
+                    <div class="section-heading text-center mb-60">
+                        <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Featured Work</h4>
+                        <h2 class="section-title" style="color: #fff;" data-text-animation="fade-in-right"
+                            data-split="char" data-duration="0.6" data-stagger="0.07">Strategic Case Studies</h2>
+                    </div>
+
+                    <div class="ag-grid fade-wrapper">
+                        <!-- Item 1: Ajira -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='ajira.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/ajira/ajirahero.png" alt="Ajira Digital Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag">01. National Campaign</span>
+                                    <h3>Ajira Digital Program</h3>
+                                    <p>Scaling digital opportunities nationwide through youth-centric narratives.</p>
+                                    <div class="ag-card-footer">
+                                        <span>Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 2: KYEEAP -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='kyeeap.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/kyeeap/kyeeaplogo.png" alt="KYEEAP Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag" style="color:#00d2ff;">02. Program Rollout</span>
+                                    <h3>KYEEAP Program</h3>
+                                    <p>Accelerating youth employment through structured structural campaigns.</p>
+                                    <div class="ag-card-footer">
+                                        <span style="color:#00d2ff;">Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 3: KAISA -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='kaisa.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/kaisa/kaisalogo.jpg" alt="KAISA Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag" style="color:#b531ff;">03. Ecosystem Initiative</span>
+                                    <h3>KAISA Initiative</h3>
+                                    <p>Advancing transparency via compelling visual advocacy and engagement.</p>
+                                    <div class="ag-card-footer">
+                                        <span style="color:#b531ff;">Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 4: SWVL -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='swvl.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/swvl/swvlimglogo.jpg" alt="SWVL Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag" style="color:#8DC63F;">04. Corporate Branding</span>
+                                    <h3>SWVL Kenya</h3>
+                                    <p>Differentiating mobility tech with data-informed user acquisition strategies.</p>
+                                    <div class="ag-card-footer">
+                                        <span style="color:#8DC63F;">Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 5: KEPSA -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='kepsa.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/kepsa/kepsalogo.png" alt="KEPSA Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag" style="color:#ffb400;">05. Multi-Sector Programs</span>
+                                    <h3>KEPSA Projects</h3>
+                                    <p>Managing alignment across sectors via standardized high-impact workflows.</p>
+                                    <div class="ag-card-footer">
+                                        <span style="color:#ffb400;">Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 6: YouthJobs -->
+                        <div class="grid-item fade-top">
+                            <div class="ag-card" onclick="window.location.href='youthjobs.html'">
+                                <div class="ag-card-thumb">
+                                    <img src="assets/youthjobs/youthnjob.png" alt="Youth & Jobs Logo">
+                                    <div class="ag-card-overlay"></div>
+                                </div>
+                                <div class="ag-card-body">
+                                    <span class="project-tag" style="color:#00f2ff;">06. Development Sector</span>
+                                    <h3>Youth & Jobs Initiative</h3>
+                                    <p>Creating opportunities through authentic and relatable youth storytelling.</p>
+                                    <div class="ag-card-footer">
+                                        <span style="color:#00f2ff;">Explore Case &rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. PROGRAMS & PLATFORMS -->
+            <section class="programs-section pt-80 pb-80" id="programs">
+                <div class="container">
+                    <div class="section-heading text-center mb-60">
+                        <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Ecosystems</h4>
+                        <h2 class="section-title" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.6" data-stagger="0.07">Key Programs & Platforms</h2>
+                    </div>
+                    <div class="row gy-4 fade-wrapper justify-content-center">
+                        <div class="col-lg-3 col-md-6 fade-top">
+                            <div class="program-card">
+                                <h3>Ajira Digital</h3>
+                                <p>National digital work campaign</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 fade-top">
+                            <div class="program-card">
+                                <h3>KYEEAP</h3>
+                                <p>Youth employment program</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 fade-top">
+                            <div class="program-card">
+                                <h3>KAISA</h3>
+                                <p>AI skilling initiative</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 fade-top">
+                            <div class="program-card">
+                                <h3>SheDiverse360</h3>
+                                <p>Inclusive empowerment program</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7 & 8. EXPERIENCE TIMELINE + SKILLS -->
+            <section class="experience-skills-section pt-80 pb-80 bg-dark-1" id="experience">
+                <div class="container">
+                    <div class="section-heading white-content mb-60">
+                        <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Background</h4>
+                        <h2 class="section-title" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.6" data-stagger="0.07">Experience & Capabilities</h2>
+                    </div>
+
+                    <div class="row gy-5">
+                        <div class="col-lg-6">
+                            <div class="timeline fade-wrapper">
+                                <div class="timeline-item fade-top">
+                                    <h3 class="timeline-title">KEPSA</h3>
+                                    <p class="timeline-role">Creative Marketing & Communications Specialist</p>
+                                    <ul class="timeline-bullets">
+                                        <li>Led national communication strategies</li>
+                                        <li>Directed branding for major summits</li>
+                                        <li>Delivered stakeholder communication systems</li>
+                                    </ul>
+                                </div>
+                                <div class="timeline-item fade-top">
+                                    <h3 class="timeline-title">SWVL Kenya</h3>
+                                    <p class="timeline-role">Marketing Graphic Designer</p>
+                                    <ul class="timeline-bullets">
+                                        <li>Designed acquisition campaigns</li>
+                                        <li>Improved brand visibility</li>
+                                        <li>Supported rapid scaling</li>
+                                    </ul>
+                                </div>
+                                <div class="timeline-item fade-top">
+                                    <h3 class="timeline-title">Socialmeds Digital</h3>
+                                    <p class="timeline-role">Digital Agency Experience</p>
+                                    <ul class="timeline-bullets">
+                                        <li>Managed multi-brand campaigns</li>
+                                        <li>Delivered digital content systems</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 offset-lg-1 fade-wrapper">
+                            <h4 class="skill-category fade-top">Strategy</h4>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Content Strategy</span><span>90%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Brand Systems</span><span>90%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="skill-category fade-top">Creative</h4>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Visual Storytelling</span><span>95%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Motion Graphics</span><span>85%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%;"></div>
+                                </div>
+                            </div>
+
+                            <h4 class="skill-category fade-top">Technical Tools</h4>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Adobe Creative Suite</span><span>90%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-container fade-top">
+                                <div class="skill-info"><span>Figma</span><span>55%</span></div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 55%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. THOUGHT LEADERSHIP -->
+            <section class="thought-leadership pt-80 pb-80 bg-grey" id="thought-leadership">
+                <div class="container">
+                    <div class="section-heading text-center mb-60">
+                        <h4 class="sub-heading" data-text-animation="fade-in" data-duration="1.5">Media & Publications
+                        </h4>
+                        <h2 class="section-title" data-text-animation="fade-in-right" data-split="char"
+                            data-duration="0.6" data-stagger="0.07">Thought Leadership</h2>
+                    </div>
+                    <div class="row fade-wrapper justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="tl-card fade-top">
+                                <h3>CNBC Africa Feature</h3>
+                            </div>
+                            <div class="tl-card fade-top">
+                                <h3>TechPoint Africa Highlight</h3>
+                            </div>
+                            <div class="tl-card fade-top">
+                                <h3>Citizen TV Interview</h3>
+                            </div>
+                            <div class="tl-card fade-top">
+                                <h3>Emerging Trends Report 2025</h3>
+                            </div>
+                            <div class="tl-card fade-top">
+                                <h3>Ajira Study Launch</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FINAL POSITIONING / CTA -->
+            <div class="final-cta">
+                <h2 data-animation="nunca-fadeInUp">I don’t just design visuals.<br> <span>I build communication systems
+                        that scale impact across ecosystems.</span></h2>
+            </div>
+
+            <!-- 10. CONTACT SECTION -->
+            <footer class="footer-section pt-80" id="contact">
+                <div class="shapes">
+                    <div class="shape shape-1"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-1.png" alt="shape"></div>
+                    <div class="shape shape-2"><img
+                            src="https://html.rrdevs.net/nunca/assets/img/shapes/footer-shape-2.png" alt="shape"></div>
+                </div>
+                <div class="container">
+                    <div class="footer-top text-center"
+                        style="display:flex; flex-direction:column; align-items:center; border-bottom: none;">
+                        <img src="assets/common/PATRICK KARANJA LOGO.png" alt="Logo"
+                            style="max-height: 80px; margin-bottom: 30px;">
+                        <h2 class="title"
+                            style="max-width: 800px; margin-bottom: 40px; font-size: clamp(30px, 4vw, 60px);">Let’s
+                            build systems that drive real impact.</h2>
+                        <a href="mailto:jajadezigns@gmail.com" class="rr-primary-btn"
+                            style="padding: 20px 40px; font-size: 18px;">Start a Conversation</a>
+                    </div>
+                    <div class="row footer-wrap" style="border-top: 1px solid rgba(0,0,0,0.1); padding-top: 50px;">
+                        <div class="col-xl-4 col-lg-6 col-md-6 mb-4 mb-lg-0">
+                            <div class="footer-widget">
+                                <div class="widget-header">
+                                    <h3 class="widget-title">Contact Details</h3>
+                                </div>
+                                <ul class="address-list">
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-location-dot"></i></div>
+                                        <div class="content">
+                                            <p>Nairobi, Kenya</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-phone-volume"></i></div>
+                                        <div class="content"><a href="tel:+254718094919">+254 718 094 919</a></div>
+                                    </li>
+                                    <li>
+                                        <div class="icon"><i class="fa-sharp fa-solid fa-envelope"></i></div>
+                                        <div class="content"><a
+                                                href="mailto:jajadezigns@gmail.com">jajadezigns@gmail.com</a></div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright-area mt-50">
+                    <div class="container">
+                        <div class="copyright-content text-center">
+                            <p>© Copyright 2026 Patrick Karanja, All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <div id="scroll-percentage"><span id="scroll-percentage-value"></span></div>
+
+    <!-- JS here (Fetched dynamically) -->
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquary-3.6.0.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/bootstrap-bundle.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/imagesloaded-pkgd.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/waypoints.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/venobox.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/odometer.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/meanmenu.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquery.isotope.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/swiper.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/split-type.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/gsap.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-trigger.min.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/scroll-smoother.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/jquery.carouselTicker.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/vendor/nice-select.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/slider.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/contact.js"></script>
+    <script src="https://html.rrdevs.net/nunca/assets/js/main.js"></script>
+</body>
+
+</html>
