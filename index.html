@@ -421,6 +421,18 @@
             transform: none !important;
             visibility: visible !important;
         }
+        @media (max-width: 576px) {
+            .service-item-dark {
+                padding: 30px 20px;
+            }
+            .about-section {
+                padding-top: 60px !important;
+                padding-bottom: 40px !important;
+            }
+            .section-title {
+                font-size: clamp(28px, 8vw, 36px) !important;
+            }
+        }
     </style>
 </head>
 
@@ -556,12 +568,58 @@
                     }
 
                     @media (max-width: 991px) {
+                        #hero {
+                            padding-top: 100px !important;
+                            height: auto !important;
+                            min-height: 100vh;
+                            display: flex;
+                            flex-direction: column;
+                        }
+
                         .hero-right-container {
-                            display: none;
+                            position: relative;
+                            width: 100%;
+                            height: auto;
+                            order: 2;
+                            margin-top: 40px;
+                            justify-content: center;
+                            align-items: flex-end;
+                            display: flex;
+                        }
+
+                        .hero-portrait {
+                            height: auto;
+                            width: 100%;
+                            max-width: 320px;
+                            margin: 0 auto;
+                        }
+
+                        .hero-right-container::before {
+                            clip-path: none !important;
+                            -webkit-clip-path: none !important;
+                            inset: 0;
+                            background: radial-gradient(circle, rgba(141, 198, 63, 0.15) 0%, transparent 75%);
                         }
 
                         .responsive-slider-content {
                             max-width: 100%;
+                            padding-right: 0;
+                            text-align: center !important;
+                            order: 1;
+                        }
+
+                        .responsive-slider-content .section-title {
+                            text-align: center !important;
+                        }
+
+                        .slider-btn-wrap {
+                            justify-content: center;
+                            display: flex;
+                            margin-top: 20px;
+                        }
+
+                        .slider-btn {
+                            margin: 5px !important;
                         }
                     }
                 </style>
