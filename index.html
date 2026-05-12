@@ -572,9 +572,9 @@
 
                     @media (max-width: 991px) {
                         #hero {
-                            padding-top: 70px !important; /* Height of the sticky menu */
+                            padding-top: 20px !important;
                             height: auto !important;
-                            min-height: 100vh;
+                            min-height: auto; /* Allow content to dictate height */
                             display: flex;
                             flex-direction: column;
                             align-items: center;
@@ -584,9 +584,9 @@
                             position: relative;
                             width: 100%;
                             height: auto;
-                            order: 1 !important; /* Image First */
-                            margin-top: 20px;
-                            margin-bottom: 20px;
+                            order: 1 !important;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
                             justify-content: center;
                             align-items: flex-end;
                             display: flex;
@@ -594,15 +594,16 @@
                         }
 
                         #hero .container {
-                            order: 2 !important; /* Text Second */
+                            order: 2 !important;
                             z-index: 3;
-                            padding-bottom: 60px;
+                            padding-bottom: 40px;
+                            margin-top: 0;
                         }
 
                         .hero-portrait {
                             height: auto;
                             width: 100%;
-                            max-width: 300px;
+                            max-width: 260px; /* Slightly smaller for tighter fit */
                             margin: 0 auto;
                         }
 
@@ -619,18 +620,26 @@
                             text-align: center !important;
                         }
 
+                        /* Tighten text spacing */
                         .responsive-slider-content .section-title {
                             text-align: center !important;
+                            margin-bottom: 5px !important; /* Reduced from 15px/25px */
+                        }
+
+                        .responsive-slider-content p {
+                            margin-bottom: 20px !important; /* Reduced from 40px */
+                            line-height: 1.3 !important;
                         }
 
                         .slider-btn-wrap {
                             justify-content: center;
                             display: flex;
-                            margin-top: 20px;
+                            margin-top: 15px;
                         }
 
                         .slider-btn {
                             margin: 5px !important;
+                            padding: 10px 25px !important; /* Slightly more compact buttons */
                         }
                     }
                 </style>
