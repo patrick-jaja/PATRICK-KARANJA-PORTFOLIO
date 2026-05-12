@@ -1,0 +1,36 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Remove LFS attributes for deployment
+        run: rm .gitattributes
+
+      - name: Remove Large Videos (100MB+) from deployment
+        run: |
+          find assets -name "ajira-for-she.mp4" -delete
+          find assets -name "inclusion-video.mp4" -delete
+          find assets -name "lets-be-clear.mp4" -delete
+          find assets -name "success-story.mp4" -delete
+          find assets -name "womens-day-26.mp4" -delete
+          find assets -name "kaisa-naks.mp4" -delete
+          find assets -name "leash-ai.mp4" -delete
+          find assets -name "kepsa-20.mp4" -delete
+          find assets -name "youthjobs-slide-2.mp4" -delete
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
+          keep_files: false
