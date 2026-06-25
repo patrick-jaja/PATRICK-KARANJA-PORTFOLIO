@@ -1,0 +1,42 @@
+<!-- videos.html - standalone Video Showcase page
+
+This page uses local assets/projectData.js to generate the video cards. To embed the
+section into your main index.html instead of using this separate page, copy the
+contents of the <main id="video-showcase-root"> element into your index and include
+projectData.js and video-showcase.js in the same order.
+
+Videos will play directly from the repository on GitHub Pages so long as the files
+are placed under assets/videos/ (supported: .mp4, .webm, .mov) and thumbnails
+under assets/videos/thumbnails/.
+
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Video Showcase — Patrick Karanja</title>
+    <link rel="stylesheet" href="assets/css/video-showcase.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-white text-gray-900 antialiased">
+    <header class="py-6 px-6 border-b bg-[#F8FAFC]">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3"><img src="assets/common/patrick-karanja-logo.png" alt="logo" class="h-10"> <span class="font-bold">Patrick Karanja</span></a>
+        <nav class="space-x-4 text-sm"><a href="/" class="text-gray-600">Home</a> <a href="/" class="text-gray-600">Projects</a></nav>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-6" id="video-showcase-root">
+      <!-- The script assets/projectData.js populates the UI automatically. -->
+      <h1 class="text-3xl font-display font-extrabold mb-2">Video Showcase</h1>
+      <p class="text-gray-600 mb-6">All videos are played directly from the repository. Add new items to <code>assets/projectData.js</code> to include more videos.</p>
+    </main>
+
+    <footer class="max-w-6xl mx-auto p-6 text-sm text-gray-600">© Patrick Karanja</footer>
+
+    <!-- Project data *must* be loaded before the showcase script so it can read projectData -->
+    <script type="module" src="/assets/projectData.js"></script>
+    <script src="/assets/js/video-showcase.js"></script>
+  </body>
+</html>
