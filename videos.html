@@ -1,13 +1,9 @@
 <!-- videos.html - standalone Video Showcase page
 
-This page uses local assets/projectData.js to generate the video cards. To embed the
-section into your main index.html instead of using this separate page, copy the
-contents of the <main id="video-showcase-root"> element into your index and include
-projectData.js and video-showcase.js in the same order.
+This page uses local assets/projectData.js to generate the video cards.
 
-Videos will play directly from the repository on GitHub Pages so long as the files
-are placed under assets/videos/ (supported: .mp4, .webm, .mov) and thumbnails
-under assets/videos/thumbnails/.
+Videos will play directly from the repository so long as each entry in
+assets/projectData.js points to a real thumbnail and video file.
 
 -->
 <!doctype html>
@@ -17,7 +13,7 @@ under assets/videos/thumbnails/.
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Video Showcase — Patrick Karanja</title>
     <link rel="stylesheet" href="assets/css/video-showcase.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/css/tailwind.css" />
   </head>
   <body class="bg-white text-gray-900 antialiased">
     <header class="py-6 px-6 border-b bg-[#F8FAFC]">
@@ -35,33 +31,6 @@ under assets/videos/thumbnails/.
 
     <footer class="max-w-6xl mx-auto p-6 text-sm text-gray-600">© Patrick Karanja</footer>
 
-    <!-- Project data *must* be loaded before the showcase script so it can read projectData -->
-    <script type="module" src="assets/projectData.js"></script>
-    <script src="assets/js/video-showcase.js"></script>
-
-    <script>
-      // Console-friendly guidance if projectData is missing or empty
-      (function(){
-        function checkData(){
-          var pd = window.projectData || (typeof projectData !== 'undefined' ? projectData : undefined);
-          if(!pd || !pd.length){
-            console.warn('[Video Showcase] projectData not found or empty. Make sure assets/projectData.js is present and exposes projectData.');
-            var root = document.getElementById('video-showcase-root');
-            if(root){
-              var hint = document.createElement('div');
-              hint.style.padding='12px';
-              hint.style.background='#FEF3C7';
-              hint.style.border='1px solid #FCD34D';
-              hint.style.borderRadius='8px';
-              hint.style.color='#92400E';
-              hint.style.marginTop='12px';
-              hint.innerHTML = '<strong>Video Showcase:</strong> No projectData found. Check <code>assets/projectData.js</code> and ensure it exports an array named <code>projectData</code> or sets <code>window.projectData</code>.';
-              root.appendChild(hint);
-            }
-          }
-        }
-        if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', checkData); else checkData();
-      })();
-    </script>
-  </body>
+    <script type="module" src="assets/js/video-showcase.js"></script>
+</body>
 </html>

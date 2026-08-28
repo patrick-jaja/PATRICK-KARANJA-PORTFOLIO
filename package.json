@@ -1,6 +1,7 @@
 {
   "name": "patrick-portfolio",
   "version": "1.0.0",
+  "type": "module",
   "description": "Premium portfolio for Patrick Karanja",
   "scripts": {
     "dev": "vite",

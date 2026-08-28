@@ -13,33 +13,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              primary: '#84CC16',
-              primaryDark: '#65A30D',
-              primaryGlow: 'rgba(132, 204, 22, 0.12)',
-              dark: '#1E293B',
-              card: '#1E293B',
-              border: 'rgba(255, 255, 255, 0.08)',
-              textMuted: '#64748B',
-              offwhite: '#F8FAFC'
-            }
-          },
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            display: ['Poppins', 'sans-serif'],
-            serif: ['Georgia', 'serif']
-          }
-        }
-      }
-    }
-  </script>
+  <link rel="stylesheet" href="src/css/tailwind.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -186,17 +160,17 @@
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-up">
         <div class="video-card aspect-[4/5] border border-white/10">
-          <video controls muted loop>
+          <video preload="metadata" controls muted loop>
             <source src="assets/swvl/swvl-mpesa.mp4" type="video/mp4">
           </video>
         </div>
         <div class="video-card aspect-[4/5] border border-white/10">
-          <video controls muted loop>
+          <video preload="metadata" controls muted loop>
             <source src="assets/swvl/swvl-mpesa-app.mp4" type="video/mp4">
           </video>
         </div>
         <div class="video-card aspect-[4/5] border border-white/10">
-          <video controls muted loop>
+          <video preload="metadata" controls muted loop>
             <source src="assets/swvl/swvl-doc.mp4" type="video/mp4">
           </video>
         </div>
