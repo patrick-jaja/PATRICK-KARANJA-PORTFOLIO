@@ -1,0 +1,591 @@
+/* ═══════════════════════════════════════════════════════════════ */
+/* COMPREHENSIVE PORTFOLIO FIXES - RESOLUTION & FORMAT */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 1. RESPONSIVE MEDIA CONTAINERS */
+/* ──────────────────────────────────────────────────────────────── */
+
+/* Aspect ratio container for videos and iframes */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.video-container iframe,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 12px;
+}
+
+/* Alternative aspect ratios */
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-tall {
+  aspect-ratio: 9 / 16;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 2. IMAGE OPTIMIZATION */
+/* ──────────────────────────────────────────────────────────────── */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Gallery image containers */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f0f0f0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 3. MASONRY GRID FIX - MOBILE FIRST */
+/* ──────────────────────────────────────────────────────────────── */
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masonry-grid {
+    display: columns;
+    columns: 3 280px;
+    column-gap: 20px;
+  }
+}
+
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.masonry-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.masonry-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 4. RESPONSIVE GRID FIXES */
+/* ──────────────────────────────────────────────────────────────── */
+
+/* 2-column responsive grid */
+.grid-2-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .grid-2-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-2-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+/* 3-column responsive grid */
+.grid-3-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .grid-3-responsive {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-3-responsive {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 5. IFRAME & EMBED FIXES */
+/* ──────────────────────────────────────────────────────────────── */
+
+iframe {
+  max-width: 100%;
+  border: none;
+  border-radius: 12px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Google Drive preview container */
+.drive-preview {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+.drive-preview.ratio-16-9 {
+  padding-top: 56.25%;
+}
+
+.drive-preview.ratio-4-3 {
+  padding-top: 75%;
+}
+
+.drive-preview.ratio-1-1 {
+  padding-top: 100%;
+}
+
+.drive-preview iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Loading state for embeds */
+.embed-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #84cc16;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 6. CONTAINER SIZING FIXES */
+/* ──────────────────────────────────────────────────────────────── */
+
+.container-full {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.container-wide {
+  width: 100%;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.container-standard {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Ensure proper padding on mobile */
+@media (max-width: 640px) {
+  .container-standard,
+  .container-wide,
+  .container-full {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .container-standard,
+  .container-wide {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .container-standard,
+  .container-wide {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 7. TEXT OVERFLOW & TRUNCATION */
+/* ──────────────────────────────────────────────────────────────── */
+
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix text wrapping */
+h1, h2, h3, h4, h5, h6,
+p, span, li, a {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 8. CARD ALIGNMENT & SIZING */
+/* ──────────────────────────────────────────────────────────────── */
+
+.card-fixed-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.card-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #f0f0f0;
+  aspect-ratio: 16 / 9;
+  flex-shrink: 0;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card-content {
+  flex: 1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 9. FLEXBOX ALIGNMENT HELPERS */
+/* ──────────────────────────────────────────────────────────────── */
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 10. SECTION PADDING CONSISTENCY */
+/* ──────────────────────────────────────────────────────────────── */
+
+section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  section {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 11. FIX OVERFLOW ISSUES */
+/* ──────────────────────────────────────────────────────────────── */
+
+body {
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal scrolling */
+html,
+body {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 12. PROJECT CARD FIXES */
+/* ──────────────────────────────────────────────────────────────── */
+
+.project-card {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .project-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 13. PRINT MEDIA FIXES */
+/* ──────────────────────────────────────────────────────────────── */
+
+@media print {
+  iframe,
+  video,
+  .video-container {
+    display: none !important;
+  }
+
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 14. ACCESSIBILITY & PERFORMANCE */
+/* ──────────────────────────────────────────────────────────────── */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+  .masonry-item,
+  .card-fixed-height,
+  .project-card {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .gallery-item {
+    background: #2a2a2a;
+  }
+
+  .drive-preview {
+    background: #1a1a1a;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 15. RESPONSIVE TYPOGRAPHY */
+/* ──────────────────────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
+
+  h3 {
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+  }
+}
+
+/* ──────────────────────────────────────────────────────────────── */
+/* 16. FIX ASPECT RATIO FALLBACK */
+/* ──────────────────────────────────────────────────────────────── */
+
+.aspect-16-9 {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.aspect-4-3 {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+
+.aspect-1-1 {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+}
+
+/* Fallback for browsers that don't support aspect-ratio */
+@supports not (aspect-ratio: 16/9) {
+  .aspect-16-9 {
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .aspect-4-3 {
+    padding-bottom: 75%;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .aspect-1-1 {
+    padding-bottom: 100%;
+    height: 0;
+    overflow: hidden;
+  }
+}
