@@ -13,7 +13,33 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="src/css/tailwind.css" />
+    <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              primary: '#84CC16',
+              primaryDark: '#65A30D',
+              primaryGlow: 'rgba(132, 204, 22, 0.12)',
+              dark: '#1E293B',
+              card: '#1E293B',
+              border: 'rgba(255, 255, 255, 0.08)',
+              textMuted: '#64748B',
+              offwhite: '#F8FAFC'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Poppins', 'sans-serif'],
+            serif: ['Georgia', 'serif']
+          }
+        }
+      }
+    }
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -25,6 +51,7 @@
       scrollbar-width: thin;
       scrollbar-color: rgba(132, 204, 22, 0.3) #1E293B;
     }
+
     body {
       background-color: #F8FAFC;
       color: #111827;
@@ -32,18 +59,62 @@
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
-    ::-webkit-scrollbar { width: 6px; height: 6px; }
-    ::-webkit-scrollbar-track { background: #1E293B; }
-    ::-webkit-scrollbar-thumb { background: rgba(132, 204, 22, 0.3); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: #84CC16; }
-    
-    .masonry-grid { columns: 3 320px; column-gap: 16px; }
-    .masonry-grid .masonry-item { break-inside: avoid; margin-bottom: 16px; border-radius: 12px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; }
-    .masonry-grid .masonry-item:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
-    .masonry-grid .masonry-item img { width: 100%; height: auto; display: block; }
 
-    .video-card { border-radius: 16px; overflow: hidden; position: relative; background: #000; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-    .video-card video { width: 100%; height: 100%; object-fit: cover; }
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1E293B;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(132, 204, 22, 0.3);
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #84CC16;
+    }
+
+    .masonry-grid {
+      columns: 3 320px;
+      column-gap: 16px;
+    }
+
+    .masonry-grid .masonry-item {
+      break-inside: avoid;
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .masonry-grid .masonry-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .masonry-grid .masonry-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .video-card {
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-card video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 
@@ -53,21 +124,28 @@
   <!-- NAVBAR -->
   <!-- ═══════════════════════════════════════ -->
   <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-6 px-4 md:px-12" id="navbar">
-    <nav class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8 rounded-full border border-black/5 bg-white/80 backdrop-blur-xl transition-all duration-500 shadow-lg shadow-black/5">
+    <nav
+      class="max-w-7xl mx-auto flex items-center justify-between p-4 md:px-8 rounded-full border border-black/5 bg-white/80 backdrop-blur-xl transition-all duration-500 shadow-lg shadow-black/5">
       <a href="index.html" class="flex items-center gap-3 group">
-        <img src="assets/common/patrick-karanja-logo.png" class="h-10 w-auto transition-transform duration-500 group-hover:rotate-12" alt="Patrick Logo" />
+        <img src="assets/common/patrick-karanja-logo.png"
+          class="h-10 w-auto transition-transform duration-500 group-hover:rotate-12" alt="Patrick Logo" />
         <span class="font-display font-bold tracking-tight text-lg text-[#111827]">
           PATRICK KARANJA<span class="text-brand-primary">.</span>
         </span>
       </a>
       <div class="hidden lg:flex items-center gap-8">
-        <a href="index.html#about" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">About</a>
-        <a href="index.html#expertise" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Expertise</a>
-        <a href="index.html#projects" class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Projects</a>
-        <a href="index.html#contact" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Contact</a>
+        <a href="index.html#about"
+          class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">About</a>
+        <a href="index.html#expertise"
+          class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Expertise</a>
+        <a href="index.html#projects"
+          class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Projects</a>
+        <a href="index.html#contact"
+          class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Contact</a>
       </div>
       <div class="flex items-center gap-4">
-        <a href="index.html#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg shadow-brand-primary/10 hover:shadow-brand-primary/20 hover:-translate-y-0.5">
+        <a href="index.html#contact"
+          class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg shadow-brand-primary/10 hover:shadow-brand-primary/20 hover:-translate-y-0.5">
           Start a Project
         </a>
       </div>
@@ -77,21 +155,27 @@
   <!-- ═══════════════════════════════════════ -->
   <!-- HERO SECTION -->
   <!-- ═══════════════════════════════════════ -->
-  <section class="relative min-h-[80vh] flex items-end pb-20 px-4 md:px-12 overflow-hidden bg-brand-dark select-none pt-32">
+  <section
+    class="relative min-h-[80vh] flex items-end pb-20 px-4 md:px-12 overflow-hidden bg-brand-dark select-none pt-32">
     <div class="absolute inset-0 z-0 opacity-40 pointer-events-none">
       <img src="assets/kepsa/kepsa-event-2.jpg" class="w-full h-full object-cover object-center" alt="KEPSA Hero" />
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent z-10 pointer-events-none"></div>
-    
+    <div
+      class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-transparent z-10 pointer-events-none">
+    </div>
+
     <div class="max-w-7xl mx-auto w-full relative z-20 reveal-up">
-      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-primary/20 bg-brand-primaryGlow text-brand-primary mb-6">
+      <div
+        class="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-primary/20 bg-brand-primaryGlow text-brand-primary mb-6">
         <span class="font-display text-[10px] font-bold uppercase tracking-widest">Ecosystem Leadership</span>
       </div>
-      <h1 class="font-display font-extrabold text-brand-offwhite text-5xl md:text-7xl xl:text-8xl leading-none tracking-tight mb-6">
+      <h1
+        class="font-display font-extrabold text-brand-offwhite text-5xl md:text-7xl xl:text-8xl leading-none tracking-tight mb-6">
         KEPSA Digital <span class="text-brand-primary italic font-serif font-normal">Ecosystem</span>
       </h1>
       <p class="font-sans text-xl text-brand-offwhite/80 max-w-2xl leading-relaxed">
-        Building a unified communication architecture to consolidate Kenya's national AI and digital employment programs under one premium visual umbrella.
+        Building a unified communication architecture to consolidate Kenya's national AI and digital employment programs
+        under one premium visual umbrella.
       </p>
     </div>
   </section>
@@ -101,19 +185,25 @@
   <!-- ═══════════════════════════════════════ -->
   <section class="py-24 px-4 md:px-12 bg-white border-b border-black/5">
     <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
-      
+
       <!-- Strategy Details -->
       <div class="lg:col-span-8 space-y-12 reveal-up">
         <div>
           <h2 class="font-display font-extrabold text-3xl text-[#111827] mb-4">The Challenge</h2>
           <p class="font-sans text-lg text-[#64748B] leading-relaxed">
-            The Kenya Private Sector Alliance (KEPSA) was simultaneously running several high-profile national programs including Ajira Digital, KAISA AI Alliance, and DSEEAP. They needed a unified communication system that could sit above these individual programs, providing a premium, executive-level visual umbrella while allowing each sub-program to maintain its distinct identity and appeal to its specific demographic.
+            The Kenya Private Sector Alliance (KEPSA) was simultaneously running several high-profile national programs
+            including Ajira Digital, KAISA AI Alliance, and DSEEAP. They needed a unified communication system that
+            could sit above these individual programs, providing a premium, executive-level visual umbrella while
+            allowing each sub-program to maintain its distinct identity and appeal to its specific demographic.
           </p>
         </div>
         <div>
           <h2 class="font-display font-extrabold text-3xl text-[#111827] mb-4">The Solution</h2>
           <p class="font-sans text-lg text-[#64748B] leading-relaxed">
-            I built a comprehensive ecosystem brand architecture. This involved designing overarching visual identity systems, directing all corporate photography and videography assets to ensure a consistent high-end look, producing executive summit documentation (including the KEPSA media book), and managing strategic event communications for national summits and forums.
+            I built a comprehensive ecosystem brand architecture. This involved designing overarching visual identity
+            systems, directing all corporate photography and videography assets to ensure a consistent high-end look,
+            producing executive summit documentation (including the KEPSA media book), and managing strategic event
+            communications for national summits and forums.
           </p>
         </div>
       </div>
@@ -136,19 +226,27 @@
         </div>
 
         <div>
-          <p class="font-display text-[10px] font-bold uppercase tracking-widest text-[#64748B] mb-4">Partner Ecosystem</p>
+          <p class="font-display text-[10px] font-bold uppercase tracking-widest text-[#64748B] mb-4">Partner Ecosystem
+          </p>
           <div class="flex flex-wrap gap-4">
-            <div class="bg-white border border-black/5 p-4 rounded-xl shadow-sm flex items-center justify-center w-24 h-24">
+            <div
+              class="bg-white border border-black/5 p-4 rounded-xl shadow-sm flex items-center justify-center w-24 h-24">
               <img src="assets/logos/kepsa-logo.png" class="w-full object-contain" alt="KEPSA" />
             </div>
-            <a href="assets/kepsa/kepsa-media-book.pdf" target="_blank" rel="noopener noreferrer" class="bg-brand-primary/10 border border-brand-primary/20 p-4 rounded-xl shadow-sm flex flex-col items-center justify-center w-32 h-24 hover:bg-brand-primary/20 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-primaryDark mb-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-              <span class="text-[9px] font-bold uppercase tracking-widest text-brand-primaryDark text-center">Media Book PDF</span>
+            <a href="assets/kepsa/kepsa-media-book.pdf" target="_blank" rel="noopener noreferrer"
+              class="bg-brand-primary/10 border border-brand-primary/20 p-4 rounded-xl shadow-sm flex flex-col items-center justify-center w-32 h-24 hover:bg-brand-primary/20 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-brand-primaryDark mb-1" fill="none"
+                viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              <span class="text-[9px] font-bold uppercase tracking-widest text-brand-primaryDark text-center">Media Book
+                PDF</span>
             </a>
           </div>
         </div>
       </div>
-      
+
     </div>
   </section>
 
@@ -159,7 +257,8 @@
     <div class="max-w-7xl mx-auto space-y-12">
       <div class="text-center space-y-4 reveal-up">
         <p class="font-display text-xs font-bold uppercase tracking-widest text-brand-primary">Motion & Film</p>
-        <h2 class="font-display font-extrabold text-4xl md:text-5xl text-brand-offwhite">Documentary & Event Coverage</h2>
+        <h2 class="font-display font-extrabold text-4xl md:text-5xl text-brand-offwhite">Documentary & Event Coverage
+        </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal-up">
@@ -193,7 +292,8 @@
   <section class="py-24 px-4 md:px-12 bg-[#F8FAFC]">
     <div class="max-w-7xl mx-auto space-y-12">
       <div class="text-center space-y-4 reveal-up">
-        <p class="font-display text-xs font-bold uppercase tracking-widest text-brand-primary">Photography & Brand Assets</p>
+        <p class="font-display text-xs font-bold uppercase tracking-widest text-brand-primary">Photography & Brand
+          Assets</p>
         <h2 class="font-display font-extrabold text-4xl md:text-5xl text-[#111827]">Executive Forums & Leadership</h2>
       </div>
 
@@ -201,9 +301,12 @@
         <div class="masonry-item"><img src="assets/kepsa/kepsa-event-1.jpg" alt="KEPSA Event" loading="lazy" /></div>
         <div class="masonry-item"><img src="assets/kepsa/kepsa-event-3.jpg" alt="KEPSA Summit" loading="lazy" /></div>
         <div class="masonry-item"><img src="assets/kepsa/kepsa-event-5.jpg" alt="KEPSA Forum" loading="lazy" /></div>
-        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-g.jpg" alt="KEPSA Executive" loading="lazy" /></div>
-        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-gjj.jpg" alt="KEPSA Meeting" loading="lazy" /></div>
-        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-gkg.jpg" alt="KEPSA Leaders" loading="lazy" /></div>
+        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-g.jpg" alt="KEPSA Executive" loading="lazy" />
+        </div>
+        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-gjj.jpg" alt="KEPSA Meeting" loading="lazy" />
+        </div>
+        <div class="masonry-item"><img src="assets/kepsa/kepsa-event-gkg.jpg" alt="KEPSA Leaders" loading="lazy" />
+        </div>
         <div class="masonry-item"><img src="assets/kepsa/kepsa-event-h.jpg" alt="KEPSA Talk" loading="lazy" /></div>
         <div class="masonry-item"><img src="assets/kepsa/kepsa-event-hj.jpg" alt="KEPSA Panel" loading="lazy" /></div>
         <div class="masonry-item"><img src="assets/kepsa/kepsa-img-3.jpg" alt="KEPSA Branding" loading="lazy" /></div>
@@ -221,9 +324,12 @@
     <div class="max-w-3xl mx-auto space-y-8 reveal-up">
       <p class="font-display text-xs font-bold uppercase tracking-widest text-[#64748B]">Next Case Study</p>
       <h2 class="font-display font-extrabold text-4xl md:text-6xl text-[#111827]">KAISA AI Alliance</h2>
-      <a href="kaisa.html" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-brand-primary/20">
+      <a href="kaisa.html"
+        class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:-translate-y-1 shadow-lg shadow-brand-primary/20">
         View Project
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
       </a>
     </div>
   </section>
@@ -232,9 +338,11 @@
   <!-- FOOTER -->
   <!-- ═══════════════════════════════════════ -->
   <footer class="border-t border-white/5 py-12 px-4 md:px-12 bg-black text-brand-textMuted select-none">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+    <div
+      class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
       <div class="space-y-2">
-        <p class="text-xs text-brand-offwhite font-display font-semibold">© 2026 Patrick Karanja. All rights reserved.</p>
+        <p class="text-xs text-brand-offwhite font-display font-semibold">© 2026 Patrick Karanja. All rights reserved.
+        </p>
         <p class="text-[10px] text-brand-textMuted tracking-wider uppercase">Strategic Communications Leader</p>
       </div>
       <div class="flex flex-wrap justify-center gap-6 text-[10px] tracking-widest font-display uppercase font-bold">
@@ -291,4 +399,5 @@
     });
   </script>
 </body>
+
 </html>
