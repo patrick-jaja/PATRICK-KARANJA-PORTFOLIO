@@ -12,9 +12,10 @@
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
     <!-- Tailwind CSS Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/css/compiled.css" />
   <script>
     if (typeof tailwind !== 'undefined') {
     tailwind.config = {
@@ -42,10 +43,6 @@
     }
     }
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/dist/lenis.min.js"></script>
 
   <style type="text/css">
     html {
@@ -249,50 +246,14 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      let lenis = null;
-      if (typeof Lenis !== 'undefined') lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-      });
-
-      function raf(time) {
-        if (lenis) lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-      if (lenis) lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-
-      ScrollTrigger.create({
-        start: "top -50px",
-        onEnter: () => {
-          document.getElementById("navbar").classList.remove("py-6");
-          document.getElementById("navbar").classList.add("py-3");
-        },
-        onLeaveBack: () => {
-          document.getElementById("navbar").classList.remove("py-3");
-          document.getElementById("navbar").classList.add("py-6");
-        }
-      });
-
-      const reveals = document.querySelectorAll(".reveal-up");
-      reveals.forEach(el => {
-        gsap.from(el, {
-          opacity: 0,
-          y: 40,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none"
-          }
-        });
-      });
+      const navbar = document.getElementById("navbar");
+      const updateNavbar = () => {
+        if (!navbar) return;
+        navbar.classList.toggle("py-3", window.scrollY > 50);
+        navbar.classList.toggle("py-6", window.scrollY <= 50);
+      };
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+      updateNavbar();
     });
   </script>
 </body>
