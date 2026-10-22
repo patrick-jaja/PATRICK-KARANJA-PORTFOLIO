@@ -1,42 +1,33 @@
 // projectData.js
-// Add one object per video. When you add new video files to assets/videos/ and
-// thumbnails to assets/videos/thumbnails/, add a corresponding entry here and
-// the Video Showcase page will automatically pick it up.
-
-// Each entry format:
-// {
-//   title: "",
-//   client: "",
-//   category: "",
-//   description: "",
-//   thumbnail: "assets/videos/thumbnails/filename.jpg",
-//   video: "assets/videos/path/to/file.mp4"
-// }
+// Store Drive preview URLs for large video files; keep thumbnails local.
 
 export const projectData = [
   {
-    title: "Featured Reel",
+    title: "Ajira for She",
     client: "Patrick Karanja",
-    category: "Motion Graphics",
-    description: "A short featured reel showcasing my best work.",
-    thumbnail: "assets/videos/thumbnails/featured.jpg",
-    video: "assets/videos/featured.mp4"
+    category: "Campaigns",
+    description: "Campaign film supporting women's participation in digital work.",
+    thumbnail: "assets/ajira/ajira-for-she-2.png",
+    video: "https://drive.google.com/file/d/1pEM1JVei1QqiwUTtPPtY6rfO2ZjyPcV4/preview"
   },
   {
-    title: "Documentary: Youth Jobs",
-    client: "Government",
-    category: "Documentaries",
-    description: "Event documentation and story-driven portrait of participants.",
-    thumbnail: "assets/videos/thumbnails/youthjobs-thumb.jpg",
-    video: "assets/videos/youthjobs/youthjobs-clip.mp4"
-  },
-  {
-    title: "Corporate Event Highlights",
+    title: "KEPSA Event Highlights",
     client: "KEPSA",
     category: "Corporate Events",
-    description: "Highlights from the national summit.",
-    thumbnail: "assets/videos/thumbnails/kepsa-event-thumb.jpg",
-    video: "assets/videos/kepsa/kepsa-highlights.mp4"
+    description: "Event documentation and leadership coverage for national private-sector programming.",
+    thumbnail: "assets/kepsa/kepsa-event-2.jpg",
+    video: "https://drive.google.com/file/d/1FOHCGO-JszwiElOqGcUxutsYVxAEzzqe/preview"
+  },
+  {
+    title: "Swvl M-Pesa Integration",
+    client: "Swvl",
+    category: "Motion Graphics",
+    description: "Product communication and motion work for the M-Pesa integration campaign.",
+    thumbnail: "assets/swvl/swvl-bus.png",
+    video: "https://drive.google.com/file/d/1yCnA4MXfxHof4TigPL1XE8jLFOdG1wtx/preview"
   }
-  // Add more entries here. Supported formats: .mp4, .webm, .mov
 ];
+
+if (typeof window !== "undefined") {
+  window.projectData = projectData;
+}
