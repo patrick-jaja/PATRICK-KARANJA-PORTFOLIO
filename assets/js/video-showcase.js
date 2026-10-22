@@ -1,7 +1,9 @@
 // video-showcase.js
-// This script reads `window.projectData` (exported from assets/projectData.js),
+// This script imports projectData from assets/projectData.js,
 // renders the video grid, sets up filters, lazy-loading and a fullscreen modal
-// player that uses local files (so it works on GitHub Pages).
+// player using Google Drive previews.
+
+import { projectData as importedProjectData } from '../projectData.js';
 
 function $qs(sel, ctx=document){ return ctx.querySelector(sel); }
 function $qa(sel, ctx=document){ return Array.from(ctx.querySelectorAll(sel)); }
@@ -17,7 +19,7 @@ function renderShowcase(data){
   featuredWrap.className = 'featured-reel';
   featuredWrap.innerHTML = `
     <div class="featured-video">
-      <video class="w-full" preload="metadata" controls playsinline muted poster="${featured.thumbnail}" data-src="${featured.video}"></video>
+      <iframe class="w-full aspect-video border-0" src="${featured.video}" title="${escapeHtml(featured.title)}" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
     </div>
     <div class="featured-meta mt-3">
       <h3 class="font-display font-bold text-lg">${escapeHtml(featured.title)}</h3>
@@ -94,7 +96,7 @@ function applyFilter(category){
 
 // Modal
 let modalOverlay;
-let modalVideo;
+let modalFrame;
 function buildModal(){
   modalOverlay = document.createElement('div');
   modalOverlay.className = 'modal-overlay';
@@ -109,14 +111,14 @@ function buildModal(){
         </div>
       </div>
       <div class="modal-body bg-black">
-        <video id="modal-video-player" controls playsinline preload="metadata" style="width:100%;height:auto" ></video>
+        <iframe id="modal-video-player" title="Video preview" class="w-full aspect-video border-0" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   `;
   document.body.appendChild(modalOverlay);
   modalOverlay.querySelector('.modal-close').addEventListener('click', closeModal);
   modalOverlay.addEventListener('click', (e)=>{ if(e.target===modalOverlay) closeModal(); });
-  modalVideo = document.getElementById('modal-video-player');
+  modalFrame = document.getElementById('modal-video-player');
   // keyboard
   window.addEventListener('keydown', (e)=>{
     if(e.key==='Escape' && modalOverlay.classList.contains('active')) closeModal();
@@ -127,27 +129,13 @@ function openModal(project){
   if(!modalOverlay) buildModal();
   modalOverlay.classList.add('active');
   modalOverlay.querySelector('.modal-title').textContent = project.title;
-  // stop any playing videos on page
-  stopAllInlineVideos();
-  // set source and play
-  modalVideo.pause();
-  modalVideo.removeAttribute('src');
-  modalVideo.src = project.video;
-  modalVideo.poster = project.thumbnail;
-  modalVideo.load();
-  modalVideo.muted = false;
-  modalVideo.play().catch(()=>{});
+  modalFrame.src = project.video;
 }
 
 function closeModal(){
   if(!modalOverlay) return;
   modalOverlay.classList.remove('active');
-  if(modalVideo){ modalVideo.pause(); modalVideo.removeAttribute('src'); modalVideo.load(); }
-}
-
-function stopAllInlineVideos(){
-  const vids = $qa('video');
-  vids.forEach(v=>{ try{ v.pause(); }catch(e){} });
+  if(modalFrame) modalFrame.src = 'about:blank';
 }
 
 // Lazy loading: set video src when the poster/featured video enters viewport
@@ -156,13 +144,6 @@ function setupLazyLoading(){
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         const el = entry.target;
-        // featured video's <video> element (data-src)
-        if(el.tagName==='VIDEO'){
-          const src = el.dataset.src;
-          if(src && !el.src){ el.src = src; }
-          io.unobserve(el);
-          return;
-        }
         // cards: when in view, replace poster img with a small preview video element (but do NOT autoplay)
         if(el.classList && el.classList.contains('video-card')){
           // nothing heavy to load; thumbnails are already images. We could optionally set up a preview small video.
@@ -172,19 +153,15 @@ function setupLazyLoading(){
     });
   }, {rootMargin:'200px 0px'});
 
-  // Observe featured video (if present)
-  $qa('video[data-src]').forEach(v=> io.observe(v));
-
   // Observe cards (for potential future progressive loading)
   $qa('.video-card').forEach(c=> io.observe(c));
 }
 
 function escapeHtml(s){ if(!s) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
-// init — expects projectData to be imported as window.projectData via a module file loaded before this script
+// init
 function init(){
-  // projectData might be exported as an ES module. Try window.projectData or imported global.
-  const data = window.projectData || (window.projectData === undefined ? (typeof projectData!=='undefined' ? projectData : []) : []);
+  const data = importedProjectData || window.projectData || [];
   if(!data || !data.length){
     const root = document.getElementById('video-showcase-root');
     if(root) root.innerHTML = '<p class="text-sm text-gray-600">No videos found. Add entries to assets/projectData.js</p>';
