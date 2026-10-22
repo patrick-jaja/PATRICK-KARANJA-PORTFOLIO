@@ -16,6 +16,7 @@
     <!-- Tailwind CSS Play CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
+    if (typeof tailwind !== 'undefined') {
     tailwind.config = {
       theme: {
         extend: {
@@ -38,6 +39,7 @@
           }
         }
       }
+    }
     }
   </script>
 
@@ -88,11 +90,14 @@
       </a>
       <div class="hidden lg:flex items-center gap-8">
         <a href="index.html#about" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">About</a>
-        <a href="index.html#expertise" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Expertise</a>
-        <a href="index.html#projects" class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Projects</a>
+        <a href="index.html#capabilities" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Capabilities</a>
+        <a href="index.html#work" class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Work</a>
         <a href="index.html#contact" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Contact</a>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="index.html#work" class="inline-flex items-center justify-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-black/10 bg-black/5 hover:bg-black/10 text-[#111827] font-display font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-all duration-300">
+          ← Back
+        </a>
         <a href="index.html#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg shadow-brand-primary/10 hover:shadow-brand-primary/20 hover:-translate-y-0.5">
           Start a Project
         </a>
@@ -237,7 +242,7 @@
         <p class="text-[10px] text-brand-textMuted tracking-wider uppercase">Strategic Communications Leader</p>
       </div>
       <div class="flex flex-wrap justify-center gap-6 text-[10px] tracking-widest font-display uppercase font-bold">
-        <a href="index.html#projects" class="hover:text-brand-primary transition-colors">Back to Portfolio</a>
+        <a href="index.html#work" class="hover:text-brand-primary transition-colors">Back to Portfolio</a>
       </div>
     </div>
   </footer>
@@ -246,18 +251,19 @@
     document.addEventListener("DOMContentLoaded", () => {
       gsap.registerPlugin(ScrollTrigger);
 
-      const lenis = new Lenis({
+      let lenis = null;
+      if (typeof Lenis !== 'undefined') lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
       });
 
       function raf(time) {
-        lenis.raf(time);
+        if (lenis) lenis.raf(time);
         requestAnimationFrame(raf);
       }
       requestAnimationFrame(raf);
-      lenis.on('scroll', ScrollTrigger.update);
+      if (lenis) lenis.on('scroll', ScrollTrigger.update);
       gsap.ticker.add((time) => { lenis.raf(time * 1000); });
       gsap.ticker.lagSmoothing(0);
 

@@ -6,35 +6,45 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
-    content="Patrick Karanja — Communication, Digital Marketing & Creative Specialist combining strategy, digital marketing, creative direction and production to build stronger campaigns, brands and communication systems." />
+    content="Patrick Karanja — Strategic Communications & Creative Specialist. I turn complex ideas, programmes and brands into clear communication, compelling campaigns and visual experiences that drive engagement and action. 8+ years across Kenya and East Africa." />
   <meta name="theme-color" content="#0A0A0A" />
-  <title>Patrick Karanja — Communication, Digital Marketing & Creative</title>
+  <title>Patrick Karanja | Strategic Communications & Creative Specialist</title>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://patrick-karanja-portfolio.vercel.app/" />
+  <meta property="og:title" content="Patrick Karanja | Strategic Communications & Creative Specialist" />
+  <meta property="og:description" content="I turn complex ideas, programmes and brands into clear communication, compelling campaigns and visual experiences that drive engagement and action. 8+ years across Kenya and East Africa." />
+  <meta property="og:image" content="https://patrick-karanja-portfolio.vercel.app/assets/common/patrick-karanja-speaking.jpg" />
+  <meta property="og:site_name" content="Patrick Karanja Portfolio" />
+  <meta property="og:locale" content="en_KE" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Patrick Karanja | Strategic Communications & Creative Specialist" />
+  <meta name="twitter:description" content="I turn complex ideas, programmes and brands into clear communication, compelling campaigns and visual experiences that drive engagement and action." />
+  <meta name="twitter:image" content="https://patrick-karanja-portfolio.vercel.app/assets/common/patrick-karanja-speaking.jpg" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://patrick-karanja-portfolio.vercel.app/" />
+
+  <!-- Additional SEO -->
+  <meta name="author" content="Patrick Karanja" />
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="strategic communications, creative specialist, campaign strategy, Kenya, Nairobi, digital marketing, creative direction, brand strategy, communication consultant" />
   <link rel="shortcut icon" type="image/png" href="assets/common/patrick-karanja-logo.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" />
+  </noscript>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            ink: '#0A0A0A', dark: '#121212', soft: '#F5F5F2', line: '#E7E7E3', lime: '#B8F23A', muted: '#737373'
-          },
-          fontFamily: { display: ['Manrope', 'sans-serif'], sans: ['DM Sans', 'sans-serif'] },
-          boxShadow: { soft: '0 28px 80px rgba(0,0,0,.08)', dark: '0 28px 80px rgba(0,0,0,.28)' }
-        }
-      }
-    };
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/dist/lenis.min.js"></script>
+  <link rel="stylesheet" href="src/css/compiled.css" />
 
   <style>
     :root {
@@ -301,11 +311,7 @@
 
     @media(max-width:767px) {
       .hero-grid {
-        background-size: 48px 48px
-      }
-
-      .masonry-grid {
-        columns: 2 150px
+        background-size: 40px 40px
       }
 
       .evidence-item {
@@ -315,6 +321,100 @@
       .project-card.is-focus {
         transform: none
       }
+    }
+
+    @media (max-width: 900px) {
+      .masonry-grid {
+        columns: 2 170px;
+        column-gap: 12px;
+      }
+      .masonry-item {
+        margin-bottom: 12px;
+        border-radius: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .masonry-grid {
+        columns: 1 100%;
+        column-gap: 0;
+      }
+      .masonry-item {
+        margin-bottom: 14px;
+        border-radius: 18px;
+      }
+    }
+
+    /* Lightbox Modal */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 10005;
+      background: rgba(10, 10, 10, .94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-modal img {
+      max-width: 92vw;
+      max-height: 80vh;
+      border-radius: 14px;
+      object-fit: contain;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .7);
+      transform: scale(0.96);
+      transition: transform .3s cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .lightbox-modal.active img {
+      transform: scale(1);
+    }
+
+    /* Floating Back-to-Top Button */
+    #back-to-top {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 850;
+      opacity: 0;
+      transform: translateY(16px);
+      pointer-events: none;
+      transition: opacity .3s ease, transform .3s ease, background-color .2s;
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Toast Notification */
+    #toast-msg {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      z-index: 10010;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s ease, transform .3s ease;
+    }
+
+    #toast-msg.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     /* ===================== VIDEO INTERLUDE STYLES ===================== */
@@ -362,7 +462,8 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 3rem 2rem
+      padding: 3rem 2rem;
+      pointer-events: none
     }
 
     @media(min-width:768px) {
@@ -525,7 +626,7 @@
       <div class="h-px bg-white/10 overflow-hidden">
         <div id="load-bar" class="h-full w-0 bg-lime"></div>
       </div>
-      <div class="mt-5 text-[9px] uppercase tracking-[.2em] text-white/35">Communication · Digital · Creative</div>
+      <div class="mt-5 text-[9px] uppercase tracking-[.2em] text-white/35">Strategic Communications · Creative · Digital</div>
     </div>
   </div>
 
@@ -537,21 +638,21 @@
             class="h-9 md:h-10 w-auto" alt="Patrick Karanja logo" />
           <div class="hidden sm:block">
             <div class="font-display text-[11px] font-extrabold uppercase tracking-[.16em]">Patrick Karanja</div>
-            <div class="text-[9px] text-black/40 uppercase tracking-[.16em] mt-0.5">Communication · Digital · Creative
+            <div class="text-[9px] text-black/40 uppercase tracking-[.16em] mt-0.5">Strategic Communications &amp; Creative Specialist
             </div>
           </div>
         </a>
         <div class="hidden lg:flex items-center gap-7">
           <a href="#about" data-nav="about"
             class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">About</a>
-          <a href="#capabilities" data-nav="capabilities"
-            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Capabilities</a>
           <a href="#work" data-nav="work"
             class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Work</a>
-          <a href="#publications" data-nav="publications"
-            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Publications</a>
-          <a href="#experience" data-nav="experience"
-            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Experience</a>
+          <a href="#capabilities" data-nav="capabilities"
+            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Capabilities</a>
+          <a href="#impact" data-nav="impact"
+            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Impact</a>
+          <a href="#showreel" data-nav="showreel"
+            class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Media</a>
           <a href="#contact" data-nav="contact"
             class="nav-link text-[10px] font-bold uppercase tracking-[.17em] text-black/50 hover:text-black transition">Contact</a>
         </div>
@@ -574,21 +675,32 @@
           class="w-11 h-11 rounded-full border border-white/10 bg-white/5 flex items-center justify-center"
           aria-label="Close menu"><span class="text-2xl leading-none">×</span></button>
       </div>
-      <div class="space-y-1"><a href="#about"
-          class="mobile-link block font-display text-4xl font-extrabold py-4 border-b border-white/10">About</a><a
-          href="#capabilities"
-          class="mobile-link block font-display text-4xl font-extrabold py-4 border-b border-white/10">Capabilities</a><a
-          href="#work"
-          class="mobile-link block font-display text-4xl font-extrabold py-4 border-b border-white/10">Work</a><a
-          href="#experience"
-          class="mobile-link block font-display text-4xl font-extrabold py-4 border-b border-white/10">Experience</a><a
-          href="#contact" class="mobile-link block font-display text-4xl font-extrabold py-4">Contact</a></div>
+      <div class="space-y-1">
+        <a href="#about" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">About <span class="text-xs text-white/30 font-normal">01</span></a>
+        <a href="#capabilities" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Capabilities <span class="text-xs text-white/30 font-normal">02</span></a>
+        <a href="#work" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Work <span class="text-xs text-white/30 font-normal">03</span></a>
+        <a href="#experience" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Experience <span class="text-xs text-white/30 font-normal">04</span></a>
+        <a href="#impact" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Impact <span class="text-xs text-white/30 font-normal">05</span></a>
+        <a href="#visual" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Visual Gallery <span class="text-xs text-white/30 font-normal">06</span></a>
+        <a href="#publications" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Publications <span class="text-xs text-white/30 font-normal">07</span></a>
+        <a href="#showreel" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 border-b border-white/10 hover:text-lime transition">Media &amp; Reel <span class="text-xs text-white/30 font-normal">08</span></a>
+        <a href="#contact" class="mobile-link flex items-center justify-between font-display text-2xl sm:text-3xl font-extrabold py-3 text-lime hover:text-white transition">Let's Talk <span class="text-xs text-lime font-normal">↗</span></a>
+      </div>
     </div>
-    <div>
-      <p class="text-sm text-white/45 leading-relaxed max-w-xs">Communication strategy, digital marketing and creative
-        production for programmes, organisations and brands that need to communicate clearly and move people to action.
-      </p><a href="mailto:patrickkaranjajaja@gmail.com"
-        class="inline-block mt-5 text-sm text-lime">patrickkaranjajaja@gmail.com</a>
+    <div class="mt-6 pt-5 border-t border-white/10 space-y-4">
+      <div class="flex items-center gap-2 text-[9px] uppercase tracking-[.18em] text-white/45">
+        <span class="w-2 h-2 rounded-full bg-lime animate-pulse"></span> Nairobi, Kenya · Available for Work
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">
+        <a href="assets/common/patrick-karanja-resume.pdf" target="_blank" rel="noopener"
+          class="flex items-center justify-center gap-1.5 rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-semibold hover:bg-white/10 transition active:scale-95 text-center">
+          <span>Download CV</span> <span>↗</span>
+        </a>
+        <a href="https://wa.me/254718094919" target="_blank" rel="noopener"
+          class="flex items-center justify-center gap-1.5 rounded-xl bg-lime text-ink py-3 text-xs font-bold hover:bg-[#C8F468] transition active:scale-95 text-center">
+          <span>WhatsApp</span> <span>↗</span>
+        </a>
+      </div>
     </div>
   </div>
   <div id="mobile-overlay" class="fixed inset-0 bg-black/55 z-[990] hidden"></div>
@@ -596,9 +708,6 @@
   <main id="top">
     <section id="hero" class="relative min-h-screen bg-ink text-white overflow-hidden px-4 md:px-7 pt-28 pb-16">
       <!-- Hero background video: brand trailer, muted loop -->
-      <video id="hero-bg-vid" class="hero-bg-video" muted autoplay loop playsinline preload="auto" aria-hidden="true">
-        <source src="assets/common/Patrick_Karanja_brand_trailer_202607171443.mp4" type="video/mp4">
-      </video>
       <div class="absolute inset-0 hero-grid pointer-events-none"></div>
       <div
         class="hero-orb absolute w-[42vw] h-[42vw] max-w-[650px] max-h-[650px] rounded-full -right-[12vw] top-[14vh] pointer-events-none">
@@ -608,61 +717,59 @@
       <div
         class="relative max-w-7xl mx-auto min-h-[calc(100vh-8rem)] grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
         <div class="lg:col-span-7">
-          <div class="reveal flex items-center gap-3 mb-7"><span class="w-2 h-2 rounded-full bg-lime"></span><span
+          <div class="reveal flex items-center gap-3 mb-6 sm:mb-7"><span class="w-2 h-2 rounded-full bg-lime"></span><span
               class="font-display text-[9px] md:text-[10px] font-bold uppercase tracking-[.2em] text-white/45">Nairobi ·
-              Kenya · Available for opportunities & consulting</span></div>
+              Kenya · Available for opportunities &amp; consulting</span></div>
           <h1
-            class="reveal font-display text-[3.4rem] sm:text-6xl md:text-7xl xl:text-[5.9rem] font-extrabold leading-[.9] tracking-[-.065em] max-w-5xl">
-            Communication, <span class="text-white/30">digital</span> & <span class="text-lime">creative.</span></h1>
-          <p class="reveal mt-7 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/60">I connect
-            communication strategy, creative execution and digital delivery to turn complex briefs into work people
-            understand — and act on.</p>
-          <div class="reveal mt-9 flex flex-col sm:flex-row gap-3"><a href="#work"
-              class="magnet inline-flex items-center justify-center rounded-full bg-lime text-ink px-7 py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-[#C8F468] transition">Explore
-              My Work</a><a href="#contact"
-              class="magnet inline-flex items-center justify-center rounded-full border border-white/12 bg-white/5 text-white px-7 py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-white/10 transition">Start
-              a Conversation</a></div>
-          <div class="reveal mt-12 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-3xl">
-            <div class="border-t border-white/10 pt-4">
-              <div class="font-display text-2xl font-extrabold">8+</div>
-              <div class="mt-1 text-[8px] uppercase tracking-[.18em] text-white/30">Years</div>
+            class="reveal font-display text-[2.25rem] xs:text-[2.75rem] sm:text-6xl md:text-7xl xl:text-[5.8rem] font-extrabold leading-[.94] sm:leading-[.9] tracking-[-.05em] sm:tracking-[-.065em] max-w-5xl">
+            Strategic <span class="text-white/28">Communications</span><br /><span class="text-lime">&times; Creative Direction</span></h1>
+          <p class="reveal mt-6 sm:mt-8 max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/60">I turn complex ideas, programmes and brands into clear communication, compelling campaigns and visual experiences that drive engagement and action.</p>
+          <p class="reveal mt-3 max-w-xl text-sm leading-relaxed text-white/35">Strategic communications, creative direction and digital storytelling for brands, programmes and organisations creating meaningful impact.</p>
+          <div class="reveal mt-8 sm:mt-9 flex flex-col sm:flex-row flex-wrap gap-3">
+            <a href="#work" class="magnet inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-lime text-ink px-7 py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-[#C8F468] transition active:scale-95 text-center">View Selected Work</a>
+            <a href="assets/common/patrick-karanja-resume.pdf" target="_blank" rel="noopener" class="magnet inline-flex items-center justify-center w-full sm:w-auto rounded-full bg-white/10 border border-white/15 text-white px-7 py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-white/18 transition active:scale-95 text-center">Download CV &nearr;</a>
+            <a href="#contact" class="magnet inline-flex items-center justify-center w-full sm:w-auto rounded-full border border-white/12 bg-transparent text-white/65 px-7 py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-white/8 hover:text-white transition active:scale-95 text-center">Let&rsquo;s Talk</a>
+          </div>
+          <div class="reveal mt-10 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 max-w-3xl">
+            <div class="rounded-2xl border border-white/10 bg-white/[.04] p-3.5 sm:p-0 sm:border-0 sm:border-t sm:border-white/10 sm:rounded-none sm:bg-transparent sm:pt-4">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-lime sm:text-white">8+</div>
+              <div class="mt-1 text-[8px] sm:text-[9px] uppercase tracking-[.18em] text-white/40">Years Exp</div>
             </div>
-            <div class="border-t border-white/10 pt-4">
-              <div class="font-display text-2xl font-extrabold">47</div>
-              <div class="mt-1 text-[8px] uppercase tracking-[.18em] text-white/30">Counties</div>
+            <div class="rounded-2xl border border-white/10 bg-white/[.04] p-3.5 sm:p-0 sm:border-0 sm:border-t sm:border-white/10 sm:rounded-none sm:bg-transparent sm:pt-4">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-lime sm:text-white">47</div>
+              <div class="mt-1 text-[8px] sm:text-[9px] uppercase tracking-[.18em] text-white/40">Counties</div>
             </div>
-            <div class="border-t border-white/10 pt-4">
-              <div class="font-display text-2xl font-extrabold">20+</div>
-              <div class="mt-1 text-[8px] uppercase tracking-[.18em] text-white/30">Initiatives</div>
+            <div class="rounded-2xl border border-white/10 bg-white/[.04] p-3.5 sm:p-0 sm:border-0 sm:border-t sm:border-white/10 sm:rounded-none sm:bg-transparent sm:pt-4">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-lime sm:text-white">20+</div>
+              <div class="mt-1 text-[8px] sm:text-[9px] uppercase tracking-[.18em] text-white/40">Initiatives</div>
             </div>
-            <div class="border-t border-white/10 pt-4">
-              <div class="font-display text-2xl font-extrabold">50+</div>
-              <div class="mt-1 text-[8px] uppercase tracking-[.18em] text-white/30">Partners</div>
+            <div class="rounded-2xl border border-white/10 bg-white/[.04] p-3.5 sm:p-0 sm:border-0 sm:border-t sm:border-white/10 sm:rounded-none sm:bg-transparent sm:pt-4">
+              <div class="font-display text-2xl sm:text-3xl font-extrabold text-lime sm:text-white">50+</div>
+              <div class="mt-1 text-[8px] sm:text-[9px] uppercase tracking-[.18em] text-white/40">Partners</div>
             </div>
           </div>
         </div>
         <div class="lg:col-span-5 relative reveal">
           <div class="absolute -inset-8 rounded-[40px] bg-lime/5 blur-3xl"></div>
-          <div class="relative rounded-[34px] border border-white/10 bg-white/[.035] p-3 shadow-dark">
-            <div class="relative aspect-[4/5] rounded-[26px] overflow-hidden bg-[#171717]"><img
+          <div class="relative rounded-[30px] sm:rounded-[34px] border border-white/10 bg-white/[.035] p-2.5 sm:p-3 shadow-dark">
+            <div class="relative aspect-[4/5] rounded-[22px] sm:rounded-[26px] overflow-hidden bg-[#171717]"><img
                 src="assets/common/patrick-karanja-speaking.jpg"
                 class="w-full h-full object-cover object-center grayscale" alt="Patrick Karanja speaking" />
               <div class="absolute inset-0 bg-gradient-to-t from-black via-black/5 to-transparent"></div>
-              <div class="absolute left-6 right-6 bottom-6">
+              <div class="absolute left-5 sm:left-6 right-5 sm:right-6 bottom-5 sm:bottom-6">
                 <div class="text-[9px] uppercase tracking-[.2em] text-lime font-bold mb-2">The role I play</div>
                 <div class="font-display text-2xl md:text-3xl font-extrabold tracking-[-.035em]">Strategy → Creative →
                   Activation</div>
               </div>
             </div>
           </div>
-          <div
-            class="absolute -left-5 md:-left-9 bottom-10 rounded-2xl border border-white/10 bg-black/75 backdrop-blur-xl px-5 py-4">
-            <div class="text-[8px] uppercase tracking-[.18em] text-white/35">Core strength</div>
-            <div class="mt-1 font-display font-bold text-sm">Multidisciplinary execution</div>
+          <div class="mt-3 flex items-center gap-3 rounded-2xl border border-white/10 bg-black/80 px-4 sm:px-5 py-3 sm:py-4 shadow-xl">
+            <div class="text-[8px] uppercase tracking-[.18em] text-white/45 shrink-0">Core strength</div>
+            <div class="font-display font-bold text-xs sm:text-sm">Multidisciplinary execution</div>
           </div>
-          <div class="absolute -right-3 md:-right-8 top-16 rounded-2xl bg-lime text-ink px-5 py-4 rotate-3">
+          <div class="absolute right-2 sm:-right-4 md:-right-8 top-4 sm:top-16 rounded-2xl bg-lime text-ink px-4 sm:px-5 py-3 sm:py-4 rotate-2 sm:rotate-3 shadow-xl">
             <div class="text-[8px] uppercase tracking-[.18em] font-bold">Based in</div>
-            <div class="mt-1 font-display font-extrabold text-sm">Nairobi, Kenya</div>
+            <div class="mt-0.5 sm:mt-1 font-display font-extrabold text-xs sm:text-sm">Nairobi, Kenya</div>
           </div>
         </div>
       </div>
@@ -699,76 +806,71 @@
       </div>
     </section>
 
-    <section id="about" class="bg-soft px-4 md:px-7 py-28 md:py-36">
+    <section id="about" class="bg-soft px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-20 items-start">
           <div class="lg:col-span-7">
             <div class="reveal">
-              <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">01 / About</div>
+              <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">01 / About</div>
               <h2
-                class="font-display text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[.95] tracking-[-.055em]">
-                A creative communicator who understands the business behind the brief.</h2>
+                class="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[.96] sm:leading-[.95] tracking-[-.05em] sm:tracking-[-.055em]">
+                I work where strategy meets creative execution.</h2>
             </div>
-            <div class="reveal mt-8 max-w-3xl text-lg md:text-xl leading-relaxed text-black/58">
-              <p>I’m a Communication, Digital Marketing &amp; Creative Specialist with 8+ years of experience across
-                development programmes, technology, youth employment, transport and private-sector initiatives.</p>
-              <p class="mt-5">My work sits between <strong class="text-black">strategy and execution</strong> — shaping
-                communication approaches, campaigns, brand systems, digital content and visual experiences, then
-                carrying the work through production and delivery.</p>
+            <div class="reveal mt-6 sm:mt-8 max-w-3xl text-base sm:text-lg md:text-xl leading-relaxed text-black/60">
+              <p>I help organisations turn complex programmes, ideas and priorities into communication people can understand, engage with and act on.</p>
+              <p class="mt-4 sm:mt-5">My experience spans strategic communications, branding, digital marketing, creative direction, content, photography, videography, multimedia, stakeholder communication and campaign production.</p>
+              <p class="mt-4 sm:mt-5">My work sits at the intersection of <strong class="text-black">strategy and execution</strong> — shaping communication approaches, campaigns, brand systems, digital content and visual experiences, then carrying the work through production and delivery.</p>
             </div>
-            <blockquote class="reveal mt-9 border-l-2 border-lime pl-6 max-w-2xl">
-              <p class="font-display text-xl md:text-2xl font-semibold leading-relaxed">“The value I bring is
-                multidisciplinary execution: I can understand the communication problem, shape the response and build
-                the work.”</p>
+            <blockquote class="reveal mt-8 sm:mt-9 border-l-2 border-lime pl-5 sm:pl-6 max-w-2xl">
+              <p class="font-display text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed">&ldquo;I don&rsquo;t just make communication look good. I build communication systems that work.&rdquo;</p>
             </blockquote>
-            <div class="reveal mt-9">
-              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35 mb-4">Core capabilities</div>
-              <div class="flex flex-wrap gap-2.5"><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Communication
+            <div class="reveal mt-8 sm:mt-9">
+              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35 mb-3 sm:mb-4">Core capabilities</div>
+              <div class="flex flex-wrap gap-2 sm:gap-2.5"><span
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Communication
                   Strategy</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Digital
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Digital
                   Marketing</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Creative
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Creative
                   Direction</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Brand
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Brand
                   Systems</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Campaigns</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Photography</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Videography</span><span
-                  class="rounded-full bg-white border border-line px-4 py-2 text-xs font-semibold">Motion</span></div>
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Campaigns</span><span
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Photography</span><span
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Videography</span><span
+                  class="rounded-full bg-white border border-line px-3.5 sm:px-4 py-1.5 sm:py-2 text-xs font-semibold">Motion</span></div>
             </div>
           </div>
           <div class="lg:col-span-5">
             <div class="sticky top-28 space-y-5 reveal">
-              <div class="rounded-[30px] bg-ink text-white p-7 md:p-9 shadow-dark">
-                <div class="flex items-center justify-between mb-8">
+              <div class="rounded-[26px] sm:rounded-[30px] bg-ink text-white p-6 sm:p-7 md:p-9 shadow-dark">
+                <div class="flex items-center justify-between mb-6 sm:mb-8">
                   <div class="font-display text-xs font-extrabold uppercase tracking-[.18em]">Professional Snapshot
                   </div><span class="w-2 h-2 rounded-full bg-lime"></span>
                 </div>
                 <div>
-                  <div class="py-4 border-t border-white/10 flex justify-between gap-6"><span
+                  <div class="py-3.5 sm:py-4 border-t border-white/10 flex justify-between gap-4 sm:gap-6"><span
                       class="text-[9px] uppercase tracking-[.16em] text-white/35">Primary role</span><span
-                      class="text-sm font-semibold text-right">Communication + Creative</span></div>
-                  <div class="py-4 border-t border-white/10 flex justify-between gap-6"><span
+                      class="text-xs sm:text-sm font-semibold text-right">Strategic Communications &amp; Creative</span></div>
+                  <div class="py-3.5 sm:py-4 border-t border-white/10 flex justify-between gap-4 sm:gap-6"><span
                       class="text-[9px] uppercase tracking-[.16em] text-white/35">Experience</span><span
-                      class="text-sm font-semibold text-right">8+ years</span></div>
-                  <div class="py-4 border-t border-white/10 flex justify-between gap-6"><span
+                      class="text-xs sm:text-sm font-semibold text-right">8+ years</span></div>
+                  <div class="py-3.5 sm:py-4 border-t border-white/10 flex justify-between gap-4 sm:gap-6"><span
                       class="text-[9px] uppercase tracking-[.16em] text-white/35">Base</span><span
-                      class="text-sm font-semibold text-right">Nairobi, Kenya</span></div>
-                  <div class="py-4 border-t border-white/10 flex justify-between gap-6"><span
+                      class="text-xs sm:text-sm font-semibold text-right">Nairobi, Kenya</span></div>
+                  <div class="py-3.5 sm:py-4 border-t border-white/10 flex justify-between gap-4 sm:gap-6"><span
                       class="text-[9px] uppercase tracking-[.16em] text-white/35">Focus</span><span
-                      class="text-sm font-semibold text-right">Campaigns · Digital · Brand</span></div>
-                  <div class="py-4 border-y border-white/10 flex justify-between gap-6"><span
+                      class="text-xs sm:text-sm font-semibold text-right">Campaigns · Digital · Brand</span></div>
+                  <div class="py-3.5 sm:py-4 border-y border-white/10 flex justify-between gap-4 sm:gap-6"><span
                       class="text-[9px] uppercase tracking-[.16em] text-white/35">Production</span><span
-                      class="text-sm font-semibold text-right text-lime">Photo · Video · Motion · Print</span></div>
+                      class="text-xs sm:text-sm font-semibold text-right text-lime">Photo · Video · Motion · Print</span></div>
                 </div><a href="assets/common/patrick-karanja-resume.pdf" target="_blank" rel="noopener"
-                  class="mt-7 inline-flex items-center justify-center gap-2 w-full rounded-full bg-lime text-ink py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-[#C8F468] transition magnet">Download
+                  class="mt-6 sm:mt-7 inline-flex items-center justify-center gap-2 w-full rounded-full bg-lime text-ink py-4 text-[10px] font-bold uppercase tracking-[.18em] hover:bg-[#C8F468] transition magnet active:scale-95 text-center">Download
                   CV <span>↗</span></a>
               </div>
-              <div class="rounded-[24px] border border-line bg-white p-6">
+              <div class="rounded-[20px] sm:rounded-[24px] border border-line bg-white p-5 sm:p-6 shadow-sm">
                 <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Positioning</div>
-                <p class="mt-3 font-display text-xl font-extrabold leading-tight">Strategy is stronger when the person
-                  shaping it can also build the work.</p>
+                <p class="mt-2.5 sm:mt-3 font-display text-lg sm:text-xl font-extrabold leading-tight">I don&rsquo;t just make communication look good. I build communication systems that work.</p>
               </div>
             </div>
           </div>
@@ -776,40 +878,40 @@
       </div>
     </section>
 
-    <section class="bg-white border-y border-line px-4 md:px-7 py-24 md:py-32">
+    <section class="bg-white border-y border-line px-4 md:px-7 py-20 sm:py-24 md:py-32">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-10">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10">
           <div class="lg:col-span-4 reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">02 / How I Work</div>
-            <h2 class="font-display text-4xl md:text-5xl font-extrabold leading-[.94] tracking-[-.05em]">From problem to
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">02 / How I Work</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl font-extrabold leading-[.96] sm:leading-[.94] tracking-[-.05em]">From problem to
               <span class="text-black/25">proof.</span>
             </h2>
-            <p class="mt-6 max-w-sm text-black/52 leading-relaxed">A practical workflow that keeps strategy, creative
+            <p class="mt-4 sm:mt-6 max-w-sm text-sm sm:text-base text-black/55 leading-relaxed">A practical workflow that keeps strategy, creative
               execution and outcomes connected.</p>
           </div>
-          <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-10">
-            <div class="reveal border-t border-black/10 pt-5">
-              <div class="font-display text-5xl font-extrabold text-black/10">01</div>
-              <h3 class="mt-5 font-display text-2xl font-extrabold">Understand</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Clarify the objective, audience, context,
+          <div class="lg:col-span-8 grid sm:grid-cols-2 gap-x-8 gap-y-8 sm:gap-y-10">
+            <div class="reveal border-t border-black/10 pt-4 sm:pt-5">
+              <div class="font-display text-4xl sm:text-5xl font-extrabold text-black/10">01</div>
+              <h3 class="mt-3 sm:mt-5 font-display text-xl sm:text-2xl font-extrabold">Understand</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Clarify the objective, audience, context,
                 constraints and communication problem before making anything.</p>
             </div>
-            <div class="reveal border-t border-black/10 pt-5">
-              <div class="font-display text-5xl font-extrabold text-black/10">02</div>
-              <h3 class="mt-5 font-display text-2xl font-extrabold">Build the strategy</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Shape messaging, positioning, channels, content
+            <div class="reveal border-t border-black/10 pt-4 sm:pt-5">
+              <div class="font-display text-4xl sm:text-5xl font-extrabold text-black/10">02</div>
+              <h3 class="mt-3 sm:mt-5 font-display text-xl sm:text-2xl font-extrabold">Build the strategy</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Shape messaging, positioning, channels, content
                 direction and the campaign system that will carry the idea.</p>
             </div>
-            <div class="reveal border-t border-black/10 pt-5">
-              <div class="font-display text-5xl font-extrabold text-black/10">03</div>
-              <h3 class="mt-5 font-display text-2xl font-extrabold">Create</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Develop brand assets, digital content, visual
+            <div class="reveal border-t border-black/10 pt-4 sm:pt-5">
+              <div class="font-display text-4xl sm:text-5xl font-extrabold text-black/10">03</div>
+              <h3 class="mt-3 sm:mt-5 font-display text-xl sm:text-2xl font-extrabold">Create</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Develop brand assets, digital content, visual
                 systems, photography, video, presentations and campaign materials.</p>
             </div>
-            <div class="reveal border-t border-black/10 pt-5">
-              <div class="font-display text-5xl font-extrabold text-black/10">04</div>
-              <h3 class="mt-5 font-display text-2xl font-extrabold">Activate &amp; measure</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Launch, distribute, optimise and report so the work
+            <div class="reveal border-t border-black/10 pt-4 sm:pt-5">
+              <div class="font-display text-4xl sm:text-5xl font-extrabold text-black/10">04</div>
+              <h3 class="mt-3 sm:mt-5 font-display text-xl sm:text-2xl font-extrabold">Activate &amp; measure</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Launch, distribute, optimise and report so the work
                 connects to visibility, engagement, leads or programme outcomes.</p>
             </div>
           </div>
@@ -822,111 +924,98 @@
          Placed between "How I Work" and Capabilities to shift energy
          and give the scroll a cinematic breath between text sections.
     ============================================================ -->
-    <section id="vi-rooftop" class="video-interlude" style="height:90vh;min-height:480px;"
+    <section id="vi-rooftop" class="video-interlude" style="height:clamp(380px, 75vh, 680px);"
       aria-label="Patrick Karanja on rooftop — brand film moment">
-      <video id="vi-rooftop-vid" muted loop playsinline preload="none"
+      <video muted loop playsinline preload="none"
         style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
-        <source src="assets/common/Patrick_Karanja_on_rooftop_202607101440.mp4" type="video/mp4">
+        <source data-drive-id="1G-GnhqtVU7XXzMIWRW9cX2WGMLnjV26Q" data-drive-title="Patrick Karanja on rooftop" type="video/mp4">
       </video>
       <div class="vi-overlay"></div>
 
-      <!-- Sound toggle -->
-      <button class="vi-sound-btn" data-vid="vi-rooftop-vid" aria-label="Toggle sound">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-          <path class="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          <path class="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-        </svg>
-        <span class="vi-sound-label">Sound</span>
-      </button>
-
-      <!-- Video progress bar -->
-      <div id="vi-rooftop-bar" class="vi-progress"></div>
-
       <!-- Content overlay -->
       <div class="vi-inner">
-        <div id="vi-rooftop-sub" class="vi-subtitle">Personal Brand Film · 2026</div>
+        <div id="vi-rooftop-sub" class="vi-subtitle show">Personal Brand Film · 2026</div>
         <div class="vi-label">Patrick Karanja</div>
-        <p id="vi-rooftop-headline" class="vi-headline">
+        <p id="vi-rooftop-headline" class="vi-headline show">
           Every great campaign<br>
           <span style="color:var(--lime)">starts with clarity.</span>
         </p>
       </div>
     </section>
 
-    <section id="capabilities" class="bg-ink text-white px-4 md:px-7 py-28 md:py-36">
+    <section id="capabilities" class="bg-ink text-white px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
         <div class="max-w-5xl reveal">
-          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-5">03 / Capabilities</div>
-          <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[.94] tracking-[-.055em]">What
+          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-4 sm:mb-5">03 / Capabilities</div>
+          <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[.96] sm:leading-[.94] tracking-[-.05em] sm:tracking-[-.055em]">What
             I can own — <span class="text-white/25">from strategy to production.</span></h2>
         </div>
-        <div class="mt-16 grid lg:grid-cols-12 gap-5">
+        <div class="mt-12 sm:mt-16 grid lg:grid-cols-12 gap-5">
           <div
-            class="evidence-item lg:col-span-7 rounded-[30px] border border-white/10 bg-white/[.035] p-7 md:p-10 reveal dark-evidence-item">
+            class="evidence-item lg:col-span-7 rounded-[26px] sm:rounded-[30px] border border-white/10 bg-white/[.035] p-6 sm:p-8 md:p-10 reveal dark-evidence-item">
             <div class="text-[9px] uppercase tracking-[.19em] font-bold text-lime">01 / Strategic</div>
-            <h3 class="mt-3 font-display text-3xl md:text-4xl font-extrabold">Communication &amp; Campaign Strategy</h3>
-            <p class="mt-5 max-w-2xl text-white/47 leading-relaxed">Communication strategy, messaging frameworks,
+            <h3 class="mt-2.5 sm:mt-3 font-display text-2xl xs:text-3xl md:text-4xl font-extrabold">Communication &amp; Campaign Strategy</h3>
+            <p class="mt-4 sm:mt-5 max-w-2xl text-white/55 leading-relaxed text-sm sm:text-base">Communication strategy, messaging frameworks,
               campaign architecture, stakeholder communication, content planning and narrative development.</p>
-            <div class="mt-7 flex flex-wrap gap-2"><span
-                class="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60">Campaign
+            <div class="mt-6 sm:mt-7 flex flex-wrap gap-2"><span
+                class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-xs text-white/70">Campaign
                 strategy</span><span
-                class="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60">Messaging</span><span
-                class="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60">Stakeholders</span><span
-                class="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60">Content systems</span><span
-                class="rounded-full border border-white/10 px-3 py-2 text-xs text-white/60">Programme
+                class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-xs text-white/70">Messaging</span><span
+                class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-xs text-white/70">Stakeholders</span><span
+                class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-xs text-white/70">Content systems</span><span
+                class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-xs text-white/70">Programme
                 storytelling</span></div>
           </div>
           <div
-            class="evidence-item lg:col-span-5 rounded-[30px] border border-white/10 bg-white/[.025] p-7 md:p-10 reveal dark-evidence-item">
+            class="evidence-item lg:col-span-5 rounded-[26px] sm:rounded-[30px] border border-white/10 bg-white/[.025] p-6 sm:p-8 md:p-10 reveal dark-evidence-item">
             <div class="text-[9px] uppercase tracking-[.19em] font-bold text-lime">02 / Digital</div>
-            <h3 class="mt-3 font-display text-3xl font-extrabold">Digital Marketing</h3>
-            <p class="mt-4 text-white/47 leading-relaxed">Social media, email, websites, campaign content, SEO
+            <h3 class="mt-2.5 sm:mt-3 font-display text-2xl xs:text-3xl font-extrabold">Digital Marketing</h3>
+            <p class="mt-3.5 sm:mt-4 text-white/55 leading-relaxed text-sm sm:text-base">Social media, email, websites, campaign content, SEO
               fundamentals, analytics, reporting and paid social thinking.</p>
-            <div class="mt-7 grid grid-cols-2 gap-3 text-xs text-white/55">
-              <div class="border-t border-white/10 pt-3">Social campaigns</div>
-              <div class="border-t border-white/10 pt-3">Email marketing</div>
-              <div class="border-t border-white/10 pt-3">Website content</div>
-              <div class="border-t border-white/10 pt-3">Analytics</div>
-              <div class="border-t border-white/10 pt-3">SEO fundamentals</div>
-              <div class="border-t border-white/10 pt-3">Paid social</div>
+            <div class="mt-6 sm:mt-7 grid grid-cols-2 gap-3 text-xs text-white/65">
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Social campaigns</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Email marketing</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Website content</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Analytics</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">SEO fundamentals</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Paid social</div>
             </div>
           </div>
           <div
-            class="evidence-item lg:col-span-5 rounded-[30px] border border-white/10 bg-white/[.025] p-7 md:p-10 reveal dark-evidence-item">
+            class="evidence-item lg:col-span-5 rounded-[26px] sm:rounded-[30px] border border-white/10 bg-white/[.025] p-6 sm:p-8 md:p-10 reveal dark-evidence-item">
             <div class="text-[9px] uppercase tracking-[.19em] font-bold text-lime">03 / Brand + Creative</div>
-            <h3 class="mt-3 font-display text-3xl font-extrabold">Creative Direction &amp; Brand Systems</h3>
-            <p class="mt-4 text-white/47 leading-relaxed">Creative concepts, brand identity, art direction, campaign
+            <h3 class="mt-2.5 sm:mt-3 font-display text-2xl xs:text-3xl font-extrabold">Creative Direction &amp; Brand Systems</h3>
+            <p class="mt-3.5 sm:mt-4 text-white/55 leading-relaxed text-sm sm:text-base">Creative concepts, brand identity, art direction, campaign
               visuals, presentations, reports and design systems.</p>
-            <div class="mt-7 grid grid-cols-2 gap-3 text-xs text-white/55">
-              <div class="border-t border-white/10 pt-3">Creative direction</div>
-              <div class="border-t border-white/10 pt-3">Brand identity</div>
-              <div class="border-t border-white/10 pt-3">Campaign design</div>
-              <div class="border-t border-white/10 pt-3">Presentation design</div>
-              <div class="border-t border-white/10 pt-3">Motion graphics</div>
-              <div class="border-t border-white/10 pt-3">OOH</div>
+            <div class="mt-6 sm:mt-7 grid grid-cols-2 gap-3 text-xs text-white/65">
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Creative direction</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Brand identity</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Campaign design</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Presentation design</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">Motion graphics</div>
+              <div class="border-t border-white/10 pt-2.5 sm:pt-3">OOH</div>
             </div>
           </div>
           <div
-            class="evidence-item lg:col-span-7 rounded-[30px] border border-white/10 overflow-hidden reveal dark-evidence-item">
+            class="evidence-item lg:col-span-7 rounded-[26px] sm:rounded-[30px] border border-white/10 overflow-hidden reveal dark-evidence-item">
             <div class="grid md:grid-cols-2">
-              <div class="relative min-h-[300px]"><img src="assets/kepsa/kepsa-event-g.jpg"
+              <div class="relative min-h-[220px] sm:min-h-[260px] md:min-h-[300px]"><img src="assets/kepsa/kepsa-event-g.jpg"
                   class="w-full h-full object-cover" alt="KEPSA event production" />
                 <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                 <div class="absolute left-6 bottom-6 text-[9px] uppercase tracking-[.18em] font-bold text-lime">
                   Production</div>
               </div>
-              <div class="p-7 md:p-10 bg-white/[.035]">
+              <div class="p-6 sm:p-8 md:p-10 bg-white/[.035]">
                 <div class="text-[9px] uppercase tracking-[.19em] font-bold text-lime">04 / Production</div>
-                <h3 class="mt-3 font-display text-3xl font-extrabold">Photo, Video &amp; Content Production</h3>
-                <p class="mt-4 text-white/47 leading-relaxed">Executive event documentation, impact stories, corporate
+                <h3 class="mt-2.5 sm:mt-3 font-display text-2xl xs:text-3xl font-extrabold">Photo, Video &amp; Content Production</h3>
+                <p class="mt-3.5 sm:mt-4 text-white/55 leading-relaxed text-sm sm:text-base">Executive event documentation, impact stories, corporate
                   photography, social video, documentary content and production coordination.</p>
-                <div class="mt-7 space-y-3 text-xs text-white/55">
-                  <div class="border-t border-white/10 pt-3">Photography</div>
-                  <div class="border-t border-white/10 pt-3">Videography</div>
-                  <div class="border-t border-white/10 pt-3">Documentary / impact stories</div>
-                  <div class="border-t border-white/10 pt-3">Event coverage</div>
-                  <div class="border-t border-white/10 pt-3">Motion / social video</div>
+                <div class="mt-6 sm:mt-7 space-y-2.5 sm:space-y-3 text-xs text-white/65">
+                  <div class="border-t border-white/10 pt-2.5 sm:pt-3">Photography</div>
+                  <div class="border-t border-white/10 pt-2.5 sm:pt-3">Videography</div>
+                  <div class="border-t border-white/10 pt-2.5 sm:pt-3">Documentary / impact stories</div>
+                  <div class="border-t border-white/10 pt-2.5 sm:pt-3">Event coverage</div>
+                  <div class="border-t border-white/10 pt-2.5 sm:pt-3">Motion / social video</div>
                 </div>
               </div>
             </div>
@@ -935,208 +1024,214 @@
       </div>
     </section>
 
-    <section id="work" class="bg-soft px-4 md:px-7 py-28 md:py-36">
+    <section id="work" class="bg-soft px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8">
           <div class="max-w-5xl reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">04 / Selected Work</div>
-            <h2 class="font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[.94] tracking-[-.055em]">
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">04 / Selected Work</div>
+            <h2 class="font-display text-3xl xs:text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[.96] sm:leading-[.94] tracking-[-.05em] sm:tracking-[-.055em]">
               Work that connects <span class="text-black/25">communication to action.</span></h2>
           </div>
-          <p class="reveal max-w-sm text-sm leading-relaxed text-black/48">Selected projects showing strategy, creative
+          <p class="reveal max-w-sm text-sm leading-relaxed text-black/50">Selected projects showing strategy, creative
             direction, digital execution and production across different environments.</p>
         </div>
-        <div class="mt-16 space-y-8">
+        <div class="mt-12 sm:mt-16 space-y-8">
           <article id="project-ajira"
-            class="project-card evidence-item bg-white rounded-[32px] overflow-hidden border border-black/8 reveal">
-            <div class="project-media relative aspect-[16/7] overflow-hidden bg-[#DDE4D3]"><img
+            class="project-card evidence-item bg-white rounded-[26px] sm:rounded-[32px] overflow-hidden border border-black/8 reveal shadow-sm">
+            <div class="project-media relative aspect-[16/10] sm:aspect-[16/8] lg:aspect-[16/7] overflow-hidden bg-[#DDE4D3]"><img
                 src="assets/ajira/ajira-hero.jpg" class="w-full h-full object-cover"
                 alt="Ajira Digital national campaign" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div
-                class="absolute left-6 md:left-10 bottom-6 md:bottom-9 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                class="absolute left-5 sm:left-8 md:left-10 bottom-5 sm:bottom-7 md:bottom-9 right-5 sm:right-8 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
                 <div>
                   <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">01 / National Programme</div>
-                  <h3 class="mt-2 font-display text-3xl md:text-5xl font-extrabold text-white tracking-[-.04em]">Ajira
+                  <h3 class="mt-1 sm:mt-2 font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-[-.04em]">Ajira
                     Digital</h3>
                 </div>
-                <div class="text-xs text-white/65 md:max-w-xs md:text-right">National digital-employment communication
+                <div class="text-xs text-white/70 md:max-w-xs md:text-right">National digital-employment communication
                   across campaign, OOH, social, events, photography and video.</div>
               </div>
             </div>
-            <div class="p-7 md:p-10 grid lg:grid-cols-12 gap-10">
+            <div class="p-6 sm:p-8 md:p-10 grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
               <div class="lg:col-span-7">
                 <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">The communication challenge
                 </div>
-                <h4 class="mt-3 font-display text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Make a complex
+                <h4 class="mt-2.5 sm:mt-3 font-display text-xl xs:text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Make a complex
                   youth employment programme easier to see, understand and engage with.</h4>
-                <p class="mt-5 text-sm md:text-base leading-relaxed text-black/55">The work combined communication
+                <p class="mt-4 sm:mt-5 text-sm md:text-base leading-relaxed text-black/60">The work combined communication
                   strategy with an integrated creative system — campaign visuals, event assets, OOH materials, social
                   content and multimedia storytelling supporting a national programme across Kenya.</p>
-                <div class="mt-7 flex flex-wrap gap-2"><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Campaign
+                <div class="mt-6 sm:mt-7 flex flex-wrap gap-2"><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Campaign
                     Strategy</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Brand
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Brand
                     Systems</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">OOH</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Photography</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Video</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Social
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">OOH</span><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Photography</span><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Video</span><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Social
                     Content</span></div>
               </div>
-              <div class="lg:col-span-5">
-                <div class="rounded-2xl bg-soft p-5">
-                  <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Selected footprint</div>
-                  <div class="grid grid-cols-3 gap-4 mt-5">
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">47</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">Counties</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">486K+</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">Selected Reach</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">200+</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">Events</div>
+              <div class="lg:col-span-5 flex flex-col justify-between">
+                <div>
+                  <div class="rounded-2xl bg-soft p-4 sm:p-5">
+                    <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Selected footprint</div>
+                    <div class="grid grid-cols-3 gap-2.5 sm:gap-4 mt-4 sm:mt-5">
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">47</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">Counties</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">486K+</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">Reach</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">200+</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">Events</div>
+                      </div>
                     </div>
                   </div>
+                  <div class="grid grid-cols-2 gap-3 mt-4 sm:mt-5"><img src="assets/ajira/ajira-for-she-2.png"
+                      alt="Ajira For She campaign" class="w-full aspect-[4/3] rounded-2xl object-cover"
+                      loading="lazy" /><img src="assets/ajira/women-empower.png" alt="Ajira women empowerment campaign"
+                      class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
                 </div>
-                <div class="grid grid-cols-2 gap-3 mt-5"><img src="assets/ajira/ajira-for-she-2.png"
-                    alt="Ajira For She campaign" class="w-full aspect-[4/3] rounded-2xl object-cover"
-                    loading="lazy" /><img src="assets/ajira/women-empower.png" alt="Ajira women empowerment campaign"
-                    class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
                 <div class="mt-5"><a href="ajira.html"
-                    class="magnet inline-flex items-center justify-between rounded-full bg-ink text-white px-5 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#202020] transition">Case
+                    class="magnet inline-flex items-center justify-between w-full sm:w-auto rounded-full bg-ink text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#202020] transition active:scale-95 text-center">Case
                     Study <span>↗</span></a></div>
               </div>
             </div>
           </article>
 
           <article id="project-kepsa"
-            class="project-card evidence-item bg-ink text-white rounded-[32px] overflow-hidden border border-white/10 reveal dark-evidence-item">
-            <div class="project-media relative aspect-[16/7] overflow-hidden"><img src="assets/kepsa/kepsa-event-2.jpg"
+            class="project-card evidence-item bg-ink text-white rounded-[26px] sm:rounded-[32px] overflow-hidden border border-white/10 reveal dark-evidence-item shadow-sm">
+            <div class="project-media relative aspect-[16/10] sm:aspect-[16/8] lg:aspect-[16/7] overflow-hidden"><img src="assets/kepsa/kepsa-event-2.jpg"
                 class="w-full h-full object-cover" alt="KEPSA ecosystem communications" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div
-                class="absolute left-6 md:left-10 bottom-6 md:bottom-9 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                class="absolute left-5 sm:left-8 md:left-10 bottom-5 sm:bottom-7 md:bottom-9 right-5 sm:right-8 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
                 <div>
                   <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">02 / Ecosystem Communications
                   </div>
-                  <h3 class="mt-2 font-display text-3xl md:text-5xl font-extrabold tracking-[-.04em]">KEPSA</h3>
+                  <h3 class="mt-1 sm:mt-2 font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-[-.04em]">KEPSA</h3>
                 </div>
-                <div class="text-xs text-white/60 md:max-w-xs md:text-right">Programme communications, event
+                <div class="text-xs text-white/65 md:max-w-xs md:text-right">Programme communications, event
                   storytelling, executive documentation and visual production across multiple initiatives.</div>
               </div>
             </div>
-            <div class="p-7 md:p-10 grid lg:grid-cols-12 gap-10">
+            <div class="p-6 sm:p-8 md:p-10 grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
               <div class="lg:col-span-7">
                 <div class="text-[9px] uppercase tracking-[.18em] font-bold text-white/30">The communication challenge
                 </div>
-                <h4 class="mt-3 font-display text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Create consistency
+                <h4 class="mt-2.5 sm:mt-3 font-display text-xl xs:text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Create consistency
                   across a portfolio of programmes without losing each programme’s identity.</h4>
-                <p class="mt-5 text-sm md:text-base leading-relaxed text-white/50">The work brought together brand
+                <p class="mt-4 sm:mt-5 text-sm md:text-base leading-relaxed text-white/55">The work brought together brand
                   architecture, communication thinking, event production, executive-facing content, photography, social
                   content and reports across the digital-economy ecosystem.</p>
-                <div class="mt-7 flex flex-wrap gap-2"><span
-                    class="rounded-full border border-white/10 px-3 py-2 text-[11px] text-white/62">Brand
+                <div class="mt-6 sm:mt-7 flex flex-wrap gap-2"><span
+                    class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-[11px] text-white/70">Brand
                     Architecture</span><span
-                    class="rounded-full border border-white/10 px-3 py-2 text-[11px] text-white/62">Event
+                    class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-[11px] text-white/70">Event
                     Communications</span><span
-                    class="rounded-full border border-white/10 px-3 py-2 text-[11px] text-white/62">Photography</span><span
-                    class="rounded-full border border-white/10 px-3 py-2 text-[11px] text-white/62">Reports</span><span
-                    class="rounded-full border border-white/10 px-3 py-2 text-[11px] text-white/62">Social
+                    class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-[11px] text-white/70">Photography</span><span
+                    class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-[11px] text-white/70">Reports</span><span
+                    class="rounded-full border border-white/10 px-3 py-1.5 sm:py-2 text-[11px] text-white/70">Social
                     Content</span></div>
               </div>
-              <div class="lg:col-span-5">
-                <div class="rounded-2xl border border-white/10 bg-white/[.045] p-5">
-                  <div class="text-[9px] uppercase tracking-[.18em] font-bold text-white/30">Selected footprint</div>
-                  <div class="grid grid-cols-3 gap-4 mt-5">
-                    <div>
-                      <div class="font-display text-2xl font-extrabold text-lime">3</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/30">Programmes</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold text-lime">47</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/30">Counties</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold text-lime">62+</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/30">Partners</div>
+              <div class="lg:col-span-5 flex flex-col justify-between">
+                <div>
+                  <div class="rounded-2xl border border-white/10 bg-white/[.045] p-4 sm:p-5">
+                    <div class="text-[9px] uppercase tracking-[.18em] font-bold text-white/30">Selected footprint</div>
+                    <div class="grid grid-cols-3 gap-2.5 sm:gap-4 mt-4 sm:mt-5">
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold text-lime">3</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/35">Programmes</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold text-lime">47</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/35">Counties</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold text-lime">62+</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-white/35">Partners</div>
+                      </div>
                     </div>
                   </div>
+                  <div class="grid grid-cols-2 gap-3 mt-4 sm:mt-5"><img src="assets/kepsa/kepsa-event-3.jpg" alt="KEPSA event"
+                      class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /><img
+                      src="assets/kepsa/kepsa-event-5.jpg" alt="KEPSA event"
+                      class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
                 </div>
-                <div class="grid grid-cols-2 gap-3 mt-5"><img src="assets/kepsa/kepsa-event-3.jpg" alt="KEPSA event"
-                    class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /><img
-                    src="assets/kepsa/kepsa-event-5.jpg" alt="KEPSA event"
-                    class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
-                <div class="grid grid-cols-2 gap-3 mt-5"><a href="kepsa.html"
-                    class="magnet inline-flex items-center justify-between rounded-full bg-lime text-ink px-5 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#C8F468] transition">Case
+                <div class="mt-5"><a href="kepsa.html"
+                    class="magnet inline-flex items-center justify-between w-full sm:w-auto rounded-full bg-lime text-ink px-6 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#C8F468] transition active:scale-95 text-center">Case
                     Study <span>↗</span></a></div>
               </div>
             </div>
           </article>
 
           <article id="project-kaisa"
-            class="project-card evidence-item bg-white rounded-[32px] overflow-hidden border border-black/8 reveal">
-            <div class="project-media relative aspect-[16/7] overflow-hidden bg-[#DDD5FF]"><img
+            class="project-card evidence-item bg-white rounded-[26px] sm:rounded-[32px] overflow-hidden border border-black/8 reveal shadow-sm">
+            <div class="project-media relative aspect-[16/10] sm:aspect-[16/8] lg:aspect-[16/7] overflow-hidden bg-[#DDD5FF]"><img
                 src="assets/kaisa/ai-week-web.png" class="w-full h-full object-cover" alt="KAISA AI Week" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               <div
-                class="absolute left-6 md:left-10 bottom-6 md:bottom-9 right-6 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                class="absolute left-5 sm:left-8 md:left-10 bottom-5 sm:bottom-7 md:bottom-9 right-5 sm:right-8 md:right-10 flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6">
                 <div>
                   <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">03 / Technology + AI</div>
-                  <h3 class="mt-2 font-display text-3xl md:text-5xl text-white font-extrabold tracking-[-.04em]">KAISA
+                  <h3 class="mt-1 sm:mt-2 font-display text-2xl xs:text-3xl sm:text-4xl md:text-5xl text-white font-extrabold tracking-[-.04em]">KAISA
                     AI Alliance</h3>
                 </div>
-                <div class="text-xs text-white/65 md:max-w-xs md:text-right">Brand identity, AI Week communications,
+                <div class="text-xs text-white/70 md:max-w-xs md:text-right">Brand identity, AI Week communications,
                   partner-facing visual materials, content and multimedia storytelling.</div>
               </div>
             </div>
-            <div class="p-7 md:p-10 grid lg:grid-cols-12 gap-10">
+            <div class="p-6 sm:p-8 md:p-10 grid lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
               <div class="lg:col-span-7">
                 <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">The communication challenge
                 </div>
-                <h4 class="mt-3 font-display text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Help a new national
+                <h4 class="mt-2.5 sm:mt-3 font-display text-xl xs:text-2xl md:text-3xl font-extrabold tracking-[-.025em]">Help a new national
                   AI initiative look credible, coherent and ready for a broad ecosystem.</h4>
-                <p class="mt-5 text-sm md:text-base leading-relaxed text-black/55">The work covered brand identity, AI
+                <p class="mt-4 sm:mt-5 text-sm md:text-base leading-relaxed text-black/60">The work covered brand identity, AI
                   Week communications, partner materials, social content and multimedia storytelling supporting the
                   alliance and its national visibility.</p>
-                <div class="mt-7 flex flex-wrap gap-2"><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Brand
+                <div class="mt-6 sm:mt-7 flex flex-wrap gap-2"><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Brand
                     Identity</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Event
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Event
                     Design</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Partner
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Partner
                     Materials</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Documentary</span><span
-                    class="rounded-full bg-soft border border-line px-3 py-2 text-[11px] font-semibold">Social
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Documentary</span><span
+                    class="rounded-full bg-soft border border-line px-3 py-1.5 sm:py-2 text-[11px] font-semibold">Social
                     Content</span></div>
               </div>
-              <div class="lg:col-span-5">
-                <div class="rounded-2xl bg-soft p-5">
-                  <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Selected footprint</div>
-                  <div class="grid grid-cols-3 gap-4 mt-5">
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">11.3K</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">Certifications</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">62+</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">Organisations</div>
-                    </div>
-                    <div>
-                      <div class="font-display text-2xl font-extrabold">1st</div>
-                      <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/35">National AI Alliance</div>
+              <div class="lg:col-span-5 flex flex-col justify-between">
+                <div>
+                  <div class="rounded-2xl bg-soft p-4 sm:p-5">
+                    <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Selected footprint</div>
+                    <div class="grid grid-cols-3 gap-2.5 sm:gap-4 mt-4 sm:mt-5">
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">11.3K</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">Certs</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">62+</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">Orgs</div>
+                      </div>
+                      <div>
+                        <div class="font-display text-xl sm:text-2xl font-extrabold">1st</div>
+                        <div class="mt-1 text-[8px] uppercase tracking-[.14em] text-black/40">National AI</div>
+                      </div>
                     </div>
                   </div>
+                  <div class="grid grid-cols-2 gap-3 mt-4 sm:mt-5"><img src="assets/kaisa/ai-week.png" alt="KAISA AI Week"
+                      class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /><img
+                      src="assets/kaisa/kaisa-impact-story.png" alt="KAISA impact story"
+                      class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
                 </div>
-                <div class="grid grid-cols-2 gap-3 mt-5"><img src="assets/kaisa/ai-week.png" alt="KAISA AI Week"
-                    class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /><img
-                    src="assets/kaisa/kaisa-impact-story.png" alt="KAISA impact story"
-                    class="w-full aspect-[4/3] rounded-2xl object-cover" loading="lazy" /></div>
-                <div class="grid grid-cols-2 gap-3 mt-5"><a href="kaisa.html"
-                    class="magnet inline-flex items-center justify-between rounded-full bg-ink text-white px-5 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#202020] transition">Case
+                <div class="mt-5"><a href="kaisa.html"
+                    class="magnet inline-flex items-center justify-between w-full sm:w-auto rounded-full bg-ink text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.15em] hover:bg-[#202020] transition active:scale-95 text-center">Case
                     Study <span>↗</span></a></div>
               </div>
             </div>
@@ -1144,73 +1239,82 @@
 
           <div class="grid lg:grid-cols-2 gap-8">
             <article
-              class="project-card evidence-item bg-white rounded-[30px] overflow-hidden border border-black/8 reveal">
-              <div class="project-media relative aspect-[4/3] overflow-hidden bg-[#E9E0E0]"><img
-                  src="assets/swvl/swvl-bus.png" class="w-full h-full object-cover" alt="Swvl Kenya transit campaign" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-                <div class="absolute left-6 right-6 bottom-6">
-                  <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">04 / Startup Marketing</div>
-                  <h3 class="mt-2 font-display text-3xl text-white font-extrabold">Swvl Kenya</h3>
+              class="project-card evidence-item bg-white rounded-[26px] sm:rounded-[30px] overflow-hidden border border-black/8 reveal shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="project-media relative aspect-[4/3] overflow-hidden bg-[#E9E0E0]"><img
+                    src="assets/swvl/swvl-bus.png" class="w-full h-full object-cover" alt="Swvl Kenya transit campaign" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute left-5 sm:left-6 right-5 sm:right-6 bottom-5 sm:bottom-6">
+                    <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">04 / Startup Marketing</div>
+                    <h3 class="mt-1 sm:mt-2 font-display text-2xl sm:text-3xl text-white font-extrabold">Swvl Kenya</h3>
+                  </div>
+                </div>
+                <div class="p-6 sm:p-7">
+                  <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Creative + digital activation
+                  </div>
+                  <p class="mt-3 text-sm leading-relaxed text-black/60">Localized a fast-moving transit brand through
+                    digital ads, OOH, bus wraps, motion assets, safety education and consumer-facing promotional creative.
+                  </p>
+                  <div class="mt-5 sm:mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">10+</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Routes</div>
+                    </div>
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">3</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Cities</div>
+                    </div>
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">50%</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Faster GTM</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="p-7">
-                <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Creative + digital activation
-                </div>
-                <p class="mt-3 text-sm leading-relaxed text-black/55">Localized a fast-moving transit brand through
-                  digital ads, OOH, bus wraps, motion assets, safety education and consumer-facing promotional creative.
-                </p>
-                <div class="mt-6 grid grid-cols-3 gap-3">
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">10+</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Routes</div>
-                  </div>
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">3</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Cities</div>
-                  </div>
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">50%</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Faster GTM</div>
-                  </div>
-                </div>
-                <div class="mt-6 flex flex-wrap gap-3"><a href="swvl.html"
-                    class="magnet inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">View
-                    Case Study <span>↗</span></a></div>
+              <div class="p-6 sm:p-7 pt-0">
+                <a href="swvl.html"
+                  class="magnet inline-flex items-center justify-between w-full sm:w-auto rounded-full bg-ink text-white px-5 py-3.5 text-[10px] font-bold uppercase tracking-[.17em] hover:bg-[#202020] transition active:scale-95 text-center">View
+                  Case Study <span>↗</span></a>
               </div>
             </article>
+
             <article
-              class="project-card evidence-item bg-white rounded-[30px] overflow-hidden border border-black/8 reveal">
-              <div class="project-media relative aspect-[4/3] overflow-hidden bg-[#DCECF5]"><img
-                  src="assets/youthjobs/youthjobs-hero.png" class="w-full h-full object-cover"
-                  alt="KYEEAP youth employment programme" />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent"></div>
-                <div class="absolute left-6 right-6 bottom-6">
-                  <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">05 / Youth Employment</div>
-                  <h3 class="mt-2 font-display text-3xl text-white font-extrabold">KYEEAP</h3>
+              class="project-card evidence-item bg-white rounded-[26px] sm:rounded-[30px] overflow-hidden border border-black/8 reveal shadow-sm flex flex-col justify-between">
+              <div>
+                <div class="project-media relative aspect-[4/3] overflow-hidden bg-[#DCECF5]"><img
+                    src="assets/youthjobs/youthjobs-hero.png" class="w-full h-full object-cover"
+                    alt="KYEEAP youth employment programme" />
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                  <div class="absolute left-5 sm:left-6 right-5 sm:right-6 bottom-5 sm:bottom-6">
+                    <div class="text-[9px] uppercase tracking-[.2em] font-bold text-lime">05 / Youth Employment</div>
+                    <h3 class="mt-1 sm:mt-2 font-display text-2xl sm:text-3xl text-white font-extrabold">KYEEAP</h3>
+                  </div>
+                </div>
+                <div class="p-6 sm:p-7">
+                  <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Communication + creative
+                    systems</div>
+                  <p class="mt-3 text-sm leading-relaxed text-black/60">Supported a multi-stakeholder youth employment
+                    programme with visual systems, reports, presentation decks, campaign assets and impact stories.</p>
+                  <div class="mt-5 sm:mt-6 grid grid-cols-3 gap-2.5 sm:gap-3">
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">47</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Counties</div>
+                    </div>
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">5+</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Partners</div>
+                    </div>
+                    <div class="rounded-xl bg-soft p-3">
+                      <div class="font-display font-extrabold text-base sm:text-lg">100K+</div>
+                      <div class="text-[8px] uppercase tracking-[.12em] text-black/40 mt-0.5 sm:mt-1">Targeted</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="p-7">
-                <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Communication + creative
-                  systems</div>
-                <p class="mt-3 text-sm leading-relaxed text-black/55">Supported a multi-stakeholder youth employment
-                  programme with visual systems, reports, presentation decks, campaign assets and impact stories.</p>
-                <div class="mt-6 grid grid-cols-3 gap-3">
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">47</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Counties</div>
-                  </div>
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">5+</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Partners</div>
-                  </div>
-                  <div class="rounded-xl bg-soft p-3">
-                    <div class="font-display font-extrabold text-lg">100K+</div>
-                    <div class="text-[8px] uppercase tracking-[.12em] text-black/35 mt-1">Targeted</div>
-                  </div>
-                </div>
-                <div class="mt-6 flex flex-wrap gap-3"><a href="kyeeap.html"
-                    class="magnet inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">View
-                    Case Study <span>↗</span></a></div>
+              <div class="p-6 sm:p-7 pt-0">
+                <a href="kyeeap.html"
+                  class="magnet inline-flex items-center justify-between w-full sm:w-auto rounded-full bg-ink text-white px-5 py-3.5 text-[10px] font-bold uppercase tracking-[.17em] hover:bg-[#202020] transition active:scale-95 text-center">View
+                  Case Study <span>↗</span></a>
               </div>
             </article>
           </div>
@@ -1223,36 +1327,22 @@
          Between Work and Experience — signals depth & personal story.
          Uses the brand film chapter for a narrative pivot moment.
     ============================================================ -->
-    <section id="vi-brandfilm" class="video-interlude" style="height:85vh;min-height:440px;"
+    <section id="vi-brandfilm" class="video-interlude" style="height:clamp(380px, 75vh, 680px);"
       aria-label="Patrick Karanja brand film — chapter">
-      <video id="vi-brandfilm-vid" class="w-full h-full object-cover" muted loop playsinline preload="none"
+      <video class="w-full h-full object-cover" muted loop playsinline preload="none"
         style="position:absolute;inset:0;height:100%;">
-        <source src="assets/common/Patrick_Karanja_brand_film_chapter_202607101440.mp4" type="video/mp4">
+        <source data-drive-id="1miWSStTFrBCdneUNbMK4kza1tLHXSiYd" data-drive-title="Patrick Karanja brand film chapter" type="video/mp4">
       </video>
       <div class="vi-overlay"
         style="background:linear-gradient(to bottom,rgba(10,10,10,.68) 0%,rgba(10,10,10,.02) 35%,rgba(10,10,10,.02) 65%,rgba(10,10,10,.82) 100%)">
       </div>
 
-      <!-- Sound toggle -->
-      <button class="vi-sound-btn" data-vid="vi-brandfilm-vid" aria-label="Toggle sound">
-        <svg id="vi-brandfilm-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-          stroke-width="2.2">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-          <path class="sound-wave-1" d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          <path class="sound-wave-2" d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-        </svg>
-        <span class="vi-sound-label">Sound</span>
-      </button>
-
-      <!-- Video progress bar -->
-      <div id="vi-brandfilm-bar" class="vi-progress"></div>
-
       <!-- Content overlay — top-anchored for this one -->
-      <div
-        style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:3rem 2rem;pointer-events:none;">
+      <div class="vi-inner"
+        style="position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3rem);pointer-events:none;">
         <div>
-          <div id="vi-brandfilm-sub" class="vi-subtitle" style="pointer-events:none;">Brand Film · Chapter</div>
-          <p id="vi-brandfilm-headline" class="vi-headline" style="pointer-events:none;">
+          <div id="vi-brandfilm-sub" class="vi-subtitle show" style="pointer-events:none;">Brand Film · Chapter</div>
+          <p id="vi-brandfilm-headline" class="vi-headline show" style="pointer-events:none;">
             The work is only<br>
             <span style="color:var(--lime)">half the story.</span>
           </p>
@@ -1260,71 +1350,71 @@
         <div style="display:flex;align-items:center;gap:1rem;">
           <div style="width:40px;height:1px;background:rgba(184,242,58,.5);"></div>
           <p
-            style="font-size:.75rem;color:rgba(255,255,255,.45);font-family:'DM Sans',sans-serif;letter-spacing:.04em;max-width:380px;">
+            style="font-size:.75rem;color:rgba(255,255,255,.6);font-family:'DM Sans',sans-serif;letter-spacing:.04em;max-width:380px;">
             Communication strategy, creative execution and digital delivery — working together in every engagement.
           </p>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="bg-white border-t border-line px-4 md:px-7 py-28 md:py-36">
+    <section id="experience" class="bg-white border-t border-line px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-14">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-14">
           <div class="lg:col-span-4 reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">05 / Experience</div>
-            <h2 class="font-display text-4xl md:text-5xl font-extrabold leading-[.96] tracking-[-.05em]">Where strategy
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">05 / Experience</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl font-extrabold leading-[.96] tracking-[-.05em]">Where strategy
               met execution.</h2>
-            <p class="mt-6 text-black/52 leading-relaxed max-w-sm">A multidisciplinary path across development
+            <p class="mt-4 sm:mt-6 text-black/55 leading-relaxed max-w-sm text-sm sm:text-base">A multidisciplinary path across development
               programmes, startups, digital initiatives and creative production.</p>
           </div>
           <div class="lg:col-span-8">
             <div class="relative">
               <div class="absolute left-[14px] md:left-[19px] top-0 bottom-0 w-px bg-line"></div>
-              <div class="relative pl-12 md:pl-16 pb-12 reveal">
+              <div class="relative pl-10 sm:pl-12 md:pl-16 pb-10 sm:pb-12 reveal">
                 <div
                   class="absolute left-[9px] md:left-[14px] top-1.5 w-3 h-3 rounded-full bg-lime border-4 border-soft">
                 </div>
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 sm:gap-3">
                   <div>
-                    <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Previously Consulting
+                    <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Communications Consultant
                     </div>
-                    <h3 class="mt-2 font-display text-2xl font-extrabold">KEPSA / Ajira Digital ecosystem</h3>
+                    <h3 class="mt-1.5 sm:mt-2 font-display text-xl sm:text-2xl font-extrabold">KEPSA / Ajira Digital Ecosystem</h3>
                   </div>
-                  <div class="text-[9px] uppercase tracking-[.16em] text-black/35">Communication · Digital · Creative
+                  <div class="text-[9px] uppercase tracking-[.16em] text-black/40">Communication · Digital · Creative
                   </div>
                 </div>
-                <p class="mt-4 text-sm leading-relaxed text-black/55 max-w-3xl">Worked across digital economy and youth
+                <p class="mt-3 sm:mt-4 text-sm leading-relaxed text-black/60 max-w-3xl">Worked across digital economy and youth
                   employment initiatives, connecting campaign strategy with social, email, websites, events, brand
                   assets, photography, video and stakeholder communication.</p>
               </div>
-              <div class="relative pl-12 md:pl-16 pb-12 reveal">
+              <div class="relative pl-10 sm:pl-12 md:pl-16 pb-10 sm:pb-12 reveal">
                 <div
                   class="absolute left-[9px] md:left-[14px] top-1.5 w-3 h-3 rounded-full bg-black/15 border-4 border-soft">
                 </div>
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 sm:gap-3">
                   <div>
                     <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Startup / Growth</div>
-                    <h3 class="mt-2 font-display text-2xl font-extrabold">Swvl Kenya</h3>
+                    <h3 class="mt-1.5 sm:mt-2 font-display text-xl sm:text-2xl font-extrabold">Swvl Kenya</h3>
                   </div>
-                  <div class="text-[9px] uppercase tracking-[.16em] text-black/35">Marketing · Creative</div>
+                  <div class="text-[9px] uppercase tracking-[.16em] text-black/40">Marketing · Creative</div>
                 </div>
-                <p class="mt-4 text-sm leading-relaxed text-black/55 max-w-3xl">Supported passenger acquisition and
+                <p class="mt-3 sm:mt-4 text-sm leading-relaxed text-black/60 max-w-3xl">Supported passenger acquisition and
                   market-facing creative through campaign concepts, digital assets, OOH, safety communication and
                   localized brand execution.</p>
               </div>
-              <div class="relative pl-12 md:pl-16 reveal">
+              <div class="relative pl-10 sm:pl-12 md:pl-16 reveal">
                 <div
                   class="absolute left-[9px] md:left-[14px] top-1.5 w-3 h-3 rounded-full bg-black/15 border-4 border-soft">
                 </div>
-                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-3">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-2 sm:gap-3">
                   <div>
                     <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Independent / Client Work
                     </div>
-                    <h3 class="mt-2 font-display text-2xl font-extrabold">Brand, digital &amp; production projects</h3>
+                    <h3 class="mt-1.5 sm:mt-2 font-display text-xl sm:text-2xl font-extrabold">Brand, digital &amp; production projects</h3>
                   </div>
-                  <div class="text-[9px] uppercase tracking-[.16em] text-black/35">Consulting · Production</div>
+                  <div class="text-[9px] uppercase tracking-[.16em] text-black/40">Consulting · Production</div>
                 </div>
-                <p class="mt-4 text-sm leading-relaxed text-black/55 max-w-3xl">A broader body of client work covering
+                <p class="mt-3 sm:mt-4 text-sm leading-relaxed text-black/60 max-w-3xl">A broader body of client work covering
                   design, campaign content, web content, photography, videography, reports, presentations, print and
                   creative production.</p>
               </div>
@@ -1334,84 +1424,83 @@
       </div>
     </section>
 
-    <section id="impact" class="bg-ink text-white px-4 md:px-7 py-24 md:py-28">
+    <section id="impact" class="bg-ink text-white px-4 md:px-7 py-18 sm:py-22 md:py-28">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 sm:gap-8">
           <div class="reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-4">06 / Selected Impact</div>
-            <h2 class="font-display text-4xl md:text-6xl font-extrabold tracking-[-.05em] leading-none">Proof, not just
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-3 sm:mb-4">06 / Selected Impact</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-.05em] leading-none">Proof, not just
               output.</h2>
           </div>
-          <p class="reveal max-w-sm text-sm leading-relaxed text-white/45">A mix of programme footprint, production
+          <p class="reveal max-w-sm text-sm leading-relaxed text-white/50">A mix of programme footprint, production
             volume and ecosystem exposure drawn from the work represented here.</p>
         </div>
-        <div class="mt-14 grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.025] p-6 dark-evidence-item">
-            <div class="font-display text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
+        <div class="mt-10 sm:mt-14 grid grid-cols-2 md:grid-cols-5 gap-3.5 sm:gap-4">
+          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.03] p-5 sm:p-6 dark-evidence-item">
+            <div class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
                 data-target="8">0</span>+</div>
-            <div class="mt-3 text-[8px] uppercase tracking-[.17em] text-white/30">Years Experience</div>
+            <div class="mt-2.5 sm:mt-3 text-[8px] sm:text-[9px] uppercase tracking-[.17em] text-white/40">Years Exp</div>
           </div>
-          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.025] p-6 dark-evidence-item">
-            <div class="font-display text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
+          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.03] p-5 sm:p-6 dark-evidence-item">
+            <div class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
                 data-target="47">0</span></div>
-            <div class="mt-3 text-[8px] uppercase tracking-[.17em] text-white/30">Counties Reached</div>
+            <div class="mt-2.5 sm:mt-3 text-[8px] sm:text-[9px] uppercase tracking-[.17em] text-white/40">Counties</div>
           </div>
-          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.025] p-6 dark-evidence-item">
-            <div class="font-display text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
+          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.03] p-5 sm:p-6 dark-evidence-item">
+            <div class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
                 data-target="20">0</span>+</div>
-            <div class="mt-3 text-[8px] uppercase tracking-[.17em] text-white/30">Campaign Initiatives</div>
+            <div class="mt-2.5 sm:mt-3 text-[8px] sm:text-[9px] uppercase tracking-[.17em] text-white/40">Initiatives</div>
           </div>
-          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.025] p-6 dark-evidence-item">
-            <div class="font-display text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
+          <div class="evidence-item reveal rounded-2xl border border-white/10 bg-white/[.03] p-5 sm:p-6 dark-evidence-item">
+            <div class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-lime"><span class="counter-number"
                 data-target="50">0</span>+</div>
-            <div class="mt-3 text-[8px] uppercase tracking-[.17em] text-white/30">Partners / Stakeholders</div>
+            <div class="mt-2.5 sm:mt-3 text-[8px] sm:text-[9px] uppercase tracking-[.17em] text-white/40">Partners</div>
           </div>
           <div
-            class="evidence-item reveal rounded-2xl border border-lime/20 bg-lime p-6 text-ink col-span-2 md:col-span-1">
-            <div class="font-display text-4xl md:text-5xl font-extrabold">486K+</div>
-            <div class="mt-3 text-[8px] uppercase tracking-[.17em] text-black/55">Selected Campaign Reach</div>
+            class="evidence-item reveal rounded-2xl border border-lime/20 bg-lime p-5 sm:p-6 text-ink col-span-2 md:col-span-1 shadow-lg shadow-lime/10">
+            <div class="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold">486K+</div>
+            <div class="mt-2.5 sm:mt-3 text-[8px] sm:text-[9px] uppercase tracking-[.17em] text-black/65 font-bold">Campaign Reach</div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="visual" class="bg-soft px-4 md:px-7 py-28 md:py-36">
+    <section id="visual" class="bg-soft px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-14">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 sm:gap-8 mb-10 sm:mb-14">
           <div class="reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">07 / Visual Work</div>
-            <h2 class="font-display text-4xl md:text-6xl font-extrabold tracking-[-.05em] leading-none">The work behind
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">07 / Visual Work</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-.05em] leading-none">The work behind
               the work.</h2>
           </div>
-          <p class="reveal max-w-md text-sm leading-relaxed text-black/48">A curated mix of campaign assets, event
-            documentation, production moments and programme storytelling. Every image here is selected to show how the
-            work was actually used.</p>
+          <p class="reveal max-w-md text-sm leading-relaxed text-black/55">A curated mix of campaign assets, event
+            documentation, production moments and programme storytelling. Tap any image to inspect full details.</p>
         </div>
         <div class="masonry-grid">
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kepsa/kepsa-event-1.jpg"
-              alt="KEPSA national event" loading="lazy" /></div>
+              alt="KEPSA National Stakeholder Summit" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kaisa/ai-week.png"
-              alt="KAISA AI Week" loading="lazy" /></div>
+              alt="KAISA AI Week Conference &amp; Hackathon" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/swvl/swvl-img-2.jpg"
-              alt="Swvl campaign" loading="lazy" /></div>
+              alt="Swvl Kenya Daily Transit Campaign" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kepsa/kepsa-event-g.jpg"
-              alt="KEPSA executive event" loading="lazy" /></div>
+              alt="KEPSA Executive Dialogue Session" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/swvl/swvl-img-6.jpg"
-              alt="Swvl transit" loading="lazy" /></div>
+              alt="Swvl Nairobi Passenger Commute" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/youthjobs/youthjobs-slide-1.png"
-              alt="Youth jobs programme material" loading="lazy" /></div>
+              alt="Youth Employment Program Keynote Presentation" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kepsa/kepsa-event-h.jpg"
-              alt="Conference event" loading="lazy" /></div>
+              alt="Kenya Private Sector Conference" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/swvl/swvl-img-7.jpg"
-              alt="Swvl Nairobi" loading="lazy" /></div>
+              alt="Swvl Digital Transit Marketing" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kepsa/kepsa-event-gjj.jpg"
-              alt="KEPSA stakeholder moment" loading="lazy" /></div>
+              alt="KEPSA Leadership Forum" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/swvl/koroga-poster.png"
-              alt="Swvl campaign poster" loading="lazy" /></div>
+              alt="Swvl Koroga Festival Campaign Poster" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kepsa/kepsa-img-a.jpg"
-              alt="KEPSA programme visual" loading="lazy" /></div>
+              alt="KEPSA Digital Economy Initiatives" loading="lazy" /></div>
           <div class="masonry-item gallery-tile evidence-item reveal"><img src="assets/kaisa/kaisa-impact-story.png"
-              alt="KAISA impact story" loading="lazy" /></div>
+              alt="KAISA AI Beneficiary Story" loading="lazy" /></div>
         </div>
       </div>
     </section>
@@ -1419,235 +1508,264 @@
     <!-- =========================================================
          PUBLICATIONS
     ========================================================== -->
-    <section id="publications" class="bg-white border-y border-line px-4 md:px-7 py-28 md:py-36">
+    <section id="publications" class="bg-white border-y border-line px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-10 items-end mb-14">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-10 items-end mb-10 sm:mb-14">
           <div class="lg:col-span-8 reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">08 / Publications</div>
-            <h2 class="font-display text-4xl md:text-6xl font-extrabold leading-[.94] tracking-[-.05em]">Publications
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">08 / Publications</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[.94] tracking-[-.05em]">Publications
               that made the work tangible.</h2>
           </div>
-          <p class="lg:col-span-4 reveal text-sm leading-relaxed text-black/48">
-            Reports, magazines, programme publications and printed communication pieces — shown as finished work rather
-            than just screen layouts.
+          <p class="lg:col-span-4 reveal text-sm leading-relaxed text-black/55">
+            Reports, magazines, programme publications and printed communication pieces — designed with precision as finished, stakeholder-facing assets.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-5">
-          <!-- PUBLICATION SLOT 01: Replace image and add Drive file URL in PUBLICATION_FILES below. -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6">
+          <!-- PUBLICATION 01 -->
           <article
-            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[28px]">
-            <div class="media-frame aspect-[16/10] bg-[#E7E2D8]">
-              <img src="assets/kepsa/kepsa-media-2.png" alt="Publication mockup sample 01" loading="lazy" />
+            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[24px] sm:rounded-[28px] transition duration-300 hover:shadow-xl">
+            <div class="media-frame aspect-[16/10] bg-[#E7E2D8] relative cursor-pointer group">
+              <img src="assets/kepsa/kepsa-media-2.png" alt="KEPSA Digital Economy National Strategy Report" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               <div
-                class="absolute top-4 left-4 rounded-full bg-black/70 text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em]">
-                Sample 01</div>
-            </div>
-            <div class="p-6 md:p-7">
-              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Publication / Print</div>
-              <h3 class="mt-2 font-display text-2xl font-extrabold">Magazine / report mockup</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Use this slot for the photographed or rendered final
-                publication, with a direct link to the finished file.</p>
-              <a href="#" data-publication-link="01"
-                class="publication-link mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">Open
-                publication ↗</a>
-            </div>
-          </article>
-
-          <!-- PUBLICATION SLOT 02: Replace image and add Drive file URL in PUBLICATION_FILES below. -->
-          <article
-            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[28px]">
-            <div class="media-frame aspect-[16/10] bg-[#E7E2D8]">
-              <img src="assets/kaisa/kaisa-story.jpg" alt="Publication mockup sample 02" loading="lazy" />
-              <div
-                class="absolute top-4 left-4 rounded-full bg-black/70 text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em]">
-                Sample 02</div>
-            </div>
-            <div class="p-6 md:p-7">
-              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Publication / Storytelling
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 rounded-full bg-black/75 backdrop-blur-md text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em] font-bold">
+                KEPSA Policy Report</div>
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="px-4 py-2 rounded-full bg-white/90 text-ink text-[10px] font-bold uppercase tracking-wider shadow-lg">Preview Cover ↗</span>
               </div>
-              <h3 class="mt-2 font-display text-2xl font-extrabold">Impact story / editorial piece</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Show the final editorial or impact publication in a
-                realistic printed-paper or magazine mockup.</p>
-              <a href="#" data-publication-link="02"
-                class="publication-link mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">Open
-                publication ↗</a>
+            </div>
+            <div class="p-5 sm:p-7">
+              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Public Policy · Private Sector</div>
+              <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-ink">National Digital Economy Strategy</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">High-impact policy documentation and strategic framework designed for government leaders, development partners, and private-sector stakeholders.</p>
+              <div class="mt-5 flex items-center justify-between border-t border-line/70 pt-4">
+                <a href="kepsa.html"
+                  class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[.17em] text-ink hover:text-lime transition py-1">View Case Study ↗</a>
+                <span class="text-[9px] uppercase tracking-wider text-black/40 font-semibold">Print &amp; Digital</span>
+              </div>
             </div>
           </article>
 
-          <!-- PUBLICATION SLOT 03: Replace image and add Drive file URL in PUBLICATION_FILES below. -->
+          <!-- PUBLICATION 02 -->
           <article
-            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[28px]">
-            <div class="media-frame aspect-[16/10] bg-[#E7E2D8]">
-              <img src="assets/youthjobs/youthjobs-slide-3.png" alt="Publication mockup sample 03" loading="lazy" />
+            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[24px] sm:rounded-[28px] transition duration-300 hover:shadow-xl">
+            <div class="media-frame aspect-[16/10] bg-[#E7E2D8] relative cursor-pointer group">
+              <img src="assets/kaisa/kaisa-story.jpg" alt="KAISA AI Strategy & Beneficiary Stories" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               <div
-                class="absolute top-4 left-4 rounded-full bg-black/70 text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em]">
-                Sample 03</div>
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 rounded-full bg-black/75 backdrop-blur-md text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em] font-bold">
+                KAISA Storybook</div>
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="px-4 py-2 rounded-full bg-white/90 text-ink text-[10px] font-bold uppercase tracking-wider shadow-lg">Preview Cover ↗</span>
+              </div>
             </div>
-            <div class="p-6 md:p-7">
-              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Publication / Programme</div>
-              <h3 class="mt-2 font-display text-2xl font-extrabold">Programme publication / report</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Use this for a finished programme report, booklet,
-                learning publication or other stakeholder-facing document.</p>
-              <a href="#" data-publication-link="03"
-                class="publication-link mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">Open
-                publication ↗</a>
+            <div class="p-5 sm:p-7">
+              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Artificial Intelligence · Innovation</div>
+              <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-ink">Kenya AI Ecosystem &amp; Voices</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Curated narrative publication documenting emerging AI startups, grassroots innovators, and practical AI adoption stories across Kenya.</p>
+              <div class="mt-5 flex items-center justify-between border-t border-line/70 pt-4">
+                <a href="kaisa.html"
+                  class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[.17em] text-ink hover:text-lime transition py-1">View Case Study ↗</a>
+                <span class="text-[9px] uppercase tracking-wider text-black/40 font-semibold">Editorial</span>
+              </div>
             </div>
           </article>
 
-          <!-- PUBLICATION SLOT 04: Replace image and add Drive file URL in PUBLICATION_FILES below. -->
+          <!-- PUBLICATION 03 -->
           <article
-            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[28px]">
-            <div class="media-frame aspect-[16/10] bg-[#E7E2D8]">
-              <img src="assets/ajira/poster-1.png" alt="Publication mockup sample 04" loading="lazy" />
+            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[24px] sm:rounded-[28px] transition duration-300 hover:shadow-xl">
+            <div class="media-frame aspect-[16/10] bg-[#E7E2D8] relative cursor-pointer group">
+              <img src="assets/youthjobs/youthjobs-slide-3.png" alt="National Youth Employment & Skills Playbook" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
               <div
-                class="absolute top-4 left-4 rounded-full bg-black/70 text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em]">
-                Sample 04</div>
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 rounded-full bg-black/75 backdrop-blur-md text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em] font-bold">
+                YouthJobs Playbook</div>
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="px-4 py-2 rounded-full bg-white/90 text-ink text-[10px] font-bold uppercase tracking-wider shadow-lg">Preview Cover ↗</span>
+              </div>
             </div>
-            <div class="p-6 md:p-7">
-              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Publication / Campaign</div>
-              <h3 class="mt-2 font-display text-2xl font-extrabold">Campaign publication / printed piece</h3>
-              <p class="mt-3 text-sm leading-relaxed text-black/55">Ideal for a campaign booklet, magazine, annual
-                publication or printed communication piece.</p>
-              <a href="#" data-publication-link="04"
-                class="publication-link mt-5 inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-[.17em]">Open
-                publication ↗</a>
+            <div class="p-5 sm:p-7">
+              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Workforce Development · Strategic Comms</div>
+              <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-ink">Youth Apprenticeship &amp; Jobs Guide</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Comprehensive programmatic blueprint outlining scalable pathways for youth skilling, private-sector placement, and digital job creation.</p>
+              <div class="mt-5 flex items-center justify-between border-t border-line/70 pt-4">
+                <a href="kyeeap.html"
+                  class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[.17em] text-ink hover:text-lime transition py-1">View Case Study ↗</a>
+                <span class="text-[9px] uppercase tracking-wider text-black/40 font-semibold">Playbook</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- PUBLICATION 04 -->
+          <article
+            class="publication-card evidence-item reveal bg-soft border border-line overflow-hidden rounded-[24px] sm:rounded-[28px] transition duration-300 hover:shadow-xl">
+            <div class="media-frame aspect-[16/10] bg-[#E7E2D8] relative cursor-pointer group">
+              <img src="assets/ajira/poster-1.png" alt="Ajira Digital Program National Impact Compendium" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+              <div
+                class="absolute top-3 sm:top-4 left-3 sm:left-4 rounded-full bg-black/75 backdrop-blur-md text-white px-3 py-1.5 text-[8px] uppercase tracking-[.16em] font-bold">
+                Ajira Compendium</div>
+              <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <span class="px-4 py-2 rounded-full bg-white/90 text-ink text-[10px] font-bold uppercase tracking-wider shadow-lg">Preview Cover ↗</span>
+              </div>
+            </div>
+            <div class="p-5 sm:p-7">
+              <div class="text-[9px] uppercase tracking-[.18em] font-bold text-black/35">Digital Work · National Campaign</div>
+              <h3 class="mt-2 font-display text-xl sm:text-2xl font-extrabold text-ink">Ajira Digital 1M+ Impact Compendium</h3>
+              <p class="mt-2.5 sm:mt-3 text-sm leading-relaxed text-black/60">Print and digital campaign report capturing nationwide scale, freelance success stories, and youth digital workforce milestones.</p>
+              <div class="mt-5 flex items-center justify-between border-t border-line/70 pt-4">
+                <a href="ajira.html"
+                  class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[.17em] text-ink hover:text-lime transition py-1">View Case Study ↗</a>
+                <span class="text-[9px] uppercase tracking-wider text-black/40 font-semibold">Report</span>
+              </div>
             </div>
           </article>
         </div>
 
-        <div class="mt-8 pt-6 border-t border-line reveal">
-          <p class="text-[10px] uppercase tracking-[.16em] text-black/35">Four publication slots are intentionally kept
-            ready for your final magazine / report mockups and corresponding file links.</p>
+        <div class="mt-8 pt-6 border-t border-line reveal flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <p class="text-[10px] uppercase tracking-[.16em] text-black/45">Featured print publications, strategy reports &amp; whitepapers from national initiatives.</p>
+          <a href="mailto:patrickkaranjajaja@gmail.com?subject=Requesting%20Full%20Publication%20PDFs"
+            class="text-[10px] uppercase tracking-[.17em] font-bold text-ink hover:text-lime transition inline-flex items-center gap-1.5">Request Complete Publication Archive ↗</a>
         </div>
       </div>
     </section>
 
-    <section id="showreel" class="bg-ink text-white px-4 md:px-7 py-28 md:py-36">
+    <!-- =========================================================
+         SHOWREEL
+    ========================================================== -->
+    <section id="showreel" class="bg-ink text-white px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-10 items-end mb-12">
+        <div class="grid lg:grid-cols-12 gap-8 sm:gap-10 items-end mb-10 sm:mb-12">
           <div class="lg:col-span-8 reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-5">09 / Motion &amp; Film</div>
-            <h2 class="font-display text-4xl md:text-6xl font-extrabold leading-[.95] tracking-[-.05em]">A moving
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-4 sm:mb-5">09 / Motion &amp; Film</div>
+            <h2 class="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[.95] tracking-[-.05em]">A moving
               picture of the work.</h2>
           </div>
-          <p class="lg:col-span-4 reveal text-sm leading-relaxed text-white/45">One strong film is featured here,
-            keeping the homepage focused and easy to explore.</p>
+          <p class="lg:col-span-4 reveal text-sm leading-relaxed text-white/50">Campaign and brand films hosted on Drive,
+            ready to preview without loading large video files from the portfolio site.</p>
         </div>
-        <div class="relative rounded-[30px] overflow-hidden border border-white/10 bg-[#151515] reveal"><video
-            id="showreel-video" class="w-full aspect-video object-cover" playsinline preload="metadata"
-            poster="assets/ajira/ajira-hero.jpg">
-            <source src="assets/ajira/womens-day-26.mp4" type="video/mp4" />
-          </video>
-          <div id="showreel-overlay" class="absolute inset-0 flex items-center justify-center bg-black/10"><button
-              id="showreel-play"
-              class="play-ring magnet w-20 h-20 md:w-24 md:h-24 rounded-full bg-lime text-ink flex items-center justify-center shadow-2xl"
-              aria-label="Play showreel"><svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor"
-                aria-hidden="true">
-                <path d="M8 5v14l11-7z"></path>
-              </svg></button></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10 pointer-events-none">
-          </div>
-          <div class="absolute left-5 right-5 bottom-5 flex items-center justify-between">
-            <div
-              class="rounded-full bg-black/45 backdrop-blur-md border border-white/10 px-4 py-2 text-[8px] uppercase tracking-[.18em] text-white/65">
-              Patrick Karanja Showreel</div>
-            <div class="flex gap-2"><button id="showreel-toggle"
-                class="rounded-full bg-black/45 backdrop-blur-md border border-white/10 px-4 py-2 text-[8px] uppercase tracking-[.18em] text-white/65">Play</button><button
-                id="showreel-mute"
-                class="rounded-full bg-black/45 backdrop-blur-md border border-white/10 px-4 py-2 text-[8px] uppercase tracking-[.18em] text-white/65">Mute</button>
-            </div>
-          </div>
+        <div class="mt-10 grid sm:grid-cols-2 gap-5 sm:gap-6">
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#151515] reveal">
+            <div class="aspect-video"><iframe class="h-full w-full border-0" src="https://drive.google.com/file/d/1qtDGh9OCOVEBmBuJfMO-Ri87dSaS-WYo/preview" title="Patrick Karanja brand trailer" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 class="px-5 py-4 font-display text-sm font-bold text-white/80">Brand Trailer</h3>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#151515] reveal">
+            <div class="aspect-video"><iframe class="h-full w-full border-0" src="https://drive.google.com/file/d/1G-GnhqtVU7XXzMIWRW9cX2WGMLnjV26Q/preview" title="Patrick Karanja on rooftop" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 class="px-5 py-4 font-display text-sm font-bold text-white/80">On the Rooftop</h3>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#151515] reveal">
+            <div class="aspect-video"><iframe class="h-full w-full border-0" src="https://drive.google.com/file/d/1miWSStTFrBCdneUNbMK4kza1tLHXSiYd/preview" title="Patrick Karanja brand film chapter" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 class="px-5 py-4 font-display text-sm font-bold text-white/80">Brand Film Chapter</h3>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#151515] reveal">
+            <div class="aspect-video"><iframe class="h-full w-full border-0" src="https://drive.google.com/file/d/1wy0AEAXjnu6xieRUpniwwp49ne6uPIov/preview" title="Communications specialist brand film" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 class="px-5 py-4 font-display text-sm font-bold text-white/80">Communications Specialist Brand Film</h3>
+          </article>
+          <article class="overflow-hidden rounded-2xl border border-white/10 bg-[#151515] reveal sm:col-span-2">
+            <div class="aspect-video"><iframe class="h-full w-full border-0" src="https://drive.google.com/file/d/1EHqag9-WwfhEZfPEftQDQQaydPxC2cly/preview" title="IMG 3194 film" loading="lazy" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div>
+            <h3 class="px-5 py-4 font-display text-sm font-bold text-white/80">IMG 3194</h3>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="bg-white px-4 md:px-7 py-28 md:py-36">
+    <!-- =========================================================
+         TESTIMONIALS / REFERENCES
+    ========================================================== -->
+    <section id="testimonials" class="bg-white px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
         <div class="max-w-5xl reveal">
-          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">10 / References</div>
-          <h2 class="font-display text-4xl md:text-6xl font-extrabold leading-[.94] tracking-[-.05em]">How collaborators
+          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">10 / References</div>
+          <h2 class="font-display text-3xl xs:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[.94] tracking-[-.05em]">How collaborators
             describe the work.</h2>
         </div>
-        <div class="mt-14 grid md:grid-cols-3 gap-5">
-          <article class="evidence-item reveal rounded-[28px] border border-line p-7 md:p-8 bg-soft">
-            <div class="text-lime text-3xl">“</div>
-            <p class="mt-4 text-sm leading-relaxed text-black/60 italic">“Patrick's strategic thinking combined with
-              exceptional creative execution has been instrumental in positioning our national programs for maximum
-              visibility and impact.”</p>
+        <div class="mt-10 sm:mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          <article class="evidence-item reveal rounded-[24px] sm:rounded-[28px] border border-line p-6 sm:p-7 md:p-8 bg-soft flex flex-col justify-between">
+            <div>
+              <div class="text-lime text-3xl font-display font-extrabold leading-none">“</div>
+              <p class="mt-4 text-sm leading-relaxed text-black/65 italic">“Patrick's strategic thinking combined with
+                exceptional creative execution has been instrumental in positioning our national programs for maximum
+                visibility and impact.”</p>
+            </div>
             <div class="mt-7 pt-5 border-t border-line">
-              <div class="font-display font-extrabold text-lg">Dr. Ehud Gachugu, PhD, HSC</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">Deputy CEO &amp; Global Director —
+              <div class="font-display font-extrabold text-base sm:text-lg text-ink">Dr. Ehud Gachugu, PhD, HSC</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/45 font-semibold">Deputy CEO &amp; Global Director —
                 Youth &amp; Jobs</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/30">KEPSA Kenya</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">KEPSA Kenya</div>
             </div>
           </article>
-          <article class="evidence-item reveal rounded-[28px] border border-line p-7 md:p-8 bg-soft">
-            <div class="text-lime text-3xl">“</div>
-            <p class="mt-4 text-sm leading-relaxed text-black/60 italic">“One of the most versatile creative
-              professionals I've worked with. Patrick understands both the strategic business context and the creative
-              execution needed to deliver results.”</p>
+
+          <article class="evidence-item reveal rounded-[24px] sm:rounded-[28px] border border-line p-6 sm:p-7 md:p-8 bg-soft flex flex-col justify-between">
+            <div>
+              <div class="text-lime text-3xl font-display font-extrabold leading-none">“</div>
+              <p class="mt-4 text-sm leading-relaxed text-black/65 italic">“One of the most versatile creative
+                professionals I've worked with. Patrick understands both the strategic business context and the creative
+                execution needed to deliver results.”</p>
+            </div>
             <div class="mt-7 pt-5 border-t border-line">
-              <div class="font-display font-extrabold text-lg">David Mwaura</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">Head of Marketing Africa</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/30">Spiro Africa</div>
+              <div class="font-display font-extrabold text-base sm:text-lg text-ink">David Mwaura</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/45 font-semibold">Head of Marketing Africa</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">Spiro Africa</div>
             </div>
           </article>
-          <article class="evidence-item reveal rounded-[28px] border border-line p-7 md:p-8 bg-soft">
-            <div class="text-lime text-3xl">“</div>
-            <p class="mt-4 text-sm leading-relaxed text-black/60 italic">“Patrick's deep understanding of print
-              production, combined with his creative direction abilities, consistently delivers work that exceeds
-              commercial expectations.”</p>
+
+          <article class="evidence-item reveal rounded-[24px] sm:rounded-[28px] border border-line p-6 sm:p-7 md:p-8 bg-soft flex flex-col justify-between md:col-span-2 lg:col-span-1">
+            <div>
+              <div class="text-lime text-3xl font-display font-extrabold leading-none">“</div>
+              <p class="mt-4 text-sm leading-relaxed text-black/65 italic">“Patrick's deep understanding of print
+                production, combined with his creative direction abilities, consistently delivers work that exceeds
+                commercial expectations.”</p>
+            </div>
             <div class="mt-7 pt-5 border-t border-line">
-              <div class="font-display font-extrabold text-lg">Sachil Gudka</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">Chief Executive Officer</div>
-              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/30">Graphic World Kenya</div>
+              <div class="font-display font-extrabold text-base sm:text-lg text-ink">Sachil Gudka</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/45 font-semibold">Chief Executive Officer</div>
+              <div class="mt-1 text-[9px] uppercase tracking-[.16em] text-black/35">Graphic World Kenya</div>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="faq" class="bg-soft px-4 md:px-7 py-24 md:py-28">
+    <!-- =========================================================
+         FAQ / WORKING TOGETHER
+    ========================================================== -->
+    <section id="faq" class="bg-soft px-4 md:px-7 py-20 sm:py-24 md:py-28">
       <div class="max-w-4xl mx-auto">
         <div class="text-center reveal">
-          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-5">11 / Working Together</div>
-          <h2 class="font-display text-4xl md:text-5xl font-extrabold tracking-[-.045em]">What can I help with?</h2>
+          <div class="text-[9px] uppercase tracking-[.2em] font-bold text-black/35 mb-4 sm:mb-5">11 / Working Together</div>
+          <h2 class="font-display text-3xl xs:text-4xl md:text-5xl font-extrabold tracking-[-.045em] text-ink">What can I help with?</h2>
         </div>
-        <div class="mt-12 rounded-[28px] border border-line bg-white overflow-hidden">
-          <div class="faq-row px-6 md:px-8 py-6"><button
-              class="faq-toggle w-full flex items-center justify-between gap-6 text-left"><span
-                class="font-display font-extrabold text-lg md:text-xl">Can you own both strategy and
-                execution?</span><span class="faq-plus text-2xl transition-transform">+</span></button>
+        <div class="mt-10 sm:mt-12 rounded-[24px] sm:rounded-[28px] border border-line bg-white overflow-hidden shadow-sm">
+          <div class="faq-row px-5 sm:px-8 py-5 sm:py-6">
+            <button
+              class="faq-toggle w-full flex items-center justify-between gap-4 sm:gap-6 text-left min-h-[48px] py-1 cursor-pointer">
+              <span class="font-display font-extrabold text-base sm:text-lg md:text-xl text-ink">Can you own both strategy and execution?</span>
+              <span class="faq-plus text-2xl font-bold transition-transform duration-300 text-lime shrink-0">+</span>
+            </button>
             <div class="faq-answer">
               <div>
-                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/55">Yes. That is a core strength of the
-                  profile: moving from the communication problem and campaign strategy through creative direction,
-                  production, digital execution and reporting.</p>
+                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/60">Yes. That is a core strength of my practice: moving seamlessly from defining the strategic communication problem into creative direction, campaign production, digital execution, and measurable post-campaign reporting.</p>
               </div>
             </div>
           </div>
-          <div class="faq-row px-6 md:px-8 py-6 border-t border-line"><button
-              class="faq-toggle w-full flex items-center justify-between gap-6 text-left"><span
-                class="font-display font-extrabold text-lg md:text-xl">What kinds of roles or engagements make
-                sense?</span><span class="faq-plus text-2xl transition-transform">+</span></button>
+          <div class="faq-row px-5 sm:px-8 py-5 sm:py-6 border-t border-line">
+            <button
+              class="faq-toggle w-full flex items-center justify-between gap-4 sm:gap-6 text-left min-h-[48px] py-1 cursor-pointer">
+              <span class="font-display font-extrabold text-base sm:text-lg md:text-xl text-ink">What kinds of roles or engagements make sense?</span>
+              <span class="faq-plus text-2xl font-bold transition-transform duration-300 text-lime shrink-0">+</span>
+            </button>
             <div class="faq-answer">
               <div>
-                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/55">Communication, creative, digital
-                  marketing and brand roles; consulting assignments; campaign projects; content systems;
-                  production-heavy work; and projects where strategy and execution need to stay connected.</p>
+                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/60">Senior communications leadership, digital marketing advisory, creative direction, high-stakes stakeholder campaigns, national programme visibility, content design systems, and consulting assignments where strategy and execution must remain connected.</p>
               </div>
             </div>
           </div>
-          <div class="faq-row px-6 md:px-8 py-6 border-t border-line"><button
-              class="faq-toggle w-full flex items-center justify-between gap-6 text-left"><span
-                class="font-display font-extrabold text-lg md:text-xl">What environments have you worked in?</span><span
-                class="faq-plus text-2xl transition-transform">+</span></button>
+          <div class="faq-row px-5 sm:px-8 py-5 sm:py-6 border-t border-line">
+            <button
+              class="faq-toggle w-full flex items-center justify-between gap-4 sm:gap-6 text-left min-h-[48px] py-1 cursor-pointer">
+              <span class="font-display font-extrabold text-base sm:text-lg md:text-xl text-ink">What environments have you worked in?</span>
+              <span class="faq-plus text-2xl font-bold transition-transform duration-300 text-lime shrink-0">+</span>
+            </button>
             <div class="faq-answer">
               <div>
-                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/55">Development programmes, technology,
-                  youth employment, startups, transport, private-sector projects, stakeholder environments and
-                  independent client work.</p>
+                <p class="pt-3 max-w-2xl text-sm leading-relaxed text-black/60">National development initiatives (Mastercard Foundation, World Bank, KEPSA), tech startups, venture-backed mobility platforms (Swvl), commercial print &amp; advertising agencies, AI innovation collectives, and executive-level corporate boards.</p>
               </div>
             </div>
           </div>
@@ -1655,62 +1773,171 @@
       </div>
     </section>
 
-    <section id="contact" class="bg-ink text-white px-4 md:px-7 py-28 md:py-36">
+    <!-- =========================================================
+         CONTACT
+    ========================================================== -->
+    <section id="contact" class="bg-ink text-white px-4 md:px-7 py-20 sm:py-24 md:py-32 lg:py-36">
       <div class="max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="grid lg:grid-cols-12 gap-10 sm:gap-12 items-end">
           <div class="lg:col-span-8 reveal">
-            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-6">12 / Contact</div>
+            <div class="text-[9px] uppercase tracking-[.2em] font-bold text-white/30 mb-4 sm:mb-6">12 / Contact</div>
             <h2
-              class="font-display text-5xl sm:text-6xl md:text-7xl xl:text-[6.5rem] font-extrabold leading-[.88] tracking-[-.065em]">
-              Have a challenge?<br /><span class="text-white/30">Let’s build the response.</span></h2>
+              class="font-display text-4xl xs:text-5xl sm:text-6xl md:text-7xl xl:text-[6.2rem] font-extrabold leading-[.9] sm:leading-[.88] tracking-[-.055em] sm:tracking-[-.065em]">
+              Have a challenge?<br /><span class="text-white/30">Let’s build the response.</span>
+            </h2>
           </div>
           <div class="lg:col-span-4 reveal">
-            <p class="text-base leading-relaxed text-white/45">Available for communication, digital marketing, creative
-              and consulting opportunities in Nairobi and with regional or remote teams.</p>
-            <div class="mt-8 flex flex-col gap-3"><a href="mailto:patrickkaranjajaja@gmail.com"
-                class="magnet flex items-center justify-between rounded-full bg-lime text-ink px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-[#C8F468] transition">Email
-                Me <span>↗</span></a><a href="https://wa.me/254718094919" target="_blank" rel="noopener"
-                class="magnet flex items-center justify-between rounded-full border border-white/10 bg-white/5 text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-white/10 transition">WhatsApp
-                <span>↗</span></a><a href="https://www.linkedin.com/in/patrick-karanja/" target="_blank" rel="noopener"
-                class="magnet flex items-center justify-between rounded-full border border-white/10 bg-white/5 text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-white/10 transition">LinkedIn
-                <span>↗</span></a></div>
+            <p class="text-base leading-relaxed text-white/50">Available for communication leadership, digital marketing strategy, creative direction and consulting engagements in Nairobi, regionally, or remotely worldwide.</p>
+            <div class="mt-6 sm:mt-8 flex flex-col gap-3">
+              <a href="mailto:patrickkaranjajaja@gmail.com"
+                class="magnet flex items-center justify-between rounded-full bg-lime text-ink px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-[#C8F468] transition min-h-[48px] active:scale-98">
+                <span>Email Me Directly</span>
+                <span>↗</span>
+              </a>
+              <button id="copy-email-btn" type="button" data-email="patrickkaranjajaja@gmail.com"
+                class="magnet flex items-center justify-between rounded-full border border-white/15 bg-white/5 text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-white/10 hover:border-lime/40 transition min-h-[48px] active:scale-98 cursor-pointer">
+                <span class="flex items-center gap-2">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-lime"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  Copy Email Address
+                </span>
+                <span class="text-lime text-[9px] font-extrabold">Copy</span>
+              </button>
+              <a href="https://wa.me/254718094919" target="_blank" rel="noopener"
+                class="magnet flex items-center justify-between rounded-full border border-white/10 bg-white/5 text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-white/10 transition min-h-[48px] active:scale-98">
+                <span>WhatsApp Instant</span>
+                <span>↗</span>
+              </a>
+              <a href="https://www.linkedin.com/in/patrick-karanja/" target="_blank" rel="noopener"
+                class="magnet flex items-center justify-between rounded-full border border-white/10 bg-white/5 text-white px-6 py-4 text-[10px] font-bold uppercase tracking-[.16em] hover:bg-white/10 transition min-h-[48px] active:scale-98">
+                <span>LinkedIn Profile</span>
+                <span>↗</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="bg-black text-white/38 border-t border-white/8 px-4 md:px-7 py-8">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-5">
+  <footer class="bg-black text-white/45 border-t border-white/10 px-4 md:px-7 py-8 sm:py-10">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
       <div>
-        <div class="font-display text-xs font-extrabold tracking-[.17em] text-white/75 uppercase">Patrick Karanja</div>
-        <div class="mt-2 text-[9px] uppercase tracking-[.18em]">Communication · Digital Marketing · Creative</div>
+        <div class="font-display text-xs font-extrabold tracking-[.17em] text-white/85 uppercase">Patrick Karanja</div>
+        <div class="mt-2 text-[9px] uppercase tracking-[.18em] text-white/40">Strategic Communications · Digital Marketing · Creative Direction</div>
       </div>
-      <div class="flex flex-wrap items-center gap-6 text-[9px] uppercase tracking-[.16em]"><a href="#about"
-          class="hover:text-lime transition">About</a><a href="#capabilities"
-          class="hover:text-lime transition">Capabilities</a><a href="#work"
-          class="hover:text-lime transition">Work</a><a href="#publications"
-          class="hover:text-lime transition">Publications</a><a href="#contact"
-          class="hover:text-lime transition">Contact</a><span>© 2026</span></div>
+      <div class="flex flex-wrap items-center gap-5 sm:gap-6 text-[9px] uppercase tracking-[.16em]">
+        <a href="#about" class="hover:text-lime transition py-1">About</a>
+        <a href="#capabilities" class="hover:text-lime transition py-1">Capabilities</a>
+        <a href="#work" class="hover:text-lime transition py-1">Work</a>
+        <a href="#publications" class="hover:text-lime transition py-1">Publications</a>
+        <a href="#contact" class="hover:text-lime transition py-1">Contact</a>
+        <span class="text-white/25">© 2026 Nairobi, Kenya</span>
+      </div>
     </div>
   </footer>
 
+  <!-- Lightbox Modal for Gallery & Publication covers -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[1000] bg-black/92 backdrop-blur-md hidden flex flex-col items-center justify-center p-4 sm:p-8" role="dialog" aria-modal="true" aria-label="Media Preview">
+    <button id="lightbox-close" class="absolute top-4 sm:top-6 right-4 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition active:scale-95 cursor-pointer z-10" aria-label="Close preview">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="max-w-5xl max-h-[82vh] flex flex-col items-center justify-center">
+      <img id="lightbox-img" src="" alt="Full preview" class="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl" />
+      <p id="lightbox-caption" class="mt-4 text-xs sm:text-sm text-white/70 text-center font-medium max-w-2xl px-4"></p>
+    </div>
+  </div>
+
+  <!-- Floating Back to Top Button -->
+  <button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-ink/90 border border-white/20 text-lime flex items-center justify-center shadow-2xl opacity-0 pointer-events-none transition-all duration-300 hover:bg-ink hover:scale-110 active:scale-95 cursor-pointer" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
+  </button>
+
+  <!-- Interactive Toast Notification -->
+  <div id="toast-msg" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[1001] px-5 py-3 rounded-full bg-ink/95 border border-lime/40 text-lime text-xs font-bold uppercase tracking-wider shadow-2xl transition-all duration-300 opacity-0 pointer-events-none translate-y-4"></div>
+
+  <script type="module" src="assets/js/drive-media.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      gsap.registerPlugin(ScrollTrigger);
-      const lenis = new Lenis({ duration: 1.1, smoothWheel: true, gestureOrientation: 'vertical', easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
-      lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(time => lenis.raf(time * 1000)); gsap.ticker.lagSmoothing(0);
+      const hasGsap = typeof gsap !== 'undefined';
+      const hasScrollTrigger = typeof ScrollTrigger !== 'undefined';
+      if (hasGsap && hasScrollTrigger) {
+        gsap.registerPlugin(ScrollTrigger);
+      }
 
-      const preloader = document.getElementById('preloader'), bar = document.getElementById('load-bar'), count = document.getElementById('load-count'); let progress = 0;
-      const timer = setInterval(() => { progress += Math.floor(Math.random() * 12) + 7; if (progress >= 100) { progress = 100; clearInterval(timer) } bar.style.width = progress + '%'; count.textContent = String(progress).padStart(2, '0') + '%'; if (progress === 100) { setTimeout(() => gsap.to(preloader, { yPercent: -100, duration: 1, ease: 'power4.inOut', onComplete: () => { preloader.remove(); startHero() } }), 220) } }, 80);
+      let lenis = null;
+      if (typeof Lenis !== 'undefined') {
+        try {
+          lenis = new Lenis({ duration: 1.1, smoothWheel: true, gestureOrientation: 'vertical', easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+          if (hasScrollTrigger) {
+            lenis.on('scroll', ScrollTrigger.update);
+          }
+          if (hasGsap) {
+            gsap.ticker.add(time => lenis.raf(time * 1000));
+            gsap.ticker.lagSmoothing(0);
+          }
+        } catch (e) {
+          console.warn('Lenis init fallback:', e);
+        }
+      }
+
+      const preloader = document.getElementById('preloader');
+      const bar = document.getElementById('load-bar');
+      const count = document.getElementById('load-count');
+      let progress = 0;
+      let dismissed = false;
+
+      function dismissPreloader() {
+        if (dismissed) return;
+        dismissed = true;
+        if (preloader) {
+          if (hasGsap) {
+            gsap.to(preloader, { yPercent: -100, duration: 0.8, ease: 'power4.inOut', onComplete: () => { preloader.remove(); startHero(); } });
+          } else {
+            preloader.style.transition = 'opacity 0.4s ease';
+            preloader.style.opacity = '0';
+            setTimeout(() => { preloader.remove(); startHero(); }, 400);
+          }
+        } else {
+          startHero();
+        }
+      }
+
+      const timer = setInterval(() => {
+        progress += Math.floor(Math.random() * 15) + 12;
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(timer);
+        }
+        if (bar) bar.style.width = progress + '%';
+        if (count) count.textContent = String(progress).padStart(2, '0') + '%';
+        if (progress === 100) {
+          setTimeout(dismissPreloader, 180);
+        }
+      }, 40);
+
+      // Failsafe timeout so preloader NEVER blocks user
+      setTimeout(dismissPreloader, 1400);
+
       function startHero() {
-        gsap.timeline({ defaults: { ease: 'power3.out' } }).to('#navbar', { opacity: 1, y: 0, duration: .65 }).to('#hero .reveal', { opacity: 1, y: 0, duration: .85, stagger: .09 }, '-.35');
+        if (hasGsap) {
+          gsap.timeline({ defaults: { ease: 'power3.out' } })
+            .to('#navbar', { opacity: 1, y: 0, duration: .65 })
+            .to('#hero .reveal', { opacity: 1, y: 0, duration: .85, stagger: .09 }, '-.35');
+        } else {
+          const nav = document.getElementById('navbar');
+          if (nav) { nav.style.opacity = '1'; nav.style.transform = 'none'; }
+          document.querySelectorAll('#hero .reveal').forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          });
+        }
         // Fade in hero bg video after preloader
         const heroBgVid = document.getElementById('hero-bg-vid');
         if (heroBgVid) {
+          heroBgVid.muted = true;
           heroBgVid.play().catch(() => { });
-          heroBgVid.addEventListener('canplay', () => heroBgVid.classList.add('loaded'), { once: true });
           heroBgVid.classList.add('loaded');
+          heroBgVid.addEventListener('canplay', () => heroBgVid.classList.add('loaded'), { once: true });
         }
       }
 
@@ -1724,16 +1951,7 @@
         const bar = document.getElementById(barId);
         if (!vid) return;
 
-        // Load video lazily when near viewport
-        const lazyObs = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting && vid.preload === 'none') {
-              vid.preload = 'auto'; vid.load();
-              lazyObs.unobserve(entry.target);
-            }
-          });
-        }, { rootMargin: '300px' });
-        lazyObs.observe(vid);
+        vid.muted = true;
 
         // Progress bar
         if (bar) {
@@ -1742,34 +1960,54 @@
           });
         }
 
-        // IntersectionObserver for play/pause + text reveal
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              vid.play().catch(() => { });
-              if (sub) { sub.classList.add('show'); }
-              if (head) {
-                setTimeout(() => head.classList.add('show'), 180);
-              }
-            } else {
-              vid.pause();
-              if (sub) { sub.classList.remove('show'); }
-              if (head) { head.classList.remove('show'); }
-            }
-          });
-        }, { threshold: threshold || 0.25 });
-        io.observe(vid.closest('.video-interlude'));
+        // Tap video to toggle play/pause
+        vid.addEventListener('click', () => {
+          if (vid.paused) {
+            vid.play().catch(() => { });
+          } else {
+            vid.pause();
+          }
+        });
 
-        // GSAP scale parallax on scroll
-        gsap.fromTo(vid, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: vid.closest('.video-interlude'), start: 'top bottom', end: 'bottom top', scrub: true } });
+        // IntersectionObserver for play/pause + text reveal
+        if ('IntersectionObserver' in window) {
+          const io = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                vid.play().catch(() => { });
+                if (sub) { sub.classList.add('show'); }
+                if (head) {
+                  setTimeout(() => head.classList.add('show'), 180);
+                }
+              } else {
+                vid.pause();
+                if (sub) { sub.classList.remove('show'); }
+                if (head) { head.classList.remove('show'); }
+              }
+            });
+          }, { threshold: threshold || 0.2 });
+          const parentSec = vid.closest('.video-interlude');
+          if (parentSec) io.observe(parentSec);
+        } else {
+          vid.play().catch(() => { });
+        }
+
+        // GSAP scale parallax on scroll if available
+        if (hasGsap && hasScrollTrigger) {
+          const parentSec = vid.closest('.video-interlude');
+          if (parentSec) {
+            gsap.fromTo(vid, { scale: 1.08 }, { scale: 1, ease: 'none', scrollTrigger: { trigger: parentSec, start: 'top bottom', end: 'bottom top', scrub: true } });
+          }
+        }
       }
 
-      setupInterlude('vi-rooftop-vid', 'vi-rooftop-sub', 'vi-rooftop-headline', 'vi-rooftop-bar', 0.3);
-      setupInterlude('vi-brandfilm-vid', 'vi-brandfilm-sub', 'vi-brandfilm-headline', 'vi-brandfilm-bar', 0.3);
+      setupInterlude('vi-rooftop-vid', 'vi-rooftop-sub', 'vi-rooftop-headline', 'vi-rooftop-bar', 0.25);
+      setupInterlude('vi-brandfilm-vid', 'vi-brandfilm-sub', 'vi-brandfilm-headline', 'vi-brandfilm-bar', 0.25);
 
       // Sound toggle for each interlude
       document.querySelectorAll('.vi-sound-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
           const vid = document.getElementById(btn.dataset.vid);
           if (!vid) return;
           vid.muted = !vid.muted;
@@ -1784,33 +2022,101 @@
             if (label) label.textContent = 'Mute';
             if (wave1) wave1.style.opacity = '1';
             if (wave2) wave2.style.opacity = '1';
+            vid.play().catch(() => { });
           }
         });
       });
 
+      // Custom cursor on desktop fine pointer
       const cursorDot = document.getElementById('cursor-dot'), cursorRing = document.getElementById('cursor-ring');
-      if (window.matchMedia('(min-width:1024px) and (pointer:fine)').matches) { window.addEventListener('mousemove', e => { gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: .08, ease: 'power2.out' }); gsap.to(cursorRing, { x: e.clientX, y: e.clientY, duration: .25, ease: 'power2.out' }) }); document.querySelectorAll('.magnet').forEach(el => { el.addEventListener('mouseenter', () => gsap.to(cursorRing, { width: 60, height: 60, background: 'rgba(184,242,58,.08)', duration: .2 })); el.addEventListener('mouseleave', () => gsap.to(cursorRing, { width: 38, height: 38, background: 'transparent', duration: .2 })) }) }
+      if (hasGsap && window.matchMedia('(min-width:1024px) and (pointer:fine)').matches) {
+        window.addEventListener('mousemove', e => {
+          gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: .08, ease: 'power2.out' });
+          gsap.to(cursorRing, { x: e.clientX, y: e.clientY, duration: .25, ease: 'power2.out' });
+        });
+        document.querySelectorAll('.magnet, a, button').forEach(el => {
+          el.addEventListener('mouseenter', () => gsap.to(cursorRing, { width: 56, height: 56, background: 'rgba(184,242,58,.08)', duration: .2 }));
+          el.addEventListener('mouseleave', () => gsap.to(cursorRing, { width: 38, height: 38, background: 'transparent', duration: .2 }));
+        });
+      }
 
+      // Mobile Menu Drawer
       const mobilePanel = document.getElementById('mobile-panel'), overlay = document.getElementById('mobile-overlay');
-      function openMenu() { mobilePanel.classList.add('open'); overlay.classList.remove('hidden'); document.body.style.overflow = 'hidden'; lenis.stop() }
-      function closeMenu() { mobilePanel.classList.remove('open'); overlay.classList.add('hidden'); document.body.style.overflow = ''; lenis.start() }
-      document.getElementById('menu-open')?.addEventListener('click', openMenu); document.getElementById('menu-close')?.addEventListener('click', closeMenu); overlay?.addEventListener('click', closeMenu); document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
+      function openMenu() {
+        if (mobilePanel) mobilePanel.classList.add('open');
+        if (overlay) overlay.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        if (lenis) lenis.stop();
+      }
+      function closeMenu() {
+        if (mobilePanel) mobilePanel.classList.remove('open');
+        if (overlay) overlay.classList.add('hidden');
+        document.body.style.overflow = '';
+        if (lenis) lenis.start();
+      }
+      document.getElementById('menu-open')?.addEventListener('click', openMenu);
+      document.getElementById('menu-close')?.addEventListener('click', closeMenu);
+      overlay?.addEventListener('click', closeMenu);
+      document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', closeMenu));
 
-      document.querySelectorAll('.reveal').forEach(el => { if (el.closest('#hero')) return; gsap.fromTo(el, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: .85, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 86%', once: true } }) });
+      // Scroll reveals & Counter animations
+      if (hasGsap && hasScrollTrigger) {
+        document.querySelectorAll('.reveal').forEach(el => {
+          if (el.closest('#hero')) return;
+          gsap.fromTo(el, { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: .85, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 88%', once: true } });
+        });
 
-      document.querySelectorAll('.counter-number').forEach(counter => { const target = Number(counter.dataset.target); ScrollTrigger.create({ trigger: counter, start: 'top 85%', once: true, onEnter: () => gsap.fromTo(counter, { textContent: 0 }, { textContent: target, duration: 1.7, ease: 'power2.out', snap: { textContent: 1 } }) }) });
-      ScrollTrigger.create({ start: 'top -60', onEnter: () => gsap.to('#navbar nav', { scale: .985, duration: .25 }), onLeaveBack: () => gsap.to('#navbar nav', { scale: 1, duration: .25 }) });
+        document.querySelectorAll('.counter-number').forEach(counter => {
+          const target = Number(counter.dataset.target);
+          ScrollTrigger.create({
+            trigger: counter,
+            start: 'top 88%',
+            once: true,
+            onEnter: () => gsap.fromTo(counter, { textContent: 0 }, { textContent: target, duration: 1.7, ease: 'power2.out', snap: { textContent: 1 } })
+          });
+        });
 
-      // Focus / highlight while an item enters the reading zone.
-      document.querySelectorAll('.evidence-item,.project-card').forEach(card => {
-        ScrollTrigger.create({ trigger: card, start: 'top 62%', end: 'bottom 38%', onEnter: () => card.classList.add('is-selected', 'is-focus'), onEnterBack: () => card.classList.add('is-selected', 'is-focus'), onLeave: () => card.classList.remove('is-selected', 'is-focus'), onLeaveBack: () => card.classList.remove('is-selected', 'is-focus') });
-      });
+        ScrollTrigger.create({
+          start: 'top -60',
+          onEnter: () => gsap.to('#navbar nav', { scale: .985, duration: .25 }),
+          onLeaveBack: () => gsap.to('#navbar nav', { scale: 1, duration: .25 })
+        });
 
-      // Active navigation.
-      ['about', 'capabilities', 'work', 'publications', 'experience', 'contact'].forEach(id => { const section = document.getElementById(id); if (!section) return; ScrollTrigger.create({ trigger: section, start: 'top 35%', end: 'bottom 35%', onEnter: () => setActive(id), onEnterBack: () => setActive(id) }) });
+        document.querySelectorAll('.evidence-item,.project-card').forEach(card => {
+          ScrollTrigger.create({
+            trigger: card,
+            start: 'top 62%',
+            end: 'bottom 38%',
+            onEnter: () => card.classList.add('is-selected', 'is-focus'),
+            onEnterBack: () => card.classList.add('is-selected', 'is-focus'),
+            onLeave: () => card.classList.remove('is-selected', 'is-focus'),
+            onLeaveBack: () => card.classList.remove('is-selected', 'is-focus')
+          });
+        });
+
+        ['about', 'capabilities', 'work', 'publications', 'experience', 'contact'].forEach(id => {
+          const section = document.getElementById(id);
+          if (!section) return;
+          ScrollTrigger.create({
+            trigger: section,
+            start: 'top 35%',
+            end: 'bottom 35%',
+            onEnter: () => setActive(id),
+            onEnterBack: () => setActive(id)
+          });
+        });
+      } else {
+        document.querySelectorAll('.reveal').forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        });
+        document.querySelectorAll('.counter-number').forEach(counter => {
+          counter.textContent = counter.dataset.target || counter.textContent;
+        });
+      }
       function setActive(id) { document.querySelectorAll('[data-nav]').forEach(link => link.classList.toggle('text-black', link.dataset.nav === id)) }
 
-      // Image fallback to remote placeholder only when local media fails.
+      // Image fallbacks
       const fallbacks = {
         'assets/ajira/ajira-hero.jpg': 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1800&q=84',
         'assets/kepsa/kepsa-event-2.jpg': 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=84',
@@ -1818,45 +2124,169 @@
       };
       document.querySelectorAll('img').forEach(img => img.addEventListener('error', () => { if (img.dataset.fallbackUsed === '1') return; const src = img.getAttribute('src'); const fb = fallbacks[src]; if (!fb) return; img.dataset.fallbackUsed = '1'; img.src = fb }));
 
-      // Showreel controls.
+      // Showreel controls
       const video = document.getElementById('showreel-video'), overlayPlay = document.getElementById('showreel-overlay'), play = document.getElementById('showreel-play'), toggle = document.getElementById('showreel-toggle'), mute = document.getElementById('showreel-mute');
-      function playVideo() { video.play().then(() => { overlayPlay.classList.add('opacity-0', 'pointer-events-none'); toggle.textContent = 'Pause' }).catch(() => { }) }
-      function pauseVideo() { video.pause(); toggle.textContent = 'Play' }
-      play.addEventListener('click', playVideo); toggle.addEventListener('click', () => video.paused ? playVideo() : pauseVideo()); video.addEventListener('click', () => video.paused ? playVideo() : pauseVideo()); mute.addEventListener('click', () => { video.muted = !video.muted; mute.textContent = video.muted ? 'Unmute' : 'Mute' }); video.addEventListener('ended', () => { overlayPlay.classList.remove('opacity-0', 'pointer-events-none'); toggle.textContent = 'Play' });
-      const obs = new IntersectionObserver(entries => entries.forEach(entry => { if (!entry.isIntersecting && !video.paused) pauseVideo() }), { threshold: .15 }); obs.observe(video);
+      if (video && overlayPlay && play && toggle && mute) {
+        function playVideo() {
+          video.play().then(() => {
+            overlayPlay.classList.add('opacity-0', 'pointer-events-none');
+            toggle.textContent = 'Pause';
+          }).catch(() => { });
+        }
+        function pauseVideo() {
+          video.pause();
+          toggle.textContent = 'Play';
+          overlayPlay.classList.remove('opacity-0', 'pointer-events-none');
+        }
+        play.addEventListener('click', playVideo);
+        toggle.addEventListener('click', () => video.paused ? playVideo() : pauseVideo());
+        video.addEventListener('click', () => video.paused ? playVideo() : pauseVideo());
+        mute.addEventListener('click', () => {
+          video.muted = !video.muted;
+          mute.textContent = video.muted ? 'Unmute' : 'Mute';
+        });
+        video.addEventListener('ended', () => {
+          overlayPlay.classList.remove('opacity-0', 'pointer-events-none');
+          toggle.textContent = 'Play';
+        });
+        if ('IntersectionObserver' in window) {
+          const obs = new IntersectionObserver(entries => entries.forEach(entry => {
+            if (!entry.isIntersecting && !video.paused) pauseVideo();
+          }), { threshold: .15 });
+          obs.observe(video);
+        }
+      }
 
-      // PUBLICATIONS: paste the final file URL for each publication here.
-      // Keep these as individual document/file links rather than a folder link.
-      const PUBLICATION_FILES = {
-        '01': '',
-        '02': '',
-        '03': '',
-        '04': ''
-      };
+      // FAQ accordion
+      document.querySelectorAll('.faq-toggle').forEach(button => button.addEventListener('click', () => {
+        const row = button.closest('.faq-row');
+        const open = row.classList.contains('open');
+        document.querySelectorAll('.faq-row.open').forEach(r => r.classList.remove('open'));
+        if (!open) row.classList.add('open');
+      }));
 
-      document.querySelectorAll('.publication-link').forEach(link => {
-        const url = PUBLICATION_FILES[link.dataset.publicationLink];
-        if (url) {
-          link.href = url;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-        } else {
-          link.addEventListener('click', e => {
-            e.preventDefault();
-            alert('Add the final publication file URL in PUBLICATION_FILES inside index.html.');
-          });
+      // Lightbox Modal Functionality
+      const lightbox = document.getElementById('lightbox-modal');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightboxCap = document.getElementById('lightbox-caption');
+      const lightboxClose = document.getElementById('lightbox-close');
+
+      function openLightbox(src, caption) {
+        if (!lightbox || !lightboxImg) return;
+        lightboxImg.src = src;
+        lightboxImg.alt = caption || 'Portfolio detail';
+        if (lightboxCap) lightboxCap.textContent = caption || '';
+        lightbox.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.add('hidden');
+        if (lightboxImg) lightboxImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.gallery-tile img, .media-frame img').forEach(img => {
+        img.addEventListener('click', () => {
+          openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+        });
+      });
+
+      lightboxClose?.addEventListener('click', closeLightbox);
+      lightbox?.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.id === 'lightbox-modal') closeLightbox();
+      });
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeLightbox();
+      });
+
+      // Toast Notification helper
+      const toast = document.getElementById('toast-msg');
+      let toastTimer = null;
+      function showToast(message) {
+        if (!toast) return;
+        clearTimeout(toastTimer);
+        toast.textContent = message;
+        toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+        toast.classList.add('opacity-100', 'translate-y-0');
+        toastTimer = setTimeout(() => {
+          toast.classList.remove('opacity-100', 'translate-y-0');
+          toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+        }, 2800);
+      }
+
+      // Copy Email button with toast
+      document.getElementById('copy-email-btn')?.addEventListener('click', async () => {
+        const email = 'patrickkaranjajaja@gmail.com';
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(email);
+          } else {
+            const ta = document.createElement('textarea');
+            ta.value = email;
+            ta.style.position = 'fixed';
+            ta.style.opacity = '0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          showToast('✓ Email copied to clipboard: ' + email);
+        } catch (err) {
+          showToast('Email: ' + email);
         }
       });
 
-      // FAQ.
-      document.querySelectorAll('.faq-toggle').forEach(button => button.addEventListener('click', () => { const row = button.closest('.faq-row'); const open = row.classList.contains('open'); document.querySelectorAll('.faq-row.open').forEach(r => r.classList.remove('open')); if (!open) row.classList.add('open') }));
+      // Back to Top button
+      const btt = document.getElementById('back-to-top');
+      window.addEventListener('scroll', () => {
+        if (!btt) return;
+        if (window.scrollY > 400) {
+          btt.classList.remove('opacity-0', 'pointer-events-none');
+          btt.classList.add('opacity-100');
+        } else {
+          btt.classList.remove('opacity-100');
+          btt.classList.add('opacity-0', 'pointer-events-none');
+        }
+      }, { passive: true });
 
-      // Magnetic buttons.
-      if (window.matchMedia('(min-width:1024px) and (pointer:fine)').matches) { document.querySelectorAll('.magnet').forEach(el => { el.addEventListener('mousemove', e => { const r = el.getBoundingClientRect(), x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height / 2); gsap.to(el, { x: x * .08, y: y * .08, duration: .2, ease: 'power2.out' }) }); el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: .45, ease: 'elastic.out(1,.35)' })) }) }
+      btt?.addEventListener('click', () => {
+        if (lenis) {
+          lenis.scrollTo(0, { duration: 1.1 });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
 
-      // Smooth hash navigation.
-      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', e => { const target = document.querySelector(link.getAttribute('href')); if (!target) return; e.preventDefault(); lenis.scrollTo(target, { offset: -90, duration: 1.05 }) }));
-      window.addEventListener('resize', () => ScrollTrigger.refresh());
+      // Magnetic buttons on desktop
+      if (window.matchMedia('(min-width:1024px) and (pointer:fine)').matches) {
+        document.querySelectorAll('.magnet').forEach(el => {
+          el.addEventListener('mousemove', e => {
+            const r = el.getBoundingClientRect(), x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height / 2);
+            gsap.to(el, { x: x * .08, y: y * .08, duration: .2, ease: 'power2.out' });
+          });
+          el.addEventListener('mouseleave', () => gsap.to(el, { x: 0, y: 0, duration: .45, ease: 'elastic.out(1,.35)' }));
+        });
+      }
+
+      // Smooth hash navigation
+      document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
+        e.preventDefault();
+        if (lenis) {
+          lenis.scrollTo(target, { offset: -90, duration: 1.05 });
+        } else {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }));
+
+      window.addEventListener('resize', () => {
+        if (hasScrollTrigger) ScrollTrigger.refresh();
+      });
     });
   </script>
 </body>

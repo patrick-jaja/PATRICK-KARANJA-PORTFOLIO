@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "css:build": "tailwindcss -i ./src/css/tailwind.css -o ./src/css/compiled.css --minify",
+    "predev": "npm run css:build",
+    "prebuild": "npm run css:build"
   },
   "devDependencies": {
     "vite": "^5.0.0",

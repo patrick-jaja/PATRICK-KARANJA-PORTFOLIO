@@ -8,6 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
+        ink: '#0A0A0A',
+        dark: '#121212',
+        soft: '#F5F5F2',
+        line: '#E7E7E3',
+        lime: '#B8F23A',
+        muted: '#737373',
         brand: {
           primary: "#84CC16",
           primaryDark: "#65A30D",
@@ -20,9 +26,13 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-        display: ["Poppins", "sans-serif"],
+        display: ['Manrope', 'sans-serif'],
+        sans: ['DM Sans', 'sans-serif'],
         serif: ["Georgia", "serif"]
+      },
+      boxShadow: {
+        soft: '0 28px 80px rgba(0,0,0,.08)',
+        dark: '0 28px 80px rgba(0,0,0,.28)'
       }
     }
   },

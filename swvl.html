@@ -12,10 +12,12 @@
 
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" /></noscript>
     <!-- Tailwind CSS Play CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="src/css/compiled.css" />
   <script>
+    if (typeof tailwind !== 'undefined') {
     tailwind.config = {
       theme: {
         extend: {
@@ -35,15 +37,12 @@
             sans: ['Inter', 'sans-serif'],
             display: ['Poppins', 'sans-serif'],
             serif: ['Georgia', 'serif']
-          }
         }
       }
     }
+    }
+    }
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1/dist/lenis.min.js"></script>
 
   <style type="text/css">
     html {
@@ -62,8 +61,7 @@
     ::-webkit-scrollbar-track { background: #1E293B; }
     ::-webkit-scrollbar-thumb { background: rgba(132, 204, 22, 0.3); border-radius: 3px; }
     ::-webkit-scrollbar-thumb:hover { background: #84CC16; }
-    
-    .masonry-grid { columns: 3 320px; column-gap: 16px; }
+
     .masonry-grid .masonry-item { break-inside: avoid; margin-bottom: 16px; border-radius: 12px; overflow: hidden; transition: transform 0.4s ease, box-shadow 0.4s ease; }
     .masonry-grid .masonry-item:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15); }
     .masonry-grid .masonry-item img { width: 100%; height: auto; display: block; }
@@ -88,11 +86,14 @@
       </a>
       <div class="hidden lg:flex items-center gap-8">
         <a href="index.html#about" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">About</a>
-        <a href="index.html#expertise" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Expertise</a>
-        <a href="index.html#projects" class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Projects</a>
+        <a href="index.html#capabilities" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Capabilities</a>
+        <a href="index.html#work" class="text-xs font-semibold uppercase tracking-widest text-[#111827] transition-colors duration-300">Work</a>
         <a href="index.html#contact" class="text-xs font-semibold uppercase tracking-widest text-[#64748B] hover:text-[#111827] transition-colors duration-300">Contact</a>
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <a href="index.html#work" class="inline-flex items-center justify-center px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full border border-black/10 bg-black/5 hover:bg-black/10 text-[#111827] font-display font-semibold text-[11px] sm:text-xs tracking-wider uppercase transition-all duration-300">
+          ← Back
+        </a>
         <a href="index.html#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-brand-primary hover:bg-brand-primaryDark text-brand-dark font-display font-semibold text-xs tracking-wider uppercase transition-all duration-300 shadow-lg shadow-brand-primary/10 hover:shadow-brand-primary/20 hover:-translate-y-0.5">
           Start a Project
         </a>
@@ -187,17 +188,17 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal-up">
         <div class="video-card aspect-[4/5] border border-white/10">
           <video preload="metadata" controls muted loop>
-            <source src="assets/swvl/swvl-mpesa.mp4" type="video/mp4">
+            <source data-drive-id="1yCnA4MXfxHof4TigPL1XE8jLFOdG1wtx" data-drive-title="Swvl M-Pesa campaign" type="video/mp4">
           </video>
         </div>
         <div class="video-card aspect-[4/5] border border-white/10">
           <video preload="metadata" controls muted loop>
-            <source src="assets/swvl/swvl-mpesa-app.mp4" type="video/mp4">
+            <source data-drive-id="1V1UUnqBW7XvQEgRNFIZ-cvKaVISdcYlu" data-drive-title="Swvl M-Pesa app campaign" type="video/mp4">
           </video>
         </div>
         <div class="video-card aspect-[4/5] border border-white/10">
           <video preload="metadata" controls muted loop>
-            <source src="assets/swvl/swvl-doc.mp4" type="video/mp4">
+            <source data-drive-id="1vHSCDPBUxGLRPTYBI9iGHcGV3QgOjKdZ" data-drive-title="Swvl documentary" type="video/mp4">
           </video>
         </div>
       </div>
@@ -254,56 +255,22 @@
         <p class="text-[10px] text-brand-textMuted tracking-wider uppercase">Strategic Communications Leader</p>
       </div>
       <div class="flex flex-wrap justify-center gap-6 text-[10px] tracking-widest font-display uppercase font-bold">
-        <a href="index.html#projects" class="hover:text-brand-primary transition-colors">Back to Portfolio</a>
+        <a href="index.html#work" class="hover:text-brand-primary transition-colors">Back to Portfolio</a>
       </div>
     </div>
   </footer>
 
+  <script type="module" src="assets/js/drive-media.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      gsap.registerPlugin(ScrollTrigger);
-
-      const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => { lenis.raf(time * 1000); });
-      gsap.ticker.lagSmoothing(0);
-
-      ScrollTrigger.create({
-        start: "top -50px",
-        onEnter: () => {
-          document.getElementById("navbar").classList.remove("py-6");
-          document.getElementById("navbar").classList.add("py-3");
-        },
-        onLeaveBack: () => {
-          document.getElementById("navbar").classList.remove("py-3");
-          document.getElementById("navbar").classList.add("py-6");
-        }
-      });
-
-      const reveals = document.querySelectorAll(".reveal-up");
-      reveals.forEach(el => {
-        gsap.from(el, {
-          opacity: 0,
-          y: 40,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: el,
-            start: "top 85%",
-            toggleActions: "play none none none"
-          }
-        });
-      });
+      const navbar = document.getElementById("navbar");
+      const updateNavbar = () => {
+        if (!navbar) return;
+        navbar.classList.toggle("py-3", window.scrollY > 50);
+        navbar.classList.toggle("py-6", window.scrollY <= 50);
+      };
+      window.addEventListener("scroll", updateNavbar, { passive: true });
+      updateNavbar();
     });
   </script>
 </body>
