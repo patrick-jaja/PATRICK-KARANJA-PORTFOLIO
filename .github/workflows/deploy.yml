@@ -36,9 +36,3 @@ jobs:
           keep_files: false
 permissions:
   contents: write
-  jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
