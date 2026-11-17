@@ -8,11 +8,11 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0A0A0A',
-        dark: '#121212',
-        soft: '#F5F5F2',
+        ink: '#111111',
+        dark: '#333333',
+        soft: '#F2F2F2',
         line: '#E7E7E3',
-        lime: '#B8F23A',
+        lime: '#84CC16',
         muted: '#737373',
         brand: {
           primary: "#84CC16",
@@ -26,8 +26,8 @@ export default {
         }
       },
       fontFamily: {
-        display: ['Manrope', 'sans-serif'],
-        sans: ['DM Sans', 'sans-serif'],
+        display: ['Gellix', 'sans-serif'],
+        sans: ['Gellix', 'sans-serif'],
         serif: ["Georgia", "serif"]
       },
       boxShadow: {
